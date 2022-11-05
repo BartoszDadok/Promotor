@@ -22,8 +22,8 @@ import {
 } from "./Offer.styles";
 import angelo from "../../../public/assets/hotels/angelo.jpg";
 import cevedale from "../../../public/assets/hotels/cevedale.jpg";
-import derbyclub from "../../../public/assets/hotels/derbyclub.jpg";
-// import frontdeneige from "../../../public/assets/hotels/frontdeneige.jpg";
+import derb from "../../../public/assets/hotels/derbyclub.jpg";
+import frontdeneige from "../../../public/assets/hotels/frontdeneige.jpg";
 import golf from "../../../public/assets/hotels/golf.jpg";
 import gentianes from "../../../public/assets/hotels/gentianes.jpg";
 // import hausanderluck from "../../../public/assets/hotels/hausanderluck.jpg";
@@ -39,7 +39,7 @@ import topresidence from "../../../public/assets/hotels/topresidence.jpg";
 
 const images = {
     angelo,
-    derbyclub,
+    derb,
     cevedale,
     golf,
     gentianes,
