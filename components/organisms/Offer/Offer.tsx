@@ -397,7 +397,7 @@ const Offer = () => {
                             const objectPhoto = itemData.object.replace(/ /g, "").toLowerCase().replace("'", "");
                             console.log(objectPhoto);
                             // @ts-ignore
-                            const src = images[objectPhoto].src;
+                            const src = images[objectPhoto];
                             return (<Item key={ itemData.id } itemData={ itemData } src={ src }/>);
                         })
                         : <div>
