@@ -36,7 +36,6 @@ import pampeago from "../../../public/assets/hotels/pampeago.jpg";
 import prom from "../../../public/assets/hotels/prom.jpg";
 import solaris from "../../../public/assets/hotels/solaris.jpg";
 import topresidence from "../../../public/assets/hotels/topresidence.jpg";
-import villaggiodolomitico from "../../../public/assets/hotels/villaggiodolomitico.jpg";
 
 const images = {
     angelo,
@@ -50,7 +49,6 @@ const images = {
     prom,
     solaris,
     topresidence,
-    villaggiodolomitico,
 };
 
 const Offer = () => {
