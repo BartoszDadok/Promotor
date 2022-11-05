@@ -6,7 +6,43 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBus, faMugHot, faPersonSkiing, faTicketSimple } from "@fortawesome/free-solid-svg-icons";
 import { ItemTypes } from "../Offer/OfferTypes";
 import Link from "next/link";
+import angelo from "../../../public/assets/hotels/angelo.jpg";
+import cevedale from "../../../public/assets/hotels/cevedale.jpg";
+import derbyclub from "../../../public/assets/hotels/derbyclub.jpg";
+import frontdeneige from "../../../public/assets/hotels/frontdeneige.jpg";
+import golf from "../../../public/assets/hotels/golf.jpg";
+import gentianes from "../../../public/assets/hotels/gentianes.jpg";
+import hausanderluck from "../../../public/assets/hotels/hausanderluck.jpg";
+import lagranbecca from "../../../public/assets/hotels/lagranbecca.jpg";
+import laroccasport from "../../../public/assets/hotels/laroccasport.jpg";
+import leschaletsladonis from "../../../public/assets/hotels/leschaletsladonis.jpg";
+import margarethenbad from "../../../public/assets/hotels/margarethenbad.jpg";
+import misurina from "../../../public/assets/hotels/misurina.jpg";
+import pampeago from "../../../public/assets/hotels/pampeago.jpg";
+import prom from "../../../public/assets/hotels/prom.jpg";
+import solaris from "../../../public/assets/hotels/solaris.jpg";
+import topresidence from "../../../public/assets/hotels/topresidence.jpg";
+import villaggiodolomitico from "../../../public/assets/hotels/villaggiodolomitico.jpg";
 
+const images = {
+    angelo,
+    cevedale,
+    derbyclub,
+    frontdeneige,
+    golf,
+    gentianes,
+    hausanderluck,
+    lagranbecca,
+    laroccasport,
+    leschaletsladonis,
+    margarethenbad,
+    misurina,
+    pampeago,
+    prom,
+    solaris,
+    topresidence,
+    villaggiodolomitico,
+};
 export const InfoWrapper = styled.div`
   width: 80%;
   padding: 0 0.8em;
@@ -66,8 +102,9 @@ const ButtonWrapper = styled.div`
 const Item = ({ itemData }: { itemData: ItemTypes }) => {
     const dateWithoutSpaces = itemData.date.replace(/ /g, "");
     const objectWithoutSpaces = itemData.object.replace(/ /g, "");
-    const objectPhoto = itemData.object.replace(/ /g, "").toLowerCase() + ".jpg";
-    const pathToPhoto = require(`../../../public/assets/hotels/${ objectPhoto }`);
+    const objectPhoto = itemData.object.replace(/ /g, "").toLowerCase().replace("'", '');;
+    // @ts-ignore
+    const pathToPhoto = images[objectPhoto];
 
 
     return (
