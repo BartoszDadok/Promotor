@@ -22,11 +22,26 @@ import {
 } from "./Offer.styles";
 import angelo from "../../../public/assets/hotels/angelo.jpg";
 import cevedale from "../../../public/assets/hotels/cevedale.jpg";
-
+import derbyclub from "../../../public/assets/hotels/derbyclub.jpg";
+import frontdeneige from "../../../public/assets/hotels/frontdeneige.jpg";
+import golf from "../../../public/assets/hotels/golf.jpg";
+import gentianes from "../../../public/assets/hotels/gentianes.jpg";
+import hausanderluck from "../../../public/assets/hotels/hausanderluck.jpg";
+import lagranbecca from "../../../public/assets/hotels/lagranbecca.jpg";
+import laroccasport from "../../../public/assets/hotels/laroccasport.jpg";
+import leschaletsladonis from "../../../public/assets/hotels/leschaletsladonis.jpg";
+import margarethenbad from "../../../public/assets/hotels/margarethenbad.jpg";
+import misurina from "../../../public/assets/hotels/misurina.jpg";
+import pampeago from "../../../public/assets/hotels/pampeago.jpg";
+import prom from "../../../public/assets/hotels/prom.jpg";
+import solaris from "../../../public/assets/hotels/solaris.jpg";
+import topresidence from "../../../public/assets/hotels/topresidence.jpg";
+import villaggiodolomitico from "../../../public/assets/hotels/villaggiodolomitico.jpg";
 
 const images = {
-    angelo,
-    cevedale,
+
+    topresidence,
+
 };
 
 const Offer = () => {
@@ -367,7 +382,7 @@ const Offer = () => {
                     { filteredData.length > 0 ? filteredData.map((itemData: ItemTypes) => {
                             const objectPhoto = itemData.object.replace(/ /g, "").toLowerCase().replace("'", "");
                             // @ts-ignore
-                            const src = images["cevedale"];
+                            const src = images["topresidence"];
                             return (<Item key={ itemData.id } itemData={ itemData } src={ src }/>);
                         })
                         : <div>
