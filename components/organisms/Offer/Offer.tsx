@@ -50,7 +50,10 @@ const images = {
     prom,
     solaris,
     topresidence,
-    laroccasport
+    laroccasport,
+    hausanderluck: haus,
+    lagranbecca: lagra,
+    frontdeneige: front,
 };
 
 const Offer = () => {
