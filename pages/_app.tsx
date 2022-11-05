@@ -17,7 +17,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                 <script
                     dangerouslySetInnerHTML={ {
                         __html: `
-          document.fonts.ready.then(function(){
+                    document.fonts.ready.then(function(){
                     document.getElementsByTagName("html")[0].classList.add("fonts-loaded")
                 })
                   `,

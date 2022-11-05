@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 
 const HeaderContainer = styled.header`
-  position: relative
+  position: relative;
 `;
 
 const HeadLineContainer = styled.div`
@@ -29,14 +29,16 @@ const HeadLineH2 = styled.h2`
   @media (max-width: 1200px) {
     font-size: 1.5rem;
   }
+
+
 `;
 const Header = () => {
     return (
         <HeaderContainer>
             <HeroImage/>
-            <HeadLineContainer>
-                <HeadLineH2> Pojedź z nami raz</HeadLineH2>
-                <HeadLineH2>- będziesz z nami jeździł zawsze!</HeadLineH2>
+            <HeadLineContainer id="headlines">
+                <HeadLineH2 className={ "h2" }> Pojedź z nami raz</HeadLineH2>
+                <HeadLineH2 className={ "h2" }>- będziesz z nami jeździł zawsze!</HeadLineH2>
             </HeadLineContainer>
         </HeaderContainer>
     );
