@@ -23,7 +23,7 @@ const HeadLineH2 = styled.h2`
   font-weight: 900;
   color: #fff;
   font-size: 2.5rem;
-  @media (max-width: 1450px) {
+  @media (max-width: 1550px) {
     font-size: 1.5rem;
   }
   @media (max-width: 1200px) {
