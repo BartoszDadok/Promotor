@@ -22,13 +22,12 @@ import {
 } from "./Offer.styles";
 import angelo from "../../../public/assets/hotels/angelo.jpg";
 import cevedale from "../../../public/assets/hotels/cevedale.jpg";
-const  derbyclub =  require("../../../public/assets/hotels/derbyclub.jpg");
-
-const frontdeneige = require("../../../public/assets/hotels/frontdeneige.jpg");
+const  derbyclub =  "../../../public/assets/hotels/derbyclub.jpg";
+import front from "../../../public/assets/hotels/front.jpg";
 import golf from "../../../public/assets/hotels/golf.jpg";
 import gentianes from "../../../public/assets/hotels/gentianes.jpg";
-// import hausanderluck from "../../../public/assets/hotels/hausanderluck.jpg";
-// import lagranbecca from "../../../public/assets/hotels/lagranbecca.jpg";
+import haus from "../../../public/assets/hotels/haus.jpg";
+import lagra from "../../../public/assets/hotels/lagra.jpg";
 import laroccasport from "../../../public/assets/hotels/laroccasport.jpg";
 import leschaletsladonis from "../../../public/assets/hotels/leschaletsladonis.jpg";
 import margarethenbad from "../../../public/assets/hotels/margarethenbad.jpg";
@@ -51,8 +50,7 @@ const images = {
     prom,
     solaris,
     topresidence,
-    laroccasport,
-    frontdeneige
+    laroccasport
 };
 
 const Offer = () => {
