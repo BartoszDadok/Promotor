@@ -28,6 +28,25 @@ html.fonts-loaded .h2 {
     font-size: 2.5rem;
 }
 
+@media (max-width: 1550px) {
+    html .h2 {
+        font-size: 1.5rem;
+    }
+    html.fonts-loaded .h2 {
+        font-size: 1.8rem;
+    }
+
+}
+@media (max-width: 1200px) {
+    html .h2 {
+        font-size: 1.2rem;
+    }
+    html.fonts-loaded .h2 {
+        font-size: 1.5rem;
+    }
+
+}
+
 a {
     color: inherit;
     text-decoration: none;
