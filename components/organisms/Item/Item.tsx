@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { PageParagraph } from "../../atoms/PageParagraph/PageParagraph";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -63,11 +63,11 @@ const ButtonWrapper = styled.div`
 `;
 
 
-const Item = ({ itemData, src }: { itemData: ItemTypes, src: string }) => {
+const Item = ({ itemData, src }: { itemData: ItemTypes, src: StaticImageData }) => {
     const dateWithoutSpaces = itemData.date.replace(/ /g, "");
     const objectWithoutSpaces = itemData.object.replace(/ /g, "");
     const objectPhoto = itemData.object.replace(/ /g, "").toLowerCase().replace("'", "");
-    console.log(src);
+
     // @ts-ignore
 
 
@@ -76,7 +76,7 @@ const Item = ({ itemData, src }: { itemData: ItemTypes, src: string }) => {
         <SingleItem>
             <Link passHref href={ objectWithoutSpaces + "/" + dateWithoutSpaces }>
                 <a>
-                    <img src={ src } width={ 340 } height={ 270 }/>
+                    <Image src={ src } width={ 340 } height={ 270 }/>
                 </a>
             </Link>
             <InfoWrapper>
