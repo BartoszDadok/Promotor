@@ -1,11 +1,12 @@
 import React from "react";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import { PageParagraph } from "../../atoms/PageParagraph/PageParagraph";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBus, faMugHot, faPersonSkiing, faTicketSimple } from "@fortawesome/free-solid-svg-icons";
 import { ItemTypes } from "../Offer/OfferTypes";
 import Link from "next/link";
+
 
 export const InfoWrapper = styled.div`
   width: 80%;
@@ -63,12 +64,9 @@ const ButtonWrapper = styled.div`
 `;
 
 
-const Item = ({ itemData, src }: { itemData: ItemTypes, src: StaticImageData }) => {
+const Item = ({ itemData, src }: { itemData: ItemTypes, src: any }) => {
     const dateWithoutSpaces = itemData.date.replace(/ /g, "");
     const objectWithoutSpaces = itemData.object.replace(/ /g, "");
-    const objectPhoto = itemData.object.replace(/ /g, "").toLowerCase().replace("'", "");
-
-    // @ts-ignore
 
 
 
@@ -76,7 +74,11 @@ const Item = ({ itemData, src }: { itemData: ItemTypes, src: StaticImageData }) 
         <SingleItem>
             <Link passHref href={ objectWithoutSpaces + "/" + dateWithoutSpaces }>
                 <a>
-                    <Image src={ src } width={ 340 } height={ 270 }/>
+                    <Image loading={ "lazy" } style={ { borderRadius: "5px", cursor: "pointer" } }
+                           objectFit={ "cover" } width={ 360 }
+                           height={ 270 }
+                           src={ src }
+                           alt={ "hotel Angelo Włochy" }/>
                 </a>
             </Link>
             <InfoWrapper>

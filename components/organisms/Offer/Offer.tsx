@@ -22,8 +22,7 @@ import {
 } from "./Offer.styles";
 import angelo from "../../../public/assets/hotels/angelo.jpg";
 import cevedale from "../../../public/assets/hotels/cevedale.jpg";
-
-const derbyclub = "../../../public/assets/hotels/derbyclub.jpg";
+const  derbyclub =  "../../../public/assets/hotels/derbyclub.jpg";
 import front from "../../../public/assets/hotels/front.jpg";
 import golf from "../../../public/assets/hotels/golf.jpg";
 import gentianes from "../../../public/assets/hotels/gentianes.jpg";
@@ -38,7 +37,6 @@ import prom from "../../../public/assets/hotels/prom.jpg";
 import solaris from "../../../public/assets/hotels/solaris.jpg";
 import topresidence from "../../../public/assets/hotels/topresidence.jpg";
 import villa from "../../../public/assets/hotels/villa.jpg";
-
 const images = {
     angelo,
     derbyclub,
@@ -56,7 +54,7 @@ const images = {
     hausanderluck: haus,
     lagranbecca: lagra,
     frontdeneige: front,
-    villaggiodolomitico: villa,
+    villaggiodolomitico: villa
 };
 
 const Offer = () => {
@@ -162,12 +160,7 @@ const Offer = () => {
                 setFilteringState({ ...filteringState, date: { ...preparedDataForState } });
             }
             // @ts-ignore
-            setFilteringState({
-                ...filteringState,
-                date: {
-                    ...preparedDataForState,
-                    [toFilter]: !filteringState[key as keyof InitialStateTypes][toFilter as keyof InitialStateTypes],
-                },
+            setFilteringState({ ...filteringState, date: { ...preparedDataForState, [toFilter]: !filteringState[key as keyof InitialStateTypes][toFilter as keyof InitialStateTypes], },
             });
             return;
 
@@ -182,12 +175,7 @@ const Offer = () => {
             return;
         } else {
             // @ts-ignore
-            setFilteringState({
-                ...filteringState,
-                [key as keyof InitialStateTypes]: {
-                    ...filteringState[key as keyof InitialStateTypes],
-                    [toFilter]: !filteringState[key as keyof InitialStateTypes][toFilter],
-                },
+            setFilteringState({ ...filteringState, [key as keyof InitialStateTypes]: { ...filteringState[key as keyof InitialStateTypes], [toFilter]: !filteringState[key as keyof InitialStateTypes][toFilter], },
             });
             return;
 
