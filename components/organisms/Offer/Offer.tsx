@@ -391,7 +391,7 @@ const Offer = () => {
                             // @ts-ignore
                             console.log(images[objectPhoto]);
                             // @ts-ignore
-                            const src = images[objectPhoto] && images["angelo"];
+                            const src = images[objectPhoto] ? images[objectPhoto] : images["angelo"];
                             return (<Item key={ itemData.id } itemData={ itemData } src={ src }/>);
                         })
                         : <div>
