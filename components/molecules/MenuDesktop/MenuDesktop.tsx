@@ -17,7 +17,6 @@ interface Props {
 }
 
 const MenuDesktop = ({ isScrolled }: Props) => {
-    console.log(isScrolled);
     return (
         <MenuContainer>
             <LeftSide>

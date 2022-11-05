@@ -66,6 +66,10 @@ const ButtonWrapper = styled.div`
 const Item = ({ itemData }: { itemData: ItemTypes }) => {
     const dateWithoutSpaces = itemData.date.replace(/ /g, "");
     const objectWithoutSpaces = itemData.object.replace(/ /g, "");
+    const objectPhoto = itemData.object.replace(/ /g, "").toLowerCase() + ".jpg";
+    const pathToPhoto = require(`../../../public/assets/hotels/${ objectPhoto }`);
+
+
     return (
         <SingleItem>
             <Link passHref href={ objectWithoutSpaces + "/" + dateWithoutSpaces }>
@@ -73,7 +77,7 @@ const Item = ({ itemData }: { itemData: ItemTypes }) => {
                     <Image loading={ "lazy" } style={ { borderRadius: "5px", cursor: "pointer" } }
                            objectFit={ "cover" } width={ 360 }
                            height={ 270 }
-                           src={ require(`../../../public/assets/hotels/${ itemData.object.replace(/ /g, "").toLowerCase() }.jpg`) }
+                           src={ pathToPhoto }
                            alt={ "hotel Angelo Włochy" }/>
                 </a>
             </Link>
