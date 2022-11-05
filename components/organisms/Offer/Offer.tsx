@@ -20,7 +20,7 @@ import {
     HeadLineH3,
     HeadLineH4,
 } from "./Offer.styles";
-import top from "../../../public/assets/hotels/top.jpg";
+import top from "../../../public/assets/hotels/topresidence.jpg";
 
 
 const images = {
@@ -145,8 +145,7 @@ const Offer = () => {
             return;
         } else {
             // @ts-ignore
-            setFilteringState({ ...filteringState, [key as keyof InitialStateTypes]: { ...filteringState[key as keyof InitialStateTypes], [toFilter]: !filteringState[key as keyof InitialStateTypes][toFilter], },
-            });
+            setFilteringState({ ...filteringState, [key as keyof InitialStateTypes]: { ...filteringState[key as keyof InitialStateTypes], [toFilter]: !filteringState[key as keyof InitialStateTypes][toFilter], }, });
             return;
 
         }
