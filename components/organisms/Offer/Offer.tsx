@@ -22,7 +22,7 @@ import {
 } from "./Offer.styles";
 import angelo from "../../../public/assets/hotels/angelo.jpg";
 import cevedale from "../../../public/assets/hotels/cevedale.jpg";
-const  der =  "../../../public/assets/hotels/der.jpg";
+import der from "../../../public/assets/hotels/der.jpg";
 import front from "../../../public/assets/hotels/front.jpg";
 import golf from "../../../public/assets/hotels/golf.jpg";
 import gentianes from "../../../public/assets/hotels/gentianes.jpg";
