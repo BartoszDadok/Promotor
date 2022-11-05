@@ -388,8 +388,8 @@ const Offer = () => {
 
                     { filteredData.length > 0 ? filteredData.map((itemData: ItemTypes) => {
                             const objectPhoto = itemData.object.replace(/ /g, "").toLowerCase().replace("'", "");
-
-                            console.log(objectPhoto);
+                            // @ts-ignore
+                            console.log(images[objectPhoto]);
                             // @ts-ignore
                             const src = images[objectPhoto] && images["angelo"];
                             return (<Item key={ itemData.id } itemData={ itemData } src={ src }/>);
