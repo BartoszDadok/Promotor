@@ -402,9 +402,7 @@ const Offer = () => {
                         : <div>
                             <div>
                                 <PageParagraph fontSize={ "1.rem" } textAlign={ "center" } margin={ "2em 0" }
-                                               fontWeight={ "700" }>Nie znaleziono żadnej wycieczki pasującej do
-                                    wybranych
-                                    filtrów.</PageParagraph>
+                                               fontWeight={ "700" }>Nie znaleziono żadnego wyjazdu pasującego do wybranych filtrów.</PageParagraph>
                             </div>
                         </div> }
                 </Items>
