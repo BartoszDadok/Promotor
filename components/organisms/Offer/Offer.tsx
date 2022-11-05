@@ -234,10 +234,10 @@ const Offer = () => {
 
     return (
         <>
-            <HeadLineH4 id="oferta">Znajdź swoje zimowe wczasy</HeadLineH4>
+            <HeadLineH3 id="oferta">Znajdź swoje zimowe wczasy</HeadLineH3>
             <OfferWrapper>
                 <FilterSidebar>
-                    <HeadLineH3>Filtruj:</HeadLineH3>
+                    <HeadLineH4>Filtruj:</HeadLineH4>
                     <FieldContainer data-name={ "date" }>
                         <div>
                             <LabelSelect data-name={ "date" } htmlFor="date">Wybierz termin:</LabelSelect>

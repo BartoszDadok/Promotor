@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const HeadLineH4 = styled.h4`
+export const HeadLineH3 = styled.h3`
   width: 65%;
   margin: 1.5em auto 1em auto;
   font-size: 1.8rem;
@@ -84,7 +84,7 @@ export const Legend = styled.legend`
   font-weight: bold;
 `;
 
-export const HeadLineH3 = styled.h3`
+export const HeadLineH4 = styled.h3`
   text-align: center;
   font-size: 1.2rem;
 
