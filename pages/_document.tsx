@@ -5,8 +5,9 @@ export default class MyDocument extends Document {
         return (
             <Html lang="en">
                 <Head>
-                <link rel="preload" href="/fonts/lato-v22-latin-regular.woff2" as="font" type="font/woff2" crossOrigin=""/>
-                    <link rel="preload" href="/fonts/lato-v22-latin-300.woff2" as="font" type="font/woff2" crossOrigin=""/>
+                    <link rel="preload" href="/fonts/subset-Lato-BlackItalic.woff2" as="font" type="font/woff2" crossOrigin=""/>
+                    <link rel="preload" href="/fonts/subset-Lato-Regular.woff2" as="font" type="font/woff2" crossOrigin=""/>
+                    <link rel="preload" href="/fonts/subset-Lato-Light.woff2" as="font" type="font/woff2" crossOrigin=""/>
                 </Head>
                 <body>
                 <Main/>
