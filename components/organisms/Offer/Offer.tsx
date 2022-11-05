@@ -22,7 +22,7 @@ import {
 } from "./Offer.styles";
 import angelo from "../../../public/assets/hotels/angelo.jpg";
 import cevedale from "../../../public/assets/hotels/cevedale.jpg";
-const  derb =  "../../../public/assets/hotels/derb.jpg";
+const  der =  "../../../public/assets/hotels/der.jpg";
 import front from "../../../public/assets/hotels/front.jpg";
 import golf from "../../../public/assets/hotels/golf.jpg";
 import gentianes from "../../../public/assets/hotels/gentianes.jpg";
@@ -40,7 +40,6 @@ import villa from "../../../public/assets/hotels/villa.jpg";
 
 const images = {
     angelo,
-    derbyclub: derb,
     cevedale,
     golf,
     gentianes,
@@ -55,7 +54,8 @@ const images = {
     hausanderluck: haus,
     lagranbecca: lagra,
     frontdeneige: front,
-    villaggiodolomitico: villa
+    villaggiodolomitico: villa,
+    derbyclub: der,
 };
 
 const Offer = () => {
@@ -396,7 +396,7 @@ const Offer = () => {
                     { filteredData.length > 0 ? filteredData.map((itemData: ItemTypes) => {
                             const objectPhoto = itemData.object.replace(/ /g, "").toLowerCase().replace("'", "");
                             // @ts-ignore
-                            const src = images[objectPhoto] ? images[objectPhoto] : images["laroccasport"];
+                            const src = images[objectPhoto];
                             return (<Item key={ itemData.id } itemData={ itemData } src={ src }/>);
                         })
                         : <div>
