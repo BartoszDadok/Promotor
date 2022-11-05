@@ -24,7 +24,7 @@ import topresidence from "../../../public/assets/hotels/topresidence.jpg";
 
 
 const images = {
-    top,
+    topresidence
 };
 
 const Offer = () => {
@@ -363,6 +363,7 @@ const Offer = () => {
 
                     { filteredData.length > 0 ? filteredData.map((itemData: ItemTypes) => {
                             const objectPhoto = itemData.object.replace(/ /g, "").toLowerCase().replace("'", "");
+                            console.log(objectPhoto);
                             // @ts-ignore
                             const src = images["topresidence"];
                             return (<Item key={ itemData.id } itemData={ itemData } src={ src }/>);
