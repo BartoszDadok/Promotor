@@ -72,7 +72,8 @@ const Item = ({ itemData }: { itemData: ItemTypes }) => {
                 <a>
                     <Image loading={ "lazy" } style={ { borderRadius: "5px", cursor: "pointer" } }
                            objectFit={ "cover" } width={ 360 }
-                           height={ 270 } src={ require(`/assets/hotels/${ itemData.object.replace(/ /g, "") }.jpg`) }
+                           height={ 270 }
+                           src={ require(`../../../public/assets/hotels/${ itemData.object.replace(/ /g, "").toLowerCase() }.jpg`) }
                            alt={ "hotel Angelo Włochy" }/>
                 </a>
             </Link>
