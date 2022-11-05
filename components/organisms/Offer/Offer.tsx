@@ -20,7 +20,7 @@ import {
     HeadLineH3,
     HeadLineH4,
 } from "./Offer.styles";
-import top from "../../../public/assets/hotels/topresidence.jpg";
+import topresidence from "../../../public/assets/hotels/topresidence.jpg";
 
 
 const images = {
@@ -364,7 +364,7 @@ const Offer = () => {
                     { filteredData.length > 0 ? filteredData.map((itemData: ItemTypes) => {
                             const objectPhoto = itemData.object.replace(/ /g, "").toLowerCase().replace("'", "");
                             // @ts-ignore
-                            const src = images["top"];
+                            const src = images["topresidence"];
                             return (<Item key={ itemData.id } itemData={ itemData } src={ src }/>);
                         })
                         : <div>
