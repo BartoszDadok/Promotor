@@ -1,13 +1,20 @@
 import Document, { DocumentContext, Head, Html, Main, NextScript } from "next/document";
 import { ServerStyleSheet } from "styled-components";
+
 export default class MyDocument extends Document {
     render() {
         return (
             <Html lang="en">
                 <Head>
-                    <link rel="preload" href="/fonts/subset-Lato-BlackItalic.woff2" as="font" type="font/woff2" crossOrigin=""/>
-                    <link rel="preload" href="/fonts/subset-Lato-Regular.woff2" as="font" type="font/woff2" crossOrigin=""/>
-                    <link rel="preload" href="/fonts/subset-Lato-Light.woff2" as="font" type="font/woff2" crossOrigin=""/>
+                    <link rel="preload" href="/fonts/subset-Lato-BoldItalic.woff2" as="font" type="font/woff2"
+                          crossOrigin=""/>
+                    <link rel="preload" href="/fonts/subset-Lato-Regular.woff2" as="font" type="font/woff2"
+                          crossOrigin=""/>
+                    <link rel="preload" href="/fonts/subset-Lato-Light.woff2" as="font" type="font/woff2"
+                          crossOrigin=""/>
+                    <link rel="preload" href="/fonts/subset-Lato-Bold.woff2" as="font" type="font/woff2"
+                          crossOrigin=""/>
+
                 </Head>
                 <body>
                 <Main/>
