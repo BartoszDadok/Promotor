@@ -105,6 +105,7 @@ const Item = ({ itemData }: { itemData: ItemTypes }) => {
     const objectPhoto = itemData.object.replace(/ /g, "").toLowerCase().replace("'", '');;
     // @ts-ignore
     const pathToPhoto = images[objectPhoto];
+    console.log(pathToPhoto);
 
 
     return (
@@ -114,7 +115,7 @@ const Item = ({ itemData }: { itemData: ItemTypes }) => {
                     <Image loading={ "lazy" } style={ { borderRadius: "5px", cursor: "pointer" } }
                            objectFit={ "cover" } width={ 360 }
                            height={ 270 }
-                           src={ pathToPhoto }
+                           src={ pathToPhoto.src }
                            alt={ "hotel Angelo Włochy" }/>
                 </a>
             </Link>
