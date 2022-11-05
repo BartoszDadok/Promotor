@@ -102,21 +102,18 @@ const ButtonWrapper = styled.div`
 const Item = ({ itemData }: { itemData: ItemTypes }) => {
     const dateWithoutSpaces = itemData.date.replace(/ /g, "");
     const objectWithoutSpaces = itemData.object.replace(/ /g, "");
-    const objectPhoto = itemData.object.replace(/ /g, "").toLowerCase().replace("'", '');;
+    const objectPhoto = itemData.object.replace(/ /g, "").toLowerCase().replace("'", "");
+    ;
     // @ts-ignore
     const pathToPhoto = images[objectPhoto];
-    console.log(pathToPhoto);
+    console.log(pathToPhoto.src);
 
 
     return (
         <SingleItem>
             <Link passHref href={ objectWithoutSpaces + "/" + dateWithoutSpaces }>
                 <a>
-                    <Image loading={ "lazy" } style={ { borderRadius: "5px", cursor: "pointer" } }
-                           objectFit={ "cover" } width={ 360 }
-                           height={ 270 }
-                           src={ pathToPhoto.src }
-                           alt={ "hotel Angelo Włochy" }/>
+                    <img src={ pathToPhoto.src } width={ 340 } height={ 270 }/>
                 </a>
             </Link>
             <InfoWrapper>
