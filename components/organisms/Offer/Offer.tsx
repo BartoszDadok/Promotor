@@ -21,9 +21,12 @@ import {
     HeadLineH4,
 } from "./Offer.styles";
 import angelo from "../../../public/assets/hotels/angelo.jpg";
+import cevedale from "../../../public/assets/hotels/cevedale.jpg";
+
 
 const images = {
     angelo,
+    cevedale,
 };
 
 const Offer = () => {
@@ -364,7 +367,7 @@ const Offer = () => {
                     { filteredData.length > 0 ? filteredData.map((itemData: ItemTypes) => {
                             const objectPhoto = itemData.object.replace(/ /g, "").toLowerCase().replace("'", "");
                             // @ts-ignore
-                            const src = images["angelo"];
+                            const src = images["cevedale"];
                             return (<Item key={ itemData.id } itemData={ itemData } src={ src }/>);
                         })
                         : <div>
