@@ -161,12 +161,7 @@ const Offer = () => {
                 setFilteringState({ ...filteringState, date: { ...preparedDataForState } });
             }
             // @ts-ignore
-            setFilteringState({
-                ...filteringState,
-                date: {
-                    ...preparedDataForState,
-                    [toFilter]: !filteringState[key as keyof InitialStateTypes][toFilter as keyof InitialStateTypes],
-                },
+            setFilteringState({ ...filteringState, date: { ...preparedDataForState, [toFilter]: !filteringState[key as keyof InitialStateTypes][toFilter as keyof InitialStateTypes], },
             });
             return;
 
@@ -181,12 +176,7 @@ const Offer = () => {
             return;
         } else {
             // @ts-ignore
-            setFilteringState({
-                ...filteringState,
-                [key as keyof InitialStateTypes]: {
-                    ...filteringState[key as keyof InitialStateTypes],
-                    [toFilter]: !filteringState[key as keyof InitialStateTypes][toFilter],
-                },
+            setFilteringState({ ...filteringState, [key as keyof InitialStateTypes]: { ...filteringState[key as keyof InitialStateTypes], [toFilter]: !filteringState[key as keyof InitialStateTypes][toFilter], },
             });
             return;
 
