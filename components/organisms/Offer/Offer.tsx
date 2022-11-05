@@ -22,7 +22,7 @@ import {
 } from "./Offer.styles";
 import angelo from "../../../public/assets/hotels/angelo.jpg";
 import cevedale from "../../../public/assets/hotels/cevedale.jpg";
-const  derbyclub =  "../../../public/assets/hotels/derbyclub.jpg";
+const  derb =  "../../../public/assets/hotels/derb.jpg";
 import front from "../../../public/assets/hotels/front.jpg";
 import golf from "../../../public/assets/hotels/golf.jpg";
 import gentianes from "../../../public/assets/hotels/gentianes.jpg";
@@ -37,9 +37,10 @@ import prom from "../../../public/assets/hotels/prom.jpg";
 import solaris from "../../../public/assets/hotels/solaris.jpg";
 import topresidence from "../../../public/assets/hotels/topresidence.jpg";
 import villa from "../../../public/assets/hotels/villa.jpg";
+
 const images = {
     angelo,
-    derbyclub,
+    derbyclub: derb,
     cevedale,
     golf,
     gentianes,
@@ -394,9 +395,6 @@ const Offer = () => {
 
                     { filteredData.length > 0 ? filteredData.map((itemData: ItemTypes) => {
                             const objectPhoto = itemData.object.replace(/ /g, "").toLowerCase().replace("'", "");
-                            console.log(objectPhoto);
-                            // @ts-ignore
-                            console.log(images[objectPhoto]);
                             // @ts-ignore
                             const src = images[objectPhoto] ? images[objectPhoto] : images["laroccasport"];
                             return (<Item key={ itemData.id } itemData={ itemData } src={ src }/>);
