@@ -24,7 +24,7 @@ const HeadLineH2 = styled.h2`
   color: #fff;
   font-size: 2.5rem;
   @media (max-width: 1550px) {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
   }
   @media (max-width: 1200px) {
     font-size: 1.5rem;
