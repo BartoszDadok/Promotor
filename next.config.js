@@ -5,9 +5,9 @@ const nextConfig = {
     experimental: {
       styledComponents: true
     },
-    // images: {
-    //     unoptimized: true,
-    // },
+    images: {
+        unoptimized: true,
+    },
     // assetPrefix is used for correct paths during next export
     assetPrefix: ".",
     
