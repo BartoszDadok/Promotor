@@ -59,7 +59,7 @@ const PrivacyPolicy = () => {
                                 <li><PageParagraph margin={ "0.2em 0" }>Poprzez dobrowolnie wprowadzone w formularzach
                                     informacje.</PageParagraph></li>
                                 <li><PageParagraph margin={ "0.2em 0" }>Poprzez zapisywanie w urządzeniach końcowych
-                                    pliki cookie (tzw. "ciasteczka").</PageParagraph></li>
+                                    pliki cookie (tzw. ciasteczka).</PageParagraph></li>
                                 <li><PageParagraph margin={ "0.2em 0" }>Poprzez gromadzenie logów serwera
                                     www</PageParagraph></li>
                             </List>
