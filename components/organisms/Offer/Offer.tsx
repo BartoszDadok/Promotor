@@ -304,7 +304,7 @@ const Offer = () => {
                             <InputContainer>
                                 <Input onInput={ (e) => handleFilteredInputs(e) } type="checkbox" id="skipass"
                                        name="skipass"/>
-                                <Label htmlFor="skipass">Skipass w cenie (Free Ski)</Label>
+                                <Label htmlFor="skipass">Skipass w cenie</Label>
                             </InputContainer>
                         </fieldset>
                     </FieldContainer>
@@ -364,19 +364,14 @@ const Offer = () => {
                         <fieldset data-name={ "transport" }>
                             <Legend>Dojazd:</Legend>
                             <InputContainer>
-                                <Input onInput={ (e) => handleFilteredInputs(e) } type="checkbox" id="own"
-                                       name="own"/>
-                                <Label htmlFor="own">Dojazd własny</Label>
-                            </InputContainer>
-                            <InputContainer>
                                 <Input onInput={ (e) => handleFilteredInputs(e) } type="checkbox" id="own/bus"
                                        name="own/bus"/>
                                 <Label htmlFor="own/bus">Dojazd własny/autokar</Label>
                             </InputContainer>
                             <InputContainer>
-                                <Input onInput={ (e) => handleFilteredInputs(e) } type="checkbox" id="busIncluded"
-                                       name="busIncluded"/>
-                                <Label htmlFor="busIncluded">Autokar w cenie</Label>
+                                <Input onInput={ (e) => handleFilteredInputs(e) } type="checkbox" id="own"
+                                       name="own"/>
+                                <Label htmlFor="own">Tylko dojazd własny</Label>
                             </InputContainer>
                         </fieldset>
                     </FieldContainer>

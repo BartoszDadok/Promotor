@@ -6,8 +6,6 @@ import MainTemplate from "../components/templates/MainTemplate/MainTemplate";
 import favicon from "../public/assets/favicon.png";
 
 function MyApp({ Component, pageProps }: AppProps) {
-    // @ts-ignore
-    // @ts-ignore
     return (
         <>
             <Head>
@@ -23,7 +21,6 @@ function MyApp({ Component, pageProps }: AppProps) {
                   `,
                     } }
                 ></script>
-
             </Head>
             <MainTemplate>
                 <Component { ...pageProps } />

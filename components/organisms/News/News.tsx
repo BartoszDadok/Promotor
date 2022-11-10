@@ -23,8 +23,10 @@ const News = () => {
                 <PageParagraph fontSize={ "2rem" } textAlign={ "center" } margin={ "0.8em 0 0 0" }>Kochani, połączyliśmy
                     siły z Giełdą Sprzętu Zimowego
                 </PageParagraph>
-                <PageParagraph fontSize={ "2rem" } textAlign={ "center" } margin={ "0 0 0.6em 0" }>i zapraszamy teraz do nowej
-                    siedziby PROMOTORA na ul. Pułaskiego 23.
+                <PageParagraph fontSize={ "2rem" } textAlign={ "center" } margin={ "0 0 0 0" }>i zapraszamy teraz do nowej
+                    siedziby PROMOTORA
+                </PageParagraph>
+                <PageParagraph fontSize={ "2rem" } textAlign={ "center" } margin={ "0 0 0.6em 0" }>przy ul. Pułaskiego 23.
                 </PageParagraph>
 
                 <PageParagraph fontSize={ "1.2rem" } margin={ "0.3em 0 0.6em 0" } fontWeight={ "bold" }>

@@ -244,7 +244,7 @@ export const data = [
         skipass: "Skipass",
         board: "Bez wyżywienia",
         category: ["Wczasy ogólne"],
-        startingDate: "12/09/2023",
+        startingDate: "[twelve]/09/2023",
         transport: "Autokar w cenie"
     },
     {
@@ -257,7 +257,7 @@ export const data = [
         skipass: "Skipass",
         board: "Pełne",
         category: ["Wczasy ogólne"],
-        startingDate: "12/10/2022",
+        startingDate: "[twelve]/10/2022",
         transport: "Dojazd własny/autokar"
     },
     {
@@ -335,7 +335,7 @@ export const data = [
         skipass: "Skipass",
         board: "Bez wyżywienia",
         category: ["Wczasy ogólne"],
-        startingDate: "12/10/2022",
+        startingDate: "[twelve]/10/2022",
         transport: "Dojazd własny/autokar"
     },
     {
