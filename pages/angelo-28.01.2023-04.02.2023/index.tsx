@@ -175,6 +175,10 @@ const Line = styled.div`
   width: 100%;
   margin-bottom: 1em;
 `;
+const PricingWrapper = styled.div`
+  border: 1px white solid;
+  padding: 0.3em 0.5em;
+`;
 
 const Index = () => {
     const [modalIsActive, setModalIsActive] = useState(false);
@@ -198,22 +202,22 @@ const Index = () => {
                             Pejo</PageParagraph>
                         <PageParagraph margin={ "0 0 0.6em 0" } color={ "white" }><b>Rodzaj
                             zakwaterowania: </b>Hotel</PageParagraph>
-                        <PageParagraph margin={ "0 0 0.2em 0" } color={ "white" }><b>Cennik:</b></PageParagraph>
+                        <PricingWrapper>
+                        <PageParagraph margin={ "0.5em 0 0 0" } color={ "white" }><b>Cennik:</b></PageParagraph>
                         <List>
-                            <ListItem><PageParagraph margin={ "0 0 0.1em 0" } color={ "white" }>dorośli - 2398.00
+                            <ListItem><PageParagraph margin={ "0 0 0.1em 0" } color={ "white" }>dorośli - 2380
                                 zł</PageParagraph></ListItem>
-                            <ListItem><PageParagraph margin={ "0 0 0.1em 0" } color={ "white" }>0-7 - 80.00
+                            <ListItem><PageParagraph margin={ "0 0 0.1em 0" } color={ "white" }>dzieci 0-4,99 lat - 80
                                 zł</PageParagraph>
                             </ListItem>
-                            <ListItem><PageParagraph margin={ "0 0 0.1em 0" } color={ "white" }>8-10 - 1798.00
+                            <ListItem><PageParagraph margin={ "0 0 0.1em 0" } color={ "white" }>dzieci 5-14,99 lat - 1495
                                 zł</PageParagraph></ListItem>
-                            <ListItem><PageParagraph margin={ "0 0 0.1em 0" } color={ "white" }>11-12 - 2098.00
-                                zł</PageParagraph></ListItem>
-                            <ListItem><PageParagraph margin={ "0 0 0.1em 0" } color={ "white" }>powyżej 13 - 2248.00
+                            <ListItem><PageParagraph margin={ "0 0 0.1em 0" } color={ "white" }>dzieci 15-17,99 lat - 2025
                                 zł</PageParagraph></ListItem>
                         </List>
-                        <Line/>
-                        <PageParagraph margin={ "0 0 0.2em 0" } color={ "white" }><b>Opcje
+                        </PricingWrapper>
+
+                        <PageParagraph margin={ "1em 0 0.2em 0" } color={ "white" }><b>Opcje
                             dodatkowe:</b></PageParagraph>
                         <List>
                             <ListItem><PageParagraph margin={ "0 0 0.1em 0" } color={ "white" }>będzie jeździć na desce
@@ -247,7 +251,7 @@ const Index = () => {
                     </DetailsWrapper>
                 </InfoPanel>
                 <Gallery>
-                    <Title>Hotel Angelo - Val di Sole </Title>
+                    <Title>Hotel Angelo - Val di Sole - Passo del Tonale </Title>
                     <FirstRow>
                         <SingleImage1>
                             <Button onClick={ (e) => handleModal(e) }>
@@ -309,6 +313,81 @@ const Index = () => {
                         </SingleImage>
                     </SecondRow>
                     <Title>Opis</Title>
+                    <PageParagraph fontWeight={ "700" } margin={ "1em 0 0.3em 0" }>REGION NARCIARSKI VAL DI SOLE –
+                        ADAMELLO SKI</PageParagraph>
+                    <PageParagraph margin={ "0 0 1em 0" }>
+                        Resort narciarski Adamello Ski obejmuje: Tonale, lodowiec Presena, Ponte di Legno i oferuje ok.
+                        115 km tras narciarskich. W ostatnich kilku latach realizowano tutaj wiele inwestycji związanych
+                        z infrastrukturą narciarską. Powstała gondola Ponte di Legno – Tonale, łącząca ten region w
+                        jedną całość, zbudowano nową kolejkę na Presenę, kilka wyciągów w Ponte di Legno i Temu, co
+                        bardziej uatrakcyjniło uprawianie sportów zimowych w tym miejscu. W regionie tym jest wiele
+                        stoków dla dobrych i bardzo dobrych narciarzy i snowboardzistów, a także trasy dla
+                        początkujących. Świetna infrastruktura, snowparki oraz parki zabaw dla dzieci przyciągają do
+                        tego miejsca także młodych adeptów białego szaleństwa. Podczas pobytu realizujemy program
+                        narciarski oparty o skipass Adamello Ski.</PageParagraph>
+
+
+                    <PageParagraph fontWeight={ "700" } margin={ "1em 0 0.3em 0" }>HOTEL ANGELO 3*</PageParagraph>
+
+                    <PageParagraph margin={ "0 0 1em 0" }>Położony jest w centrum miejscowości Passo del Tonale, w
+                        bliskiej odległości od wyciągów narciarskich, sklepików i kawiarenek. Hotel prowadzony
+                        rodzinnie, urządzony w alpejskim stylu. Do dyspozycji gości restauracja, bar, centrum wellness,
+                        pokój zabaw dla dzieci, narciarnia. Kilkadziesiąt metrów od hotelu znajduje się także dyskoteka.
+                        W hotelu dostępne są pokoje 2,3 i 4 os. z łazienką, suszarką do włosów, TV, telefonem.
+                        Wyżywienie: śniadania w formie bufetu, 3 daniowe obiadokolacje z daniami do wyboru, bufet
+                        sałatkowy. Napoje do obiadokolacji dodatkowo płatne.</PageParagraph>
+
+
+                    <PageParagraph fontWeight={ "700" } margin={ "1em 0 0.3em 0" }>SZKÓŁKA NARCIARSKA JUNIOR SKI ORAZ
+                        PRZEDSZKOLE NARCIARSKIE BABY SKI</PageParagraph>
+
+                    <PageParagraph margin={ "0 0" }>Program dedykowany jest dzieciom w wieku 7-14 lat, a przedszkola
+                        dzieciom w wieku 4-7 lat, wyjeżdżającym na wczasy z rodzicami/opiekunami. W ramach programu
+                        zapewniamy opiekę nad dziećmi w godz. 10.00-15.30, każdego dnia przeznaczonego na jazdę na
+                        nartach. Dzieci pozostają pod opieką naszych instruktorów, mających doświadczenie w pracy z
+                        dziećmi, którzy prowadzą szkolenie narciarskie w grupach 5–10 osobowych (podział na grupy zależy
+                        od wieku i umiejętności narciarskich). Uczestnicy szkółki i przedszkola ubierani są na stok w
+                        rozpoznawalne, odblaskowe kamizelki z logo biura.
+
+                        Zajęcia - zwłaszcza dla dzieci młodszych - prowadzone są w formie zabawy. Najmłodsi narciarze
+                        potrzebują częstszych przerw oraz zmian charakteru zajęć, dlatego oprócz nauki narciarstwa
+                        planowanej na 2-4 godziny dziennie planujemy dla nich rozmaite zabawy na śniegu.
+
+                        Starsi większość czasu spędzają na nauce i doskonaleniu techniki jazdy na nartach. Dla
+                        zaawansowanych wprowadzamy jazdę sportową.
+
+                        Dzieci w każdym wieku oprócz narciarstwa chętnie biorą udział w organizowanych przez naszych
+                        instruktorów saneczkarstwie, rozmaitych zabawach i zawodach na śniegu.
+
+                        W niektórych przypadkach – szczególnie w odniesieniu do najmłodszych narciarzy - potrzebna bywa
+                        obecność rodzica w pobliżu stoku podczas szkolenia narciarskiego. Prosimy przygotować się na
+                        taką okoliczność.
+
+                        Od godz.15.30 opiekę nad dziećmi przejmują rodzice.
+
+                        Na zakończenie turnusu organizujemy podsumowanie szkolenia, omówienie postępów i rozdanie
+                        wszystkim dzieciom upominków.
+
+                        Każde dziecko obowiązkowo zabiera kask, ważny paszport lub dowód osobisty, kartę EKUZ.
+
+
+                        RAMOWY PROGRAM DNIA:
+
+                        10:00 – 10:15 Rozgrzewka na stoku
+
+                        10:15 – 12:30 Szkolenie narciarskie
+
+                        12:30 – 13:00 Przerwa w schronisku
+
+                        13:00 – 14:00 Gry i zabawy na śniegu
+
+                        14:00 – 15:30 Kontynuacja szkolenia na nartach
+
+                        15:30 Odbiór dzieci przez opiekunów
+
+                        Szkółkę narciarską JUNIOR SKI oraz przedszkole narciarskie BABY SKI uruchamiamy przy minimum 5
+                        uczestnikach.
+                    </PageParagraph>
                 </Gallery>
 
             </Wrapper>
