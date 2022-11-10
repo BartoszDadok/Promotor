@@ -179,6 +179,7 @@ const Line = styled.div`
 const PricingWrapper = styled.div`
   border: 1px white solid;
   padding: 0.3em 0.5em;
+  margin-top: 1em;
 `;
 
 const Index = () => {
@@ -197,7 +198,7 @@ const Index = () => {
                         <PageParagraph margin={ "0 0 0.6em 0" } color={ "white" }><b>Termin wyjazdu: </b>
                             28.01.2023-04.02.2023</PageParagraph>
                         <PageParagraph margin={ "0 0 0.6em 0" } color={ "white" }><b>Rodzaj transportu: </b>Dojazd
-                            własny</PageParagraph>
+                            własny lub autokarem</PageParagraph>
                         <PageParagraph margin={ "0 0 0.6em 0" } color={ "white" }><b>Kraj: </b>Włochy</PageParagraph>
                         <PageParagraph margin={ "0 0 0.6em 0" } color={ "white" }><b>Miejscowość: </b>Cogolo di
                             Pejo</PageParagraph>
@@ -208,7 +209,24 @@ const Index = () => {
 
 
                         <PricingWrapper>
-                            <PageParagraph margin={ "0.5em 0 0 0" } color={ "white" }><b>Cennik:</b></PageParagraph>
+                            <PageParagraph margin={ "0.5em 0 0 0" } color={ "white" }><b>Cennik z dojazdem własnym:</b></PageParagraph>
+                            <List>
+                                <ListItem><PageParagraph margin={ "0 0 0.1em 0" } color={ "white" }>dorośli - 2380
+                                    zł</PageParagraph></ListItem>
+                                <ListItem><PageParagraph margin={ "0 0 0.1em 0" } color={ "white" }>dzieci 0-4,99 lat -
+                                    80
+                                    zł</PageParagraph>
+                                </ListItem>
+                                <ListItem><PageParagraph margin={ "0 0 0.1em 0" } color={ "white" }>dzieci 5-14,99 lat -
+                                    1495
+                                    zł</PageParagraph></ListItem>
+                                <ListItem><PageParagraph margin={ "0 0 0.1em 0" } color={ "white" }>dzieci 15-17,99 lat
+                                    - 2025
+                                    zł</PageParagraph></ListItem>
+                            </List>
+                        </PricingWrapper>
+                        <PricingWrapper>
+                            <PageParagraph margin={ "0.5em 0 0 0" } color={ "white" }><b>Cennik z dojazem autokrem:</b></PageParagraph>
                             <List>
                                 <ListItem><PageParagraph margin={ "0 0 0.1em 0" } color={ "white" }>dorośli - 2380
                                     zł</PageParagraph></ListItem>
@@ -412,7 +430,35 @@ const Index = () => {
                         Szkółkę narciarską JUNIOR SKI oraz przedszkole narciarskie BABY SKI uruchamiamy przy minimum 5
                         uczestnikach.
                     </PageParagraph>
-                    
+
+
+                    CENA PAKIETU ZAWIERA:
+
+                    7 noclegów w pokojach 2,3,4 os.
+
+                    wyżywienie 2 x dziennie (7 śniadań, 7 obiadokolacji)
+
+                    napoje do obiadokolacji dodatkowo płatne
+
+                    korzystanie z hotelowego wellness 10Euro/wejście
+
+                    program narciarski SKI SAFARI w rejonie Adamello Ski
+
+                    opiekę rezydenta/instruktora
+
+                    Internet WI-FI
+
+                    5% zniżki na skipass
+
+                    ubezpieczenie podstawowe KL 20 000 EUR i NNW 5 000 EUR
+
+                    opłatę Gwarancyjną Funduszu Turystycznego i Pomocowego
+
+                    Dziecko w pokoju z 1 osobą dorosłą – cena jak za osobę dorosłą.
+
+
+                    Ostateczny program SKI SAFARI ustalany jest przez organizatora po przyjeździe grupy na miejsce
+                    pobytu i zależy od bieżących możliwości jego realizacji, w tym m.in. od warunków pogodowych.
                 </Gallery>
             </Wrapper>
             <Modal modalIsActive={ modalIsActive }/>
