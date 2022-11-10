@@ -65,6 +65,7 @@ const SecondRow = styled.div`
   grid-auto-flow: row;
   grid-gap: 0 0.5em;
   margin-top: 0.5em;
+  margin-bottom: 1.5em;
 `;
 
 const SingleImage1 = styled.div`
@@ -307,7 +308,9 @@ const Index = () => {
                             </Button>
                         </SingleImage>
                     </SecondRow>
+                    <Title>Opis</Title>
                 </Gallery>
+
             </Wrapper>
             <Modal modalIsActive={ modalIsActive }/>
         </PageWrapper>
