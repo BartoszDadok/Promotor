@@ -38,6 +38,7 @@ const InfoPanel = styled.aside`
   background-color: #0173d6;
   padding: 1em 1.5em;
   border-radius: 2px;
+  height: fit-content;
 `;
 
 const Gallery = styled.div`
@@ -202,19 +203,26 @@ const Index = () => {
                             Pejo</PageParagraph>
                         <PageParagraph margin={ "0 0 0.6em 0" } color={ "white" }><b>Rodzaj
                             zakwaterowania: </b>Hotel</PageParagraph>
+                        <PageParagraph margin={ "0 0 0.6em 0" }
+                                       color={ "white" }><b>Wyżywienie: </b>Pełne</PageParagraph>
+
+
                         <PricingWrapper>
-                        <PageParagraph margin={ "0.5em 0 0 0" } color={ "white" }><b>Cennik:</b></PageParagraph>
-                        <List>
-                            <ListItem><PageParagraph margin={ "0 0 0.1em 0" } color={ "white" }>dorośli - 2380
-                                zł</PageParagraph></ListItem>
-                            <ListItem><PageParagraph margin={ "0 0 0.1em 0" } color={ "white" }>dzieci 0-4,99 lat - 80
-                                zł</PageParagraph>
-                            </ListItem>
-                            <ListItem><PageParagraph margin={ "0 0 0.1em 0" } color={ "white" }>dzieci 5-14,99 lat - 1495
-                                zł</PageParagraph></ListItem>
-                            <ListItem><PageParagraph margin={ "0 0 0.1em 0" } color={ "white" }>dzieci 15-17,99 lat - 2025
-                                zł</PageParagraph></ListItem>
-                        </List>
+                            <PageParagraph margin={ "0.5em 0 0 0" } color={ "white" }><b>Cennik:</b></PageParagraph>
+                            <List>
+                                <ListItem><PageParagraph margin={ "0 0 0.1em 0" } color={ "white" }>dorośli - 2380
+                                    zł</PageParagraph></ListItem>
+                                <ListItem><PageParagraph margin={ "0 0 0.1em 0" } color={ "white" }>dzieci 0-4,99 lat -
+                                    80
+                                    zł</PageParagraph>
+                                </ListItem>
+                                <ListItem><PageParagraph margin={ "0 0 0.1em 0" } color={ "white" }>dzieci 5-14,99 lat -
+                                    1495
+                                    zł</PageParagraph></ListItem>
+                                <ListItem><PageParagraph margin={ "0 0 0.1em 0" } color={ "white" }>dzieci 15-17,99 lat
+                                    - 2025
+                                    zł</PageParagraph></ListItem>
+                            </List>
                         </PricingWrapper>
 
                         <PageParagraph margin={ "1em 0 0.2em 0" } color={ "white" }><b>Opcje
@@ -341,59 +349,74 @@ const Index = () => {
                     <PageParagraph fontWeight={ "700" } margin={ "1em 0 0.3em 0" }>SZKÓŁKA NARCIARSKA JUNIOR SKI ORAZ
                         PRZEDSZKOLE NARCIARSKIE BABY SKI</PageParagraph>
 
-                    <PageParagraph margin={ "0 0" }>Program dedykowany jest dzieciom w wieku 7-14 lat, a przedszkola
+                    <PageParagraph margin={ "0 0 1em 0" }>Program dedykowany jest dzieciom w wieku 7-14 lat, a
+                        przedszkola
                         dzieciom w wieku 4-7 lat, wyjeżdżającym na wczasy z rodzicami/opiekunami. W ramach programu
                         zapewniamy opiekę nad dziećmi w godz. 10.00-15.30, każdego dnia przeznaczonego na jazdę na
                         nartach. Dzieci pozostają pod opieką naszych instruktorów, mających doświadczenie w pracy z
                         dziećmi, którzy prowadzą szkolenie narciarskie w grupach 5–10 osobowych (podział na grupy zależy
                         od wieku i umiejętności narciarskich). Uczestnicy szkółki i przedszkola ubierani są na stok w
-                        rozpoznawalne, odblaskowe kamizelki z logo biura.
-
+                        rozpoznawalne, odblaskowe kamizelki z logo biura.</PageParagraph>
+                    <PageParagraph margin={ "0 0 1em 0" }>
                         Zajęcia - zwłaszcza dla dzieci młodszych - prowadzone są w formie zabawy. Najmłodsi narciarze
                         potrzebują częstszych przerw oraz zmian charakteru zajęć, dlatego oprócz nauki narciarstwa
                         planowanej na 2-4 godziny dziennie planujemy dla nich rozmaite zabawy na śniegu.
+                    </PageParagraph>
 
+                    <PageParagraph margin={ "0 0 1em 0" }>
                         Starsi większość czasu spędzają na nauce i doskonaleniu techniki jazdy na nartach. Dla
-                        zaawansowanych wprowadzamy jazdę sportową.
-
+                        zaawansowanych wprowadzamy jazdę sportową.</PageParagraph>
+                    <PageParagraph margin={ "0 0 1em 0" }>
                         Dzieci w każdym wieku oprócz narciarstwa chętnie biorą udział w organizowanych przez naszych
                         instruktorów saneczkarstwie, rozmaitych zabawach i zawodach na śniegu.
-
+                    </PageParagraph>
+                    <PageParagraph margin={ "0 0 1em 0" }>
                         W niektórych przypadkach – szczególnie w odniesieniu do najmłodszych narciarzy - potrzebna bywa
                         obecność rodzica w pobliżu stoku podczas szkolenia narciarskiego. Prosimy przygotować się na
                         taką okoliczność.
+                    </PageParagraph>
 
+                    <PageParagraph margin={ "0 0 1em 0" }>
                         Od godz.15.30 opiekę nad dziećmi przejmują rodzice.
-
+                    </PageParagraph>
+                    <PageParagraph margin={ "0 0 1em 0" }>
                         Na zakończenie turnusu organizujemy podsumowanie szkolenia, omówienie postępów i rozdanie
                         wszystkim dzieciom upominków.
-
+                    </PageParagraph>
+                    <PageParagraph margin={ "0 0 1em 0" }>
                         Każde dziecko obowiązkowo zabiera kask, ważny paszport lub dowód osobisty, kartę EKUZ.
+                    </PageParagraph>
 
-
+                    <PageParagraph fontWeight={ "800" } margin={ "0 0 0.3em 0" }>
                         RAMOWY PROGRAM DNIA:
-
-                        10:00 – 10:15 Rozgrzewka na stoku
-
-                        10:15 – 12:30 Szkolenie narciarskie
-
-                        12:30 – 13:00 Przerwa w schronisku
-
-                        13:00 – 14:00 Gry i zabawy na śniegu
-
-                        14:00 – 15:30 Kontynuacja szkolenia na nartach
-
-                        15:30 Odbiór dzieci przez opiekunów
-
+                    </PageParagraph>
+                    <PageParagraph>
+                        10:00 – 10:15 - rozgrzewka na stoku
+                    </PageParagraph>
+                    <PageParagraph>
+                        10:15 – 12:30 - szkolenie narciarskie
+                    </PageParagraph>
+                    <PageParagraph>
+                        12:30 – 13:00 - przerwa w schronisku
+                    </PageParagraph>
+                    <PageParagraph>
+                        13:00 – 14:00 - gry i zabawy na śniegu
+                    </PageParagraph>
+                    <PageParagraph>
+                        14:00 – 15:30 - kontynuacja szkolenia na nartach
+                    </PageParagraph>
+                    <PageParagraph>
+                        15:30 - odbiór dzieci przez opiekunów
+                    </PageParagraph>
+                    <PageParagraph margin={ "1em 0 1em 0" }>
                         Szkółkę narciarską JUNIOR SKI oraz przedszkole narciarskie BABY SKI uruchamiamy przy minimum 5
                         uczestnikach.
                     </PageParagraph>
+                    
                 </Gallery>
-
             </Wrapper>
             <Modal modalIsActive={ modalIsActive }/>
         </PageWrapper>
-
     );
 };
 
