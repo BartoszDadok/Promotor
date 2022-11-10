@@ -66,13 +66,13 @@ const ButtonWrapper = styled.div`
 
 const Item = ({ itemData, src }: { itemData: ItemTypes, src: any }) => {
     const dateWithoutSpaces = itemData.date.replace(/ /g, "");
-    const objectWithoutSpaces = itemData.object.replace(/ /g, "");
+    const objectWithoutSpaces = itemData.object.replace(/ /g, "").toLowerCase();
 
 
 
     return (
         <SingleItem>
-            <Link passHref href={ objectWithoutSpaces + "/" + dateWithoutSpaces }>
+            <Link passHref href={ objectWithoutSpaces + "-" + dateWithoutSpaces }>
                 <a>
                     <Image loading={ "lazy" } style={ { borderRadius: "5px", cursor: "pointer" } }
                            objectFit={ "cover" } width={ 360 }
@@ -82,7 +82,7 @@ const Item = ({ itemData, src }: { itemData: ItemTypes, src: any }) => {
                 </a>
             </Link>
             <InfoWrapper>
-                <Link passHref href={ objectWithoutSpaces + "/" + dateWithoutSpaces }>
+                <Link passHref href={ objectWithoutSpaces + "-" + dateWithoutSpaces }>
                     <ParagraphWrapper>
                         <PageParagraph fontSize={ "1.3rem" }
                                        fontWeight={ "700" }>{ itemData.accommodation } { itemData.object }</PageParagraph>
@@ -127,7 +127,7 @@ const Item = ({ itemData, src }: { itemData: ItemTypes, src: any }) => {
                 </DataWrapper>
                 <Price>Cena za osobę od <span>{ itemData.price }zł</span></Price>
                 <ButtonWrapper>
-                    <Link passHref href={ objectWithoutSpaces + "/" + dateWithoutSpaces }>
+                    <Link href={ objectWithoutSpaces + "-" + dateWithoutSpaces }>
                         <Button>Zobacz szczegóły</Button>
                     </Link>
                 </ButtonWrapper>
