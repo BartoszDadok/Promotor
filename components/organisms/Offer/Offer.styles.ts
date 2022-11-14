@@ -19,7 +19,7 @@ export const OfferWrapper = styled.section`
   flex-direction: column;
   justify-content: center;
   justify-items: center;
-  @media (max-width: 1500px) {
+  @media (max-width: 1600px) {
     width: 85%;
   }
   @media (max-width: 1100px) {
