@@ -5,6 +5,10 @@ body {
     padding: 0;
 }
 
+body.galleryIsActive{
+    overflow-y: hidden;
+    pointer-events: none;
+}
 
 html {
     font-family: Arial;

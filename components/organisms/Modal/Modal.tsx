@@ -55,6 +55,8 @@ const ButtonArrow = styled.button`
   cursor: pointer;
   border: none;
   background-color: white;
+  padding: 0;
+  margin: 0;
 `;
 const ExitButton = styled.button`
   cursor: pointer;
@@ -63,6 +65,8 @@ const ExitButton = styled.button`
   right: 20px;
   background-color: white;
   border: none;
+  padding: 0;
+  margin: 0;
 `;
 
 const ImageWrapper = styled.div`
@@ -111,6 +115,14 @@ const Modal = ({ modalData, setModalData }: {
             document.removeEventListener("keydown", ({ key }) => closeModal(key));
         };
     });
+    useEffect(() => {
+        if(modalData.isActive){
+            document.body.classList.add("galleryIsActive")
+        } else {
+            document.body.classList.remove("galleryIsActive")
+        }
+
+    });
     const slides = [
         { url: angelo1.src, title: "" },
         { url: angelo2.src, title: "" },
@@ -135,7 +147,7 @@ const Modal = ({ modalData, setModalData }: {
     return (
         <ModalWrapper className={ isActive ? "active" : "" }>
             <ExitButton onClick={ () => handleExitButton() }>
-                <FontAwesomeIcon width={ "45px" } color={ "#000" } icon={ faCircleXmark }/>
+                <FontAwesomeIcon width={ "45px" } color={ "#353535" } icon={ faCircleXmark }/>
             </ExitButton>
             <Gallery>
                 <ButtonArrow onClick={ () => handleClickArrow("left") }>
