@@ -38,6 +38,7 @@ export const FilterSidebar = styled.div`
 export const Select = styled.select`
   margin-bottom: 0.4em;
   margin-top: 0.2em;
+  padding-right: 0.5em;
 `;
 export const LabelSelect = styled.label`
   font-weight: bold;

@@ -59,33 +59,35 @@ const images = {
 };
 
 const Offer = () => {
-    const convertedData = data.map((item: ItemTypes) => {
-        return [item.date, item.startingDate];
+
+    const convertedDate = data.map((item: ItemTypes) => {
+        return [[...item.date], item.startingDate];
     });
 
-    const sortedData = convertedData.sort((a, b) => new Date(a[1]).getTime() - new Date(b[1]).getTime());
+    const sortedDate = convertedDate.sort((a: any, b: any) => new Date(a[1]).getTime() - new Date(b[1]).getTime());
 
+    const swappedDate = sortedDate.map(data => {
+        if (!data[0][1]) return data[0][0];
+        return [data[0][1], data[0][0]];
+    })
+    const flattenDate = swappedDate.flat();
 
-    const removeDuplicatedDate = (arr: string[][]) => {
-        let withoutDuplicates = [] as string[][];
+    const removeDuplicatedDate = (arr: string[]) => {
+        let withoutDuplicates = [] as string[];
         arr.forEach((element) => {
-            if (!withoutDuplicates.map((item: string[]) => item[1]).includes(element[1])) {
+            if (!withoutDuplicates.map((item: string) => item).includes(element)) {
                 withoutDuplicates.push(element);
             }
         });
         return withoutDuplicates;
     };
 
-    const removedDuplicatedDate = removeDuplicatedDate(sortedData);
-
-
-    const selectedDateOfTrip = (removedDuplicatedDate.map((item: string[]) => item[0]));
-
+    const removedDuplicatedDate = removeDuplicatedDate(flattenDate);
 
     const prepareDateForState = () => {
         let object = {} as DateTypes;
 
-        selectedDateOfTrip.map((item: string) => {
+        removedDuplicatedDate.map((item: string) => {
             return object[item as keyof DateTypes] = false;
         });
         return { ...object };
@@ -120,8 +122,7 @@ const Offer = () => {
         },
         transport: {
             "Dojazd własny/autokar": false,
-            "Autokar w cenie": false,
-            "Dojazd własny": false,
+            "Tylko dojazd własny": false,
         },
     };
 
@@ -143,8 +144,7 @@ const Offer = () => {
         "sportCenter": "Ośrodek sportowy",
         "skipass": "Skipass",
         "own/bus": "Dojazd własny/autokar",
-        "busIncluded": "Autokar w cenie",
-        "own": "Dojazd własny",
+        "own": "Tylko dojazd własny",
     };
 
 
@@ -154,15 +154,16 @@ const Offer = () => {
         const target = e.target as HTMLInputElement;
         const key = target?.parentElement?.parentElement?.dataset.name;
 
+        // @ts-ignore
         const toFilter = translations[target.name as keyof Translations] ? translations[target.name as keyof Translations] : target.name;
         if (target.tagName === "SELECT") {
+            // @ts-ignore
             const toFilter = translations[target.value as keyof Translations] ? translations[target.value as keyof Translations] : target.value;
             if (target.value === "all") {
                 setFilteringState({ ...filteringState, date: { ...preparedDataForState } });
             }
             // @ts-ignore
-            setFilteringState({ ...filteringState, date: { ...preparedDataForState, [toFilter]: !filteringState[key as keyof InitialStateTypes][toFilter as keyof InitialStateTypes], },
-            });
+            setFilteringState({ ...filteringState,date: {...preparedDataForState, [toFilter]: !filteringState[key as keyof InitialStateTypes][toFilter as keyof InitialStateTypes], }, });
             return;
 
         }
@@ -176,7 +177,7 @@ const Offer = () => {
             return;
         } else {
             // @ts-ignore
-            setFilteringState({ ...filteringState, [key as keyof InitialStateTypes]: { ...filteringState[key as keyof InitialStateTypes], [toFilter]: !filteringState[key as keyof InitialStateTypes][toFilter], },
+            setFilteringState({ ...filteringState, [key as keyof InitialStateTypes]: {...filteringState[key as keyof InitialStateTypes],[toFilter]: !filteringState[key as keyof InitialStateTypes][toFilter], },
             });
             return;
 
@@ -247,7 +248,7 @@ const Offer = () => {
                                 <option value="all">Wszystkie terminy</option>
                                 { removedDuplicatedDate.map((date: any) => {
                                     return (
-                                        <option key={ date[0] } value={ date[0] }>{ date[0] }</option>
+                                        <option key={ date } value={ date }>{ date }</option>
                                     );
                                 }) }
                             </Select>
@@ -397,7 +398,8 @@ const Offer = () => {
                         : <div>
                             <div>
                                 <PageParagraph fontSize={ "1.rem" } textAlign={ "center" } margin={ "2em 0" }
-                                               fontWeight={ "700" }>Nie znaleziono żadnego wyjazdu pasującego do wybranych filtrów.</PageParagraph>
+                                               fontWeight={ "700" }>Nie znaleziono żadnego wyjazdu pasującego do
+                                    wybranych filtrów.</PageParagraph>
                             </div>
                         </div> }
                 </Items>

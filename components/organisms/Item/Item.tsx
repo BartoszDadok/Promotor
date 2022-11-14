@@ -3,10 +3,10 @@ import Image from "next/image";
 import { PageParagraph } from "../../atoms/PageParagraph/PageParagraph";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBus, faMugHot, faPersonSkiing, faTicketSimple } from "@fortawesome/free-solid-svg-icons";
+import { faCarSide, faMugHot, faPersonSkiing, faTicketSimple } from "@fortawesome/free-solid-svg-icons";
 import { ItemTypes } from "../Offer/OfferTypes";
 import Link from "next/link";
-
+import busIcon from "../../../public/assets/bus-icon.svg";
 
 export const InfoWrapper = styled.div`
   width: 80%;
@@ -33,6 +33,7 @@ const DataWrapper = styled.div`
   display: flex;
   margin-top: 1em;
   flex-direction: column;
+  margin-bottom: 1em;
 `;
 const Data = styled.div`
   display: flex;
@@ -41,14 +42,14 @@ const Data = styled.div`
 const Price = styled.div`
   display: flex;
   justify-content: right;
-  margin-top: 1.5em;
+  margin-bottom: 0.2em;
 
   span {
     font-weight: 700;
     padding-left: 3px;
   }
 `;
-const Button = styled.a`
+const Button = styled.div`
   display: flex;
   background-color: #0173d6;
   justify-content: center;
@@ -62,35 +63,70 @@ const ButtonWrapper = styled.div`
   display: flex;
   justify-content: right;
 `;
+const IconWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 0.2em;
+  padding-top: 2px;
+`;
+
+const LinkWrapper = styled.a`
+  display: flex;
+  height: fit-content;
+  position: relative;
+`;
+
+const ImageWrapper = styled.div<{ busSrc?: string }>`
+  position: relative;
+
+  ::after {
+    content: url(${ ({ busSrc }) => busSrc });
+    background-color: #f5e23f;
+    border-radius: 3px;
+    padding: 0 0.3em;
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+`;
 
 
 const Item = ({ itemData, src }: { itemData: ItemTypes, src: any }) => {
-    const dateWithoutSpaces = itemData.date.replace(/ /g, "");
+    const dateWithoutSpaces = itemData.date[0].replace(/ /g, "");
     const objectWithoutSpaces = itemData.object.replace(/ /g, "").toLowerCase();
-
-
 
     return (
         <SingleItem>
             <Link passHref href={ objectWithoutSpaces + "-" + dateWithoutSpaces }>
-                <a>
+                <LinkWrapper>
                     <Image loading={ "lazy" } style={ { borderRadius: "5px", cursor: "pointer" } }
                            objectFit={ "cover" } width={ 360 }
                            height={ 270 }
                            src={ src }
                            alt={ "hotel Angelo Włochy" }/>
-                </a>
+                    { itemData.transport === "Dojazd własny/autokar" &&
+                    <ImageWrapper busSrc={ busIcon.src }/>
+                    }
+                </LinkWrapper>
             </Link>
             <InfoWrapper>
                 <Link passHref href={ objectWithoutSpaces + "-" + dateWithoutSpaces }>
-                    <ParagraphWrapper>
-                        <PageParagraph fontSize={ "1.3rem" }
-                                       fontWeight={ "700" }>{ itemData.accommodation } { itemData.object }</PageParagraph>
-                        <PageParagraph fontSize={ "1rem" }
-                                       fontWeight={ "700" }>{ itemData.country }</PageParagraph>
-                    </ParagraphWrapper>
+                    <a>
+                        <ParagraphWrapper>
+                            <PageParagraph fontSize={ "1.3rem" }
+                                           fontWeight={ "700" }>{ itemData.accommodation } { itemData.object }</PageParagraph>
+                            <PageParagraph fontSize={ "1rem" }
+                                           fontWeight={ "700" }>{ itemData.country }</PageParagraph>
+                        </ParagraphWrapper>
+                    </a>
                 </Link>
-                <PageParagraph fontSize={ "1rem" } fontWeight={ "500" }>Termin: { itemData.date }</PageParagraph>
+                <PageParagraph fontSize={ "1rem" } fontWeight={ "500" }>Termin z dojazem
+                    własnym: <b>{ itemData.date[0] }</b></PageParagraph>
+                <PageParagraph fontSize={ "1rem" } fontWeight={ "500" }>Termin z dojazdem
+                    autokarem: <b>{ itemData.date[1] }</b></PageParagraph>
                 <DataWrapper>
                     <Data>
                         <FontAwesomeIcon width={ "15px" } color={ "#8c8c8c" } icon={ faMugHot }/>
@@ -114,7 +150,14 @@ const Item = ({ itemData, src }: { itemData: ItemTypes, src: any }) => {
                         </PageParagraph>
                     </Data>
                     <Data>
-                        <FontAwesomeIcon width={ "15px" } color={ "#8c8c8c" } icon={ faBus }/>
+                        <FontAwesomeIcon style={ { paddingTop: "3px" } } width={ "15px" } color={ "#8c8c8c" }
+                                         icon={ faCarSide }/>
+                        { itemData.transport === "Dojazd własny/autokar" &&
+                        <IconWrapper>
+                            <Image alt={ "ikona busa" } src={ busIcon } width={ "16px" }
+                                   height={ "16px" }/>
+                        </IconWrapper>
+                        }
                         <PageParagraph margin={ "0 0.3em" }>{ itemData.transport }</PageParagraph>
                     </Data>
                     { itemData.skipass === "Skipass" &&
@@ -125,10 +168,15 @@ const Item = ({ itemData, src }: { itemData: ItemTypes, src: any }) => {
                     </Data>
                     }
                 </DataWrapper>
-                <Price>Cena za osobę od <span>{ itemData.price }zł</span></Price>
+                <Price>Cena z dojazdem własnym od <span>{ itemData.price }zł</span></Price>
+                { itemData.transport === "Dojazd własny/autokar" &&
+                <Price>Cena z dojazdem autokarem od <span>{ itemData.priceWithBus }zł</span></Price>
+                }
                 <ButtonWrapper>
                     <Link href={ objectWithoutSpaces + "-" + dateWithoutSpaces }>
-                        <Button>Zobacz szczegóły</Button>
+                        <a>
+                            <Button>Zobacz szczegóły</Button>
+                        </a>
                     </Link>
                 </ButtonWrapper>
             </InfoWrapper>

@@ -26,8 +26,7 @@ export interface InitialStateTypes {
     },
     transport: {
         "Dojazd własny/autokar": boolean,
-        "Autokar w cenie": boolean,
-        "Dojazd własny": boolean,
+        "Tylko dojazd własny": boolean,
     },
 };
 
@@ -49,7 +48,6 @@ export interface Translations {
     "sportCenter": string,
     "skipass": string,
     "own/bus": string,
-    "busIncluded": string,
     "own": string,
 };
 
@@ -86,7 +84,8 @@ export interface ItemTypes {
     accommodation: string,
     object: string,
     price: string,
-    date: string,
+    date: string[],
+    priceWithBus: string,
     skipass: string,
     board: string,
     category: string[],
