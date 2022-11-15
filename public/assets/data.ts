@@ -11,7 +11,7 @@ export const data = [
         board: "Pełne",
         category: ["Wczasy ogólne"],
         startingDate: "01/28/2023",
-        transport: "Dojazd własny/autokar",
+        transport: ["Dojazd własny", "Autokar"],
     },
     {
         id: 3,
@@ -20,26 +20,26 @@ export const data = [
         price: "1525",
         object: "Top Residence",
         date: ["28.01.2023 - 04.02.2023", "27.01.2023 - 05.02.2023"],
-        priceWithBus: "???",
+        priceWithBus: "1950",
         skipass: "Nie",
         board: "Bez wyżywienia",
         category: ["Wczasy ogólne"],
         startingDate: "01/28/2023",
-        transport: "Dojazd własny/autokar",
+        transport: ["Dojazd własny", "Autokar"],
     },
     {
         id: 5,
         country: "Włochy",
         accommodation: "Hotel",
         object: "Cevedale",
-        price: "???",
+        price: "2549",
         date: ["11.03.2023 - 18.03.2023", "10.03.2023 - 19.03.2023"],
         priceWithBus: "2849",
         skipass: "Nie",
         board: "Pełne",
         category: ["Wczasy ogólne", "Ski 50+ aktywnie"],
         startingDate: "03/11/2023",
-        transport: "Dojazd własny/autokar",
+        transport: ["Dojazd własny", "Autokar"],
     },
     {
         id: 7,
@@ -53,7 +53,7 @@ export const data = [
         board: "Pełne",
         category: ["Wczasy ogólne", "Wczasy ze szkółkami dla dzieci"],
         startingDate: "01/21/2023",
-        transport: "Tylko dojazd własny",
+        transport: ["Dojazd własny"],
     },
     {
         id: 8,
@@ -62,12 +62,12 @@ export const data = [
         object: "Derby Club",
         price: "1248",
         date: ["28.01.2023 - 04.02.2023", "27.01.2023 - 05.02.2023"],
-        priceWithBus: "???",
+        priceWithBus: "1673",
         skipass: "Nie",
         board: "Bez wyżywienia",
         category: ["Wczasy ogólne", "Wczasy ze szkółkami dla dzieci"],
         startingDate: "01/28/2023",
-        transport: "Dojazd własny/autokar",
+        transport: ["Dojazd własny", "Autokar"],
     },
     {
         id: 10,
@@ -81,7 +81,7 @@ export const data = [
         board: "Pełne",
         category: ["Wczasy ogólne", "Wczasy ze szkółkami dla dzieci"],
         startingDate: "01/28/2023",
-        transport: "Dojazd własny/autokar",
+        transport: ["Dojazd własny", "Autokar"],
     },
     {
         id: 12,
@@ -95,7 +95,7 @@ export const data = [
         board: "Pełne",
         category: ["Wczasy ogólne"],
         startingDate: "03/11/2023",
-        transport: "Dojazd własny/autokar",
+        transport: ["Dojazd własny", "Autokar"],
     },
     {
         id: 14,
@@ -109,7 +109,7 @@ export const data = [
         board: "Pełne",
         category: ["Wczasy ogólne"],
         startingDate: "02/25/2023",
-        transport: "Dojazd własny/autokar",
+        transport: ["Dojazd własny", "Autokar"],
     },
     {
         id: 16,
@@ -123,7 +123,7 @@ export const data = [
         board: "Pełne",
         category: ["Wczasy ogólne", "Wczasy ze szkółkami dla dzieci"],
         startingDate: "01/28/2023",
-        transport: "Dojazd własny/autokar",
+        transport: ["Dojazd własny", "Autokar"],
     },
     {
         id: 18,
@@ -137,7 +137,7 @@ export const data = [
         board: "Tylko śniadania",
         category: ["Wczasy ogólne"],
         startingDate: "02/11/2023",
-        transport: "Dojazd własny/autokar",
+        transport: ["Dojazd własny", "Autokar"],
     },
     {
         id: 20,
@@ -151,7 +151,7 @@ export const data = [
         board: "Pełne",
         category: ["Obozy młodzieżowe"],
         startingDate: "01/28/2023",
-        transport: "Dojazd własny/autokar",
+        transport: ["Dojazd własny", "Autokar"],
     },
     {
         id: 22,
@@ -165,7 +165,7 @@ export const data = [
         board: "Bez wyżywienia",
         category: ["Wczasy ogólne"],
         startingDate: "01/28/2023",
-        transport: "Dojazd własny/autokar",
+        transport: ["Dojazd własny", "Autokar"],
     },
     {
         id: 24,
@@ -179,7 +179,7 @@ export const data = [
         board: "Pełne",
         category: ["Wczasy ogólne", "Wczasy ze szkółkami dla dzieci"],
         startingDate: "01/28/2023",
-        transport: "Dojazd własny/autokar",
+        transport: ["Dojazd własny", "Autokar"],
     },
     {
         id: 26,
@@ -193,7 +193,7 @@ export const data = [
         board: "Pełne",
         category: ["Wczasy ogólne", "Wczasy ze szkółkami dla dzieci"],
         startingDate: "02/04/2023",
-        transport: "Dojazd własny/autokar",
+        transport: ["Dojazd własny", "Autokar"],
     },
 
     {
@@ -208,7 +208,7 @@ export const data = [
         board: "Bez wyżywienia",
         category: ["Wczasy ogólne"],
         startingDate: "03/04/2023",
-        transport: "Dojazd własny/autokar",
+        transport: ["Dojazd własny", "Autokar"],
     },
     {
         id: 30,
@@ -222,8 +222,8 @@ export const data = [
         board: "Pełne",
         category: ["Wczasy ogólne"],
         startingDate: "03/11/2023",
-        transport: "Dojazd własny/autokar",
-        additional_information: "Termin dla grup zorganizowanych",
+        transport: ["Dojazd własny", "Autokar"],
+        additionalInformation: "Termin dla grup zorganizowanych",
     },
     {
         id: 32,
@@ -237,7 +237,7 @@ export const data = [
         board: "Pełne",
         category: ["Wczasy ogólne", "Wczasy ze szkółkami dla dzieci"],
         startingDate: "02/04/2023",
-        transport: "Dojazd własny/autokar",
+        transport: ["Dojazd własny", "Autokar"],
     },
     {
         id: 34,
@@ -251,7 +251,7 @@ export const data = [
         board: "Bez wyżywienia",
         category: ["Wczasy ogólne"],
         startingDate: "12/10/2022",
-        transport: "Dojazd własny/autokar",
+        transport: ["Dojazd własny", "Autokar"],
     },
     {
         id: 36,
@@ -265,7 +265,7 @@ export const data = [
         board: "Pełne",
         category: ["Wczasy ogólne"],
         startingDate: "12/10/2022",
-        transport: "Dojazd własny/autokar",
+        transport: ["Dojazd własny", "Autokar"],
     },
     {
         id: 38,
@@ -279,7 +279,7 @@ export const data = [
         board: "Bez wyżywienia",
         category: ["Wczasy ogólne"],
         startingDate: "03/25/2023",
-        transport: "Dojazd własny/autokar",
+        transport: ["Dojazd własny", "Autokar"],
     },
     {
         id: 40,
@@ -293,7 +293,7 @@ export const data = [
         board: "Bez wyżywienia",
         category: ["Wczasy ogólne"],
         startingDate: "03/18/2023",
-        transport: "Dojazd własny/autokar",
+        transport: ["Dojazd własny", "Autokar"],
     },
     {
         id: 42,
@@ -307,7 +307,7 @@ export const data = [
         board: "Pełne",
         category: ["Wczasy ogólne", "Wczasy ze szkółkami dla dzieci"],
         startingDate: "01/28/2023",
-        transport: "Dojazd własny/autokar",
+        transport: ["Dojazd własny", "Autokar"],
     },
     {
         id: 44,
@@ -321,7 +321,7 @@ export const data = [
         board: "Pełne",
         category: ["Wczasy ogólne", "Wczasy ze szkółkami dla dzieci"],
         startingDate: "01/29/2023",
-        transport: "Dojazd własny/autokar",
+        transport: ["Dojazd własny", "Autokar"],
     },
     {
         id: 46,
@@ -335,7 +335,7 @@ export const data = [
         board: "Pełne",
         category: ["Wczasy ogólne", "Wczasy ze szkółkami dla dzieci"],
         startingDate: "01/28/2023",
-        transport: "Dojazd własny/autokar",
+        transport: ["Dojazd własny", "Autokar"],
     },
 
     {
@@ -350,7 +350,7 @@ export const data = [
         board: "Bez wyżywienia",
         category: ["Wczasy ogólne"],
         startingDate: "12/10/2022",
-        transport: "Dojazd własny/autokar",
+        transport: ["Dojazd własny", "Autokar"],
     },
     {
         id: 50,
@@ -364,7 +364,7 @@ export const data = [
         board: "Pełne",
         category: ["Wczasy ogólne", "Wczasy ze szkółkami dla dzieci"],
         startingDate: "01/28/2023",
-        transport: "Dojazd własny/autokar",
+        transport: ["Dojazd własny", "Autokar"],
     },
     {
         id: 52,
@@ -378,7 +378,7 @@ export const data = [
         board: "Bez wyżywienia",
         category: ["Wczasy ogólne", "Wczasy ze szkółkami dla dzieci"],
         startingDate: "02/04/2023",
-        transport: "Tylko dojazd własny",
+        transport: ["Dojazd własny"],
     },
     {
         id: 53,
@@ -392,7 +392,7 @@ export const data = [
         board: "Pełne",
         category: ["Express narty"],
         startingDate: "01/06/2023",
-        transport: "Dojazd własny/autokar",
+        transport: ["Dojazd własny", "Autokar"],
     },
     {
         id: 55,
@@ -406,6 +406,6 @@ export const data = [
         board: "Pełne",
         category: ["Wczasy ogólne"],
         startingDate: "03/18/2023",
-        transport: "Dojazd własny/autokar",
+        transport: ["Dojazd własny", "Autokar"],
     },
 ];

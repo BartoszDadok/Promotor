@@ -25,8 +25,8 @@ export interface InitialStateTypes {
         "Ośrodek sportowy": boolean,
     },
     transport: {
-        "Dojazd własny/autokar": boolean,
-        "Tylko dojazd własny": boolean,
+        "Autokar": boolean,
+        "Dojazd własny": boolean,
     },
 };
 
@@ -90,6 +90,6 @@ export interface ItemTypes {
     board: string,
     category: string[],
     startingDate: string,
-    transport: string
-
+    transport: string[],
+    additionalInformation?: string
 }

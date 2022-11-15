@@ -121,8 +121,8 @@ const Offer = () => {
             "Ośrodek sportowy": false,
         },
         transport: {
-            "Dojazd własny/autokar": false,
-            "Tylko dojazd własny": false,
+            "Autokar": false,
+            "Dojazd własny": false,
         },
     };
 
@@ -143,8 +143,8 @@ const Offer = () => {
         "apartment": "Apartament",
         "sportCenter": "Ośrodek sportowy",
         "skipass": "Skipass",
-        "own/bus": "Dojazd własny/autokar",
-        "own": "Tylko dojazd własny",
+        "own/bus": "Autokar",
+        "own": "Dojazd własny",
     };
 
 
@@ -208,7 +208,6 @@ const Offer = () => {
         return Object.keys(collectedFilteringData);
     };
     const filteringCategories = getFilteringCategories();
-
 
     const filterData = () => {
         const pureData = [...data];
@@ -367,12 +366,12 @@ const Offer = () => {
                             <InputContainer>
                                 <Input onInput={ (e) => handleFilteredInputs(e) } type="checkbox" id="own/bus"
                                        name="own/bus"/>
-                                <Label htmlFor="own/bus">Dojazd własny/autokar</Label>
+                                <Label htmlFor="own/bus">Autokar</Label>
                             </InputContainer>
                             <InputContainer>
                                 <Input onInput={ (e) => handleFilteredInputs(e) } type="checkbox" id="own"
                                        name="own"/>
-                                <Label htmlFor="own">Tylko dojazd własny</Label>
+                                <Label htmlFor="own">Dojazd własny</Label>
                             </InputContainer>
                         </fieldset>
                     </FieldContainer>

@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import Navigation from "../../components/organisms/Navigation/Navigation";
 import { PageParagraph } from "../../components/atoms/PageParagraph/PageParagraph";
@@ -13,6 +13,8 @@ import angelo7 from "../../public/assets/hotels/angelo/7.jpg";
 import angelo8 from "../../public/assets/hotels/angelo/8.jpg";
 import Modal from "../../components/organisms/Modal/Modal";
 import Footer from "../../components/organisms/Footer/Footer";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 
 const PageWrapper = styled.div`
   width: 100%;
@@ -202,15 +204,61 @@ const PricingWrapper = styled.div`
 const Link = styled.a`
   color: #0173d6;
 `;
+const FormWrapper = styled.div`
+  padding: 0.5em;
+  margin: 1em 0 2em 0;
+  border: 1px dashed white;
+  border-radius: 3px;
+`;
+
+const ReservationForm = styled.form`
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  
+  textarea {
+    height: 70px;
+  }
+`;
+
+const LabelForm = styled.label`
+  color: white;
+  margin-bottom: 0.2em;
+`;
+const InputForm = styled.input`
+  border: none;
+  padding: 0.6em;
+  margin-bottom: 0.6em;
+`;
+const SelectForm = styled.select`
+  border: none;
+  padding: 0.4em;
+  margin-bottom: 0.6em;
+`;
+const ButtonForm = styled.button`
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  text-align: center;
+  background-color: #f5e23f;
+  width: 150px;
+  border: none;
+  padding: 0.5em;
+  margin-top: 0.5em;
+`;
 
 const Index = () => {
-
+    const date = ["28.01.2023-04.02.2023", "27.01.2023-05.02.2023"];
     const [modalData, setModalData] = useState<{ isActive: boolean, id: number | null }>({
         isActive: false,
         id: null,
     });
 
     const handleModal = (e: any) => {
+        window.scrollTo(0, 0)
         const id = +e.currentTarget.dataset.id;
         setModalData({ isActive: true, id });
     };
@@ -221,13 +269,37 @@ const Index = () => {
                 <Navigation/>
                 <Wrapper>
                     <InfoPanel>
+                        <FormWrapper>
+                            <TitleWhite>Rezerwacja</TitleWhite>
+                            <ReservationForm>
+                                <LabelForm>Imię i nazwisko</LabelForm>
+                                <InputForm type="text" id="name" name="name" required/>
+                                <LabelForm>Email</LabelForm>
+                                <InputForm type="email" id="email" name="email" required/>
+                                <LabelForm>Telefon</LabelForm>
+                                <InputForm type="tel" id="tel" name="tel" required/>
+                                <LabelForm>Termin</LabelForm>
+                                <SelectForm>
+                                    <option value="Wybierz termin">Wybierz termin</option>
+                                    <option value={ date[0] }>{ date[0] + " - dojazd własny" }</option>
+                                    <option value={ date[1] }>{ date[1] + " - dojazd autokarem" }</option>
+                                </SelectForm>
+                                <LabelForm>Liczba osób</LabelForm>
+                                <InputForm type="number" id="guest" name="guest" required/>
+                                <LabelForm>Uwagi</LabelForm>
+                                <textarea/>
+                                <ButtonForm>Zapytaj</ButtonForm>
+                            </ReservationForm>
+                        </FormWrapper>
                         <TitleWhite>Szczegóły</TitleWhite>
                         <Line/>
                         <DetailsWrapper>
-                            <PageParagraph margin={ "0 0 0.6em 0" } color={ "white" }><b>Termin wyjazdu: </b>
+                            <PageParagraph margin={ "0 0 0.6em 0" } color={ "white" }><b>Termin wyjazdu z dojazdem
+                                własnym: </b>
                                 28.01.2023-04.02.2023</PageParagraph>
-                            <PageParagraph margin={ "0 0 0.6em 0" } color={ "white" }><b>Rodzaj transportu: </b>Dojazd
-                                własny lub autokarem</PageParagraph>
+                            <PageParagraph margin={ "0 0 0.6em 0" } color={ "white" }><b>Termin wyjazdu z dojazdem
+                                autokarem: </b>
+                                27.01.2023-05.02.2023</PageParagraph>
                             <PageParagraph margin={ "0 0 0.6em 0" }
                                            color={ "white" }><b>Kraj: </b>Włochy</PageParagraph>
                             <PageParagraph margin={ "0 0 0.6em 0" } color={ "white" }><b>Miejscowość: </b>Cogolo di
@@ -263,20 +335,20 @@ const Index = () => {
                                 <PageParagraph margin={ "0.5em 0 0 0" } color={ "white" }><b>Cennik z dojazem
                                     autokrem:</b></PageParagraph>
                                 <List>
-                                    <ListItem><PageParagraph margin={ "0 0 0.1em 0" } color={ "white" }>dorośli - 2380
+                                    <ListItem><PageParagraph margin={ "0 0 0.1em 0" } color={ "white" }>dorośli - 2805
                                         zł</PageParagraph></ListItem>
                                     <ListItem><PageParagraph margin={ "0 0 0.1em 0" } color={ "white" }>dzieci 0-4,99
                                         lat -
-                                        80
+                                        505
                                         zł</PageParagraph>
                                     </ListItem>
                                     <ListItem><PageParagraph margin={ "0 0 0.1em 0" } color={ "white" }>dzieci 5-14,99
                                         lat -
-                                        1495
+                                        1920
                                         zł</PageParagraph></ListItem>
                                     <ListItem><PageParagraph margin={ "0 0 0.1em 0" } color={ "white" }>dzieci 15-17,99
                                         lat
-                                        - 2025
+                                        - 2450
                                         zł</PageParagraph></ListItem>
                                 </List>
                             </PricingWrapper>
@@ -563,7 +635,8 @@ const Index = () => {
                         </ListDescribe>
                         <HeadlineH3>WAŻNE INFORMACJE</HeadlineH3>
                         <ListDescribe margin={ "0 0 2em 0" }>
-                            <ListItem><PageParagraph>jest dowód osobisty lub paszport</PageParagraph></ListItem>
+                            <ListItem><PageParagraph>wymagany jest dowód osobisty lub
+                                paszport</PageParagraph></ListItem>
                             <ListItem>
                                 <PageParagraph>
                                     wymagana jest karta EKUZ (Europejska Karta Ubezpieczenia Zdrowotnego; informacje i
@@ -579,7 +652,7 @@ const Index = () => {
 
                     </Gallery>
                 </Wrapper>
-                <Modal modalData={modalData} setModalData={ setModalData }/>
+                <Modal modalData={ modalData } setModalData={ setModalData }/>
             </PageWrapper>
             <Footer/>
         </>

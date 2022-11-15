@@ -21,6 +21,7 @@ export const ParagraphWrapper = styled.div`
   align-items: center;
 `;
 const SingleItem = styled.div`
+  position: relative;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -67,7 +68,7 @@ const IconWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 0.2em;
+  margin: 0 0.2em;
   padding-top: 2px;
 `;
 
@@ -92,6 +93,14 @@ const ImageWrapper = styled.div<{ busSrc?: string }>`
     right: 0;
   }
 `;
+const AdditionalInformation = styled.div`
+  padding: 0.2em 0.2em;
+  background-color: #0173d6;
+  border: 1px solid #0173d6;
+  position: absolute;
+  top: -15px;
+  right: -1px;
+`;
 
 
 const Item = ({ itemData, src }: { itemData: ItemTypes, src: any }) => {
@@ -100,6 +109,11 @@ const Item = ({ itemData, src }: { itemData: ItemTypes, src: any }) => {
 
     return (
         <SingleItem>
+            { itemData.additionalInformation && <AdditionalInformation>
+                <PageParagraph color={ "white" }
+                               margin={ "0 0.3em" }>{ itemData.additionalInformation }</PageParagraph>
+            </AdditionalInformation>
+            }
             <Link passHref href={ objectWithoutSpaces + "-" + dateWithoutSpaces }>
                 <LinkWrapper>
                     <Image loading={ "lazy" } style={ { borderRadius: "5px", cursor: "pointer" } }
@@ -107,11 +121,12 @@ const Item = ({ itemData, src }: { itemData: ItemTypes, src: any }) => {
                            height={ 270 }
                            src={ src }
                            alt={ "hotel Angelo Włochy" }/>
-                    { itemData.transport === "Dojazd własny/autokar" &&
+                    { itemData.transport.includes("Autokar") &&
                     <ImageWrapper busSrc={ busIcon.src }/>
                     }
                 </LinkWrapper>
             </Link>
+
             <InfoWrapper>
                 <Link passHref href={ objectWithoutSpaces + "-" + dateWithoutSpaces }>
                     <a>
@@ -152,13 +167,23 @@ const Item = ({ itemData, src }: { itemData: ItemTypes, src: any }) => {
                     <Data>
                         <FontAwesomeIcon style={ { paddingTop: "3px" } } width={ "15px" } color={ "#8c8c8c" }
                                          icon={ faCarSide }/>
-                        { itemData.transport === "Dojazd własny/autokar" &&
+                        { itemData.transport.includes("Autokar") &&
                         <IconWrapper>
                             <Image alt={ "ikona busa" } src={ busIcon } width={ "16px" }
                                    height={ "16px" }/>
                         </IconWrapper>
                         }
-                        <PageParagraph margin={ "0 0.3em" }>{ itemData.transport }</PageParagraph>
+                        { itemData.transport.length === 1 ? <span style={ { margin: "0 0.1em" } }>{ itemData.transport }</span>
+                            :
+                            itemData.transport.map((item, i) => {
+                                if (i === 0) {
+                                    return (<span style={ { margin: "0 0.1em" } } key={ item }>{ item }</span>);
+                                } else {
+                                    return (<span style={ { margin: "0 0.1em" } } key={ item }>| { item } </span>);
+                                }
+
+                            })
+                        }
                     </Data>
                     { itemData.skipass === "Skipass" &&
                     <Data>
@@ -169,7 +194,7 @@ const Item = ({ itemData, src }: { itemData: ItemTypes, src: any }) => {
                     }
                 </DataWrapper>
                 <Price>Cena z dojazdem własnym od <span>{ itemData.price }zł</span></Price>
-                { itemData.transport === "Dojazd własny/autokar" &&
+                { itemData.transport.includes("Autokar") &&
                 <Price>Cena z dojazdem autokarem od <span>{ itemData.priceWithBus }zł</span></Price>
                 }
                 <ButtonWrapper>
@@ -179,6 +204,7 @@ const Item = ({ itemData, src }: { itemData: ItemTypes, src: any }) => {
                         </a>
                     </Link>
                 </ButtonWrapper>
+
             </InfoWrapper>
 
 

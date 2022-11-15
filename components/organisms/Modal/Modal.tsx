@@ -94,13 +94,14 @@ const Modal = ({ modalData, setModalData }: {
         if (e === "left") {
             const isFirstSlide = modalData.id === 0;
             const newID = isFirstSlide ? slides.length - 1 : modalData.id - 1;
-
             setModalData({ isActive: true, id: newID });
         }
     };
+
     const handleExitButton = () => {
         setModalData({ isActive: false, id: null });
     };
+
     useEffect(() => {
         if (!modalData.isActive) return;
 
@@ -108,18 +109,18 @@ const Modal = ({ modalData, setModalData }: {
             if (key === "Escape") {
                 setModalData({ isActive: false, id: null });
             }
+
         };
         document.addEventListener("keydown", ({ key }) => closeModal(key));
 
-        return () => {
-            document.removeEventListener("keydown", ({ key }) => closeModal(key));
-        };
+        return () => document.removeEventListener("keydown", ({ key }) => closeModal(key));
+
     });
     useEffect(() => {
-        if(modalData.isActive){
-            document.body.classList.add("galleryIsActive")
+        if (modalData.isActive) {
+            document.body.classList.add("galleryIsActive");
         } else {
-            document.body.classList.remove("galleryIsActive")
+            document.body.classList.remove("galleryIsActive");
         }
 
     });
