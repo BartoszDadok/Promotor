@@ -9,7 +9,7 @@ const nextConfig = {
         unoptimized: true,
     },
     // assetPrefix is used for correct paths during next export
-    assetPrefix: ".",
+    // assetPrefix: ".",
     
     
 };

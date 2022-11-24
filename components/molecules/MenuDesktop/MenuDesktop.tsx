@@ -22,10 +22,12 @@ const MenuDesktop = ({ isScrolled }: Props) => {
             <LeftSide>
                 <ListItem>
                     <Link passHref href="/">
+                        <a style={{height: "100%"}}>
                         <StyledLogo>
                             <Logo/>
                             <HeadLineH1>Biuro podróży z zimowymi wakacjami</HeadLineH1>
                         </StyledLogo>
+                        </a>
                     </Link>
 
                 </ListItem>

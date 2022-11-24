@@ -114,7 +114,7 @@ const Item = ({ itemData, src }: { itemData: ItemTypes, src: any }) => {
                                margin={ "0 0.3em" }>{ itemData.additionalInformation }</PageParagraph>
             </AdditionalInformation>
             }
-            <Link passHref href={ objectWithoutSpaces + "-" + dateWithoutSpaces }>
+            <Link passHref href={ objectWithoutSpaces + "/" + dateWithoutSpaces }>
                 <LinkWrapper>
                     <Image loading={ "lazy" } style={ { borderRadius: "5px", cursor: "pointer" } }
                            objectFit={ "cover" } width={ 360 }
@@ -128,7 +128,7 @@ const Item = ({ itemData, src }: { itemData: ItemTypes, src: any }) => {
             </Link>
 
             <InfoWrapper>
-                <Link passHref href={ objectWithoutSpaces + "-" + dateWithoutSpaces }>
+                <Link passHref href={ objectWithoutSpaces + "/" + dateWithoutSpaces }>
                     <a>
                         <ParagraphWrapper>
                             <PageParagraph fontSize={ "1.3rem" }
@@ -198,7 +198,7 @@ const Item = ({ itemData, src }: { itemData: ItemTypes, src: any }) => {
                 <Price>Cena z dojazdem autokarem od <span>{ itemData.priceWithBus }zł</span></Price>
                 }
                 <ButtonWrapper>
-                    <Link href={ objectWithoutSpaces + "-" + dateWithoutSpaces }>
+                    <Link href={ objectWithoutSpaces + "/" + dateWithoutSpaces }>
                         <a>
                             <Button>Zobacz szczegóły</Button>
                         </a>

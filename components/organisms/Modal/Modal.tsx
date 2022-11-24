@@ -1,22 +1,6 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import styled from "styled-components";
-import angelo1 from "../../../public/assets/hotels/angelo/1.jpg";
-import angelo2 from "../../../public/assets/hotels/angelo/2.jpg";
-import angelo3 from "../../../public/assets/hotels/angelo/3.jpg";
-import angelo4 from "../../../public/assets/hotels/angelo/4.jpg";
-import angelo5 from "../../../public/assets/hotels/angelo/5.jpg";
-import angelo6 from "../../../public/assets/hotels/angelo/6.jpg";
-import angelo7 from "../../../public/assets/hotels/angelo/7.jpg";
-import angelo8 from "../../../public/assets/hotels/angelo/8.jpg";
-import angelo9 from "../../../public/assets/hotels/angelo/9.jpg";
-import angelo10 from "../../../public/assets/hotels/angelo/10.jpg";
-import angelo11 from "../../../public/assets/hotels/angelo/11.jpg";
-import angelo12 from "../../../public/assets/hotels/angelo/12.jpg";
-import angelo13 from "../../../public/assets/hotels/angelo/13.jpg";
-import angelo14 from "../../../public/assets/hotels/angelo/14.jpg";
-import angelo15 from "../../../public/assets/hotels/angelo/15.jpg";
-import angelo16 from "../../../public/assets/hotels/angelo/16.jpg";
 import { faChevronRight, faChevronLeft, faCircleXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -77,15 +61,17 @@ const ImageWrapper = styled.div`
 
 `;
 
-const Modal = ({ modalData, setModalData }: {
-    modalData: any
-    setModalData: any
+const Modal = ({ modalData, setModalData, images }: {
+    modalData: any,
+    setModalData: any,
+    images: any
 }) => {
+    const modalRef = useRef(null);
     const isActive = modalData.isActive;
 
     const handleClickArrow = (e: string) => {
         if (e === "right") {
-            const isLastSlide = modalData.id === slides.length - 1;
+            const isLastSlide = modalData.id === images.length - 1;
             const newID = isLastSlide ? 0 : modalData.id + 1;
 
             setModalData({ isActive: true, id: newID });
@@ -93,7 +79,7 @@ const Modal = ({ modalData, setModalData }: {
 
         if (e === "left") {
             const isFirstSlide = modalData.id === 0;
-            const newID = isFirstSlide ? slides.length - 1 : modalData.id - 1;
+            const newID = isFirstSlide ? images.length - 1 : modalData.id - 1;
             setModalData({ isActive: true, id: newID });
         }
     };
@@ -101,19 +87,39 @@ const Modal = ({ modalData, setModalData }: {
     const handleExitButton = () => {
         setModalData({ isActive: false, id: null });
     };
+    const handleArrowKeys = (e: KeyboardEvent) => {
+        if (e.key === "ArrowRight") {
+            const isLastSlide = modalData.id === images.length - 1;
+            const newID = isLastSlide ? 0 : modalData.id + 1;
+            setModalData({ isActive: true, id: newID });
+        }
+        if (e.key === "ArrowLeft") {
+            const isFirstSlide = modalData.id === 0;
+            const newID = isFirstSlide ? images.length - 1 : modalData.id - 1;
+            setModalData({ isActive: true, id: newID });
+        }
+    };
+
+    const closeModal = (e: KeyboardEvent) => {
+        if (e.key === "Escape") {
+            setModalData({ isActive: false, id: null });
+        }
+    };
+
+    useEffect(() => {
+        if (!modalData.isActive) return;
+        // @ts-ignore
+        window.addEventListener("keydown", handleArrowKeys);
+        return () => window.removeEventListener("keydown", handleArrowKeys);
+    }, [modalData.id, modalData.isActive]);
+
 
     useEffect(() => {
         if (!modalData.isActive) return;
 
-        const closeModal = (key: string) => {
-            if (key === "Escape") {
-                setModalData({ isActive: false, id: null });
-            }
+        document.addEventListener("keydown", closeModal);
 
-        };
-        document.addEventListener("keydown", ({ key }) => closeModal(key));
-
-        return () => document.removeEventListener("keydown", ({ key }) => closeModal(key));
+        return () => document.removeEventListener("keydown", closeModal);
 
     });
     useEffect(() => {
@@ -122,31 +128,12 @@ const Modal = ({ modalData, setModalData }: {
         } else {
             document.body.classList.remove("galleryIsActive");
         }
+    }, [modalData.isActive]);
 
-    });
-    const slides = [
-        { url: angelo1.src, title: "" },
-        { url: angelo2.src, title: "" },
-        { url: angelo3.src, title: "" },
-        { url: angelo4.src, title: "" },
-        { url: angelo5.src, title: "" },
-        { url: angelo6.src, title: "" },
-        { url: angelo7.src, title: "" },
-        { url: angelo8.src, title: "" },
-        { url: angelo9.src, title: "" },
-        { url: angelo10.src, title: "" },
-        { url: angelo11.src, title: "" },
-        { url: angelo12.src, title: "" },
-        { url: angelo13.src, title: "" },
-        { url: angelo14.src, title: "" },
-        { url: angelo15.src, title: "" },
-        { url: angelo16.src, title: "" },
-    ];
-
-    const slide = slides[modalData.id] || slides[0];
+    const slide = images[modalData.id] || images[0];
 
     return (
-        <ModalWrapper className={ isActive ? "active" : "" }>
+        <ModalWrapper ref={ modalRef } className={ isActive ? "active" : "" }>
             <ExitButton onClick={ () => handleExitButton() }>
                 <FontAwesomeIcon width={ "45px" } color={ "#353535" } icon={ faCircleXmark }/>
             </ExitButton>

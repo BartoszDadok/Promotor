@@ -90,7 +90,7 @@ export const ListItem = styled.li<{ arrowSrc?: string }>`
 
 `;
 
-export const StyledLogo = styled.button`
+export const StyledLogo = styled.div`
   display: flex;
   justify-content: center;
   background-color: transparent;
