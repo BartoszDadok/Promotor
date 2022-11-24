@@ -58,11 +58,22 @@ const DataWrapper = styled.div`
 const Data = styled.div`
   display: flex;
   position: relative;
+  
+  @media (max-width: 49em) {
+    justify-content: left;
+    align-items: center;
+    margin-bottom: 0.3em;
+
+    span{
+      text-align: center;
+    }
+  }
 `;
-const Price = styled.div`
+const Price = styled.p`
  display: inline-block;
   justify-content: right;
   margin-bottom: 0.2em;
+  line-height: 1.2;
 
   span {
     font-weight: 700;
@@ -71,6 +82,7 @@ const Price = styled.div`
 
   @media (max-width: 49em) {
     justify-content: left;
+    margin-bottom: 0.3em;
   }
 
 `;
@@ -196,7 +208,7 @@ const Item = ({ itemData, src }: { itemData: ItemTypes, src: any }) => {
                         </HotelTitleWrapper>
                     </Link>
                 </DesktopTitle>
-                <PageParagraph fontSize={ "1rem" } fontWeight={ "500" }>Termin z dojazem
+                <PageParagraph fontSize={ "1rem" } fontWeight={ "500" } margin={"0 0 0.2em 0"}>Termin z dojazem
                     własnym: <b>{ itemData.date[0] }</b></PageParagraph>
                 <PageParagraph fontSize={ "1rem" } fontWeight={ "500" }>Termin z dojazdem
                     autokarem: <b>{ itemData.date[1] }</b></PageParagraph>

@@ -32,7 +32,7 @@ export const OfferWrapper = styled.section`
 
 `;
 export const FilterSidebar = styled.div`
-  width: 320px;
+  width: 350px;
   height: fit-content;
   border: 3px #0173d6 solid;
   padding: 1em;

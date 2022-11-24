@@ -38,6 +38,7 @@ const H1Headline = styled.h1`
   @media (max-width: 700px) {
     font-size: 0.7rem;;
     margin-top: -4px;
+    margin-right: 3px;
   }
 `;
 

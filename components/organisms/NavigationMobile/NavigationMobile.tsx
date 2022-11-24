@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Hamburger } from "../../atoms/Hamburger/Hamburger";
 import styled from "styled-components";
 import logoSrc from "../../../public/assets/logo.svg";
@@ -23,8 +23,10 @@ const NavigationMobileWrapper = styled.nav`
   @media (max-width: 60em) {
     background-color: transparent;
   }
+  &.isScrolled {
+    background-color: #0173d6;
+  }
   @media (max-width: 49em) {
-
     background-color: #0173d6;
   }
 `;
@@ -37,8 +39,24 @@ const List = styled.ul`
 
 
 const NavigationMobile = () => {
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    useEffect(() => {
+        const onScroll = () => {
+            if (window.scrollY > 0) {
+                setIsScrolled(true);
+            }
+            if (window.scrollY === 0) {
+                setIsScrolled(false);
+            }
+        };
+        window.document.addEventListener("scroll", onScroll);
+
+        return () => window.document.removeEventListener("scroll", onScroll);
+    });
+
     return (
-        <NavigationMobileWrapper>
+        <NavigationMobileWrapper className={ isScrolled ? "isScrolled" : "" }>
             <List>
                 <ListItem>
                     <Link passHref href="/">
