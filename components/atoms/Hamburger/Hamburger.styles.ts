@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const HamburgerButton = styled.button`
+  display: flex;
   padding: 10px;
-  display: inline-block;
   cursor: pointer;
   background-color: transparent;
   border: 0;

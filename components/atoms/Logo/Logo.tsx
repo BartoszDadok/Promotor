@@ -37,6 +37,7 @@ const H1Headline = styled.h1`
   color: white;
   @media (max-width: 700px) {
     font-size: 0.7rem;;
+    margin-top: -4px;
   }
 `;
 
