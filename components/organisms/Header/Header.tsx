@@ -5,6 +5,9 @@ import styled from "styled-components";
 
 const HeaderContainer = styled.header`
   position: relative;
+  @media (max-width: 49em) {
+    display: none;
+  }
 `;
 
 const HeadLineContainer = styled.div`
@@ -28,6 +31,9 @@ const HeadLineH2 = styled.h2`
   }
   @media (max-width: 1200px) {
     font-size: 1.5rem;
+  }
+  @media (max-width: 1100px) {
+    font-size: 1.2rem;
   }
 
 

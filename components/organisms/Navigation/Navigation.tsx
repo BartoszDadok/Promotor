@@ -1,5 +1,5 @@
 import stripeSrc from "../../../public/assets/pasek.jpg";
-
+import NavigationMobile from "../NavigationMobile/NavigationMobile";
 import { NavigationDesktop } from "./Navigation.styles";
 import { useEffect, useState } from "react";
 import MenuDesktop from "../../molecules/MenuDesktop/MenuDesktop";
@@ -23,9 +23,12 @@ const Navigation = ({ homePage }: { homePage?: string }) => {
 
     return (
         homePage ?
+            <>
             <NavigationDesktop stripeSrc={ stripeSrc.src } className={ isScrolled ? "isScrolled" : "" }>
                 <MenuDesktop isScrolled={ isScrolled }/>
             </NavigationDesktop>
+            <NavigationMobile/>
+            </>
             :
             <NavigationDesktop stripeSrc={ stripeSrc.src } className={ "visible isScrolled" }>
                 <MenuDesktop isScrolled={ isScrolled }/>

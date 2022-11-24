@@ -50,6 +50,14 @@ html.fonts-loaded .h2 {
         font-size: 1.5rem;
     }
 }
+@media (max-width: 1000px) {
+    html .h2 {
+        font-size: 1.2rem;
+    }
+    html.fonts-loaded .h2 {
+        font-size: 1.2rem;
+    }
+}
 
 a {
     color: inherit;

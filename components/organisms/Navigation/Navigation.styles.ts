@@ -9,7 +9,7 @@ export const NavigationDesktop = styled.nav<{ stripeSrc?: string }>`
   width: 100%;
   padding: 0 1em;
 
-  @media (max-width: 49em) {
+  @media (max-width: 60em) {
     display: none;
   }
 
@@ -21,14 +21,16 @@ export const NavigationDesktop = styled.nav<{ stripeSrc?: string }>`
 
 export const MenuContainer = styled.div`
   display: flex;
-  width: 70%;
+  width: 80%;
   justify-content: space-between;
+  align-items: center;
   @media (max-width: 1550px) {
     width: 100%;
     justify-content: flex-start;
   }
   @media (max-width: 1300px) {
     justify-content: flex-start;
+    
   }
 `;
 
@@ -37,7 +39,6 @@ export const LeftSide = styled.ul`
   align-items: center;
   justify-content: flex-start;
   height: 80%;
-  margin-left: 1em;
 `;
 export const RightSide = styled.ul`
   display: flex;
@@ -70,53 +71,40 @@ export const ListItem = styled.li<{ arrowSrc?: string }>`
     ::after {
       content: url(${ ({ arrowSrc }) => arrowSrc });
       position: absolute;
-      top: -22px;
+      top: -45px;
       right: -390px;
       width: 400px;
       animation-name: ${ animation };
       animation-duration: 1s;
       animation-iteration-count: initial;
-      @media (max-width: 1400px) {
-        width: 300px;
-        top: -12px;
-        right: -290px;
-      }
-      @media (max-width: 1230px) {
+      @media (max-width: 1530px) {
         display: none;
       }
     }
   }
-
-
 `;
 
-export const StyledLogo = styled.div`
-  display: flex;
-  justify-content: center;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  width: 270px;
-  height: 100%;
-  @media (max-width: 1100px) {
-    width: 220px;
-  }
-`;
 
 export const StyledLink = styled.a`
   background-color: transparent;
   border: none;
   padding: 0.5em;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 300;
   cursor: pointer;
   letter-spacing: 1px;
+
+  @media (max-width: 1300px) {
+    font-size: 1rem;
+  }
   @media (max-width: 1200px) {
     font-size: 1rem;
     padding: 0.2em;
   }
-  @media (max-width: 1300px) {
-    font-size: 1rem;
+  
+  @media (max-width: 1100px) {
+    font-size: 0.8rem;
+    padding: 0.2em;
   }
 
   :after {

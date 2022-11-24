@@ -6,7 +6,6 @@ import {
     MenuContainer,
     RightSide,
     StyledLink,
-    StyledLogo,
 } from "../../organisms/Navigation/Navigation.styles";
 import Link from "next/link";
 import { Logo } from "../../atoms/Logo/Logo";
@@ -23,13 +22,9 @@ const MenuDesktop = ({ isScrolled }: Props) => {
                 <ListItem>
                     <Link passHref href="/">
                         <a style={{height: "100%"}}>
-                        <StyledLogo>
                             <Logo/>
-                            <HeadLineH1>Biuro podróży z zimowymi wakacjami</HeadLineH1>
-                        </StyledLogo>
                         </a>
                     </Link>
-
                 </ListItem>
 
             </LeftSide>
@@ -51,6 +46,9 @@ const MenuDesktop = ({ isScrolled }: Props) => {
                     <Link passHref href="/blog">
                         <StyledLink>BLOG</StyledLink>
                     </Link>
+                </ListItem>
+                <ListItem>
+                    <StyledLink href="/oferta-indywidualna">OFERTA INDYWIDUALNA</StyledLink>
                 </ListItem>
                 <ListItem>
                     <Link passHref href="/kontakt">

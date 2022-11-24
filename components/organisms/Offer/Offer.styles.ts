@@ -19,6 +19,9 @@ export const OfferWrapper = styled.section`
   flex-direction: column;
   justify-content: center;
   justify-items: center;
+  @media (max-width: 60em) {
+    grid-template-columns: 1fr;
+  }
   
   @media (max-width: 1600px) {
     width: 80%;
@@ -26,6 +29,7 @@ export const OfferWrapper = styled.section`
   @media (max-width: 1100px) {
     grid-gap: 0 20px;
   }
+
 `;
 export const FilterSidebar = styled.div`
   width: 320px;
@@ -34,6 +38,9 @@ export const FilterSidebar = styled.div`
   padding: 1em;
   @media (max-width: 1200px) {
     width: 260px;
+  }
+  @media (max-width: 60em) {
+    display: none;
   }
 `;
 export const Select = styled.select`
