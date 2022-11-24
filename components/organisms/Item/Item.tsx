@@ -60,7 +60,7 @@ const Data = styled.div`
   position: relative;
 `;
 const Price = styled.div`
-  display: flex;
+ display: inline-block;
   justify-content: right;
   margin-bottom: 0.2em;
 
@@ -257,9 +257,9 @@ const Item = ({ itemData, src }: { itemData: ItemTypes, src: any }) => {
                     </Data>
                     }
                 </DataWrapper>
-                <Price>Cena z dojazdem własnym od <span>{ itemData.price }zł</span></Price>
+                <Price>Cena z dojazdem własnym od<span>{ itemData.price }zł</span></Price>
                 { itemData.transport.includes("Autokar") &&
-                <Price>Cena z dojazdem autokarem od <span>{ itemData.priceWithBus }zł</span></Price>
+                <Price>Cena z dojazdem autokarem od<span>{ itemData.priceWithBus }zł</span></Price>
                 }
                 <ButtonWrapper>
                     <Link href={ objectWithoutSpaces + "/" + dateWithoutSpaces }>
