@@ -37,6 +37,7 @@ import prom from "../../../public/assets/hotels/prom.jpg";
 import solaris from "../../../public/assets/hotels/solaris.jpg";
 import topresidence from "../../../public/assets/hotels/topresidence.jpg";
 import villa from "../../../public/assets/hotels/villa.jpg";
+import MobileFilterPanel from "../../molecules/MobileFilterPanel/MobileFilterPanel";
 
 const images = {
     angelo,
@@ -235,6 +236,7 @@ const Offer = () => {
     return (
         <>
             <HeadLineH3 id="oferta">Znajdź swoje zimowe wczasy</HeadLineH3>
+            <MobileFilterPanel/>
             <OfferWrapper>
                 <FilterSidebar>
                     <HeadLineH4>Filtruj:</HeadLineH4>

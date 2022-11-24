@@ -7,7 +7,9 @@ export const HeadLineH3 = styled.h3`
   @media (max-width: 1400px) {
     width: 80%;
   }
-
+  @media (max-width: 60em) {
+    margin: 1.5em auto 0.5em auto;
+  }
 `;
 
 export const OfferWrapper = styled.section`

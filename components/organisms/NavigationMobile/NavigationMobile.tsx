@@ -34,6 +34,9 @@ const List = styled.ul`
   display: flex;
   align-items: center;
   align-content: center;
+  :first-child{
+    margin-top: -3px;
+  }
 `;
 
 

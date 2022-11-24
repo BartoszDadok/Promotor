@@ -25,10 +25,24 @@ const GridWrapper = styled.div`
   grid-gap: 2em;
   margin-top: 1em;
   justify-content: center;
+  @media (max-width: 60em) {
+    grid-auto-flow: row;
+    grid-gap: 0.3em;
+  ;
+  }
 `;
 
 
 const Informations = styled.div`
+  margin-bottom: 1.5em;
+
+  @media (max-width: 60em) {
+    p {
+      text-align: center;
+    }
+
+  ;
+
 `;
 
 const StyledLink = styled.a`
@@ -38,6 +52,10 @@ const StyledLink = styled.a`
 
 const StyledLogo = styled.a`
   display: flex;
+  justify-content: center;
+  @media (max-width: 60em) {
+    margin: 1em 0;
+  ;
 `;
 
 
@@ -51,7 +69,7 @@ const Footer = () => {
                     href="tel:+48618676623">+48 61
                     867
                     66 23</StyledLink></PageParagraph>
-                <PageParagraph margin={ "0.3em 0 0 0" } color={ "white" }>
+                <PageParagraph textAlign={ "center" } margin={ "0.3em 0 0 0" } color={ "white" }>
                     lub skontaktuj się mailowo:
                     <Link passHref href="/kontakt">
                         <StyledLink> Formularz kontaktowy →</StyledLink>
@@ -66,7 +84,8 @@ const Footer = () => {
                     <Informations>
                         <PageParagraph fontWeight={ "700" } margin={ "0.3em 0" }
                                        color={ "white" }>Prywatność:</PageParagraph>
-                        <PageParagraph color={ "white" } margin={"0 0 0.2em 0"}><Link passHref href="/polityka-prywatnosci">
+                        <PageParagraph color={ "white" } margin={ "0 0 0.2em 0" }><Link passHref
+                                                                                        href="/polityka-prywatnosci">
                             <StyledLink> Polityka prywatności →</StyledLink>
                         </Link>
                         </PageParagraph>
