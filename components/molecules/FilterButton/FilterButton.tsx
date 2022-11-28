@@ -35,6 +35,7 @@ const FilterButton = () => {
     const closeFilterPanel = context.closeFilterPanel;
 
     const handleFilterPanel = () => {
+        window.scrollTo(0, 0);
         openFilterPanel();
     };
     return (
