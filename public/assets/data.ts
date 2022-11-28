@@ -14,7 +14,7 @@ export const data = [
         transport: ["Dojazd własny", "Autokar"],
     },
     {
-        id: 3,
+        id: 2,
         country: "Włochy",
         accommodation: "Apartament",
         price: "1525",
@@ -28,7 +28,7 @@ export const data = [
         transport: ["Dojazd własny", "Autokar"],
     },
     {
-        id: 5,
+        id: 3,
         country: "Włochy",
         accommodation: "Hotel",
         object: "Cevedale",
@@ -42,7 +42,7 @@ export const data = [
         transport: ["Dojazd własny", "Autokar"],
     },
     {
-        id: 7,
+        id: 4,
         country: "Włochy",
         accommodation: "Hotel",
         object: "Golf",
@@ -56,7 +56,7 @@ export const data = [
         transport: ["Dojazd własny"],
     },
     {
-        id: 8,
+        id: 5,
         country: "Włochy",
         accommodation: "Apartament",
         object: "Derby Club",
@@ -70,7 +70,7 @@ export const data = [
         transport: ["Dojazd własny", "Autokar"],
     },
     {
-        id: 10,
+        id: 6,
         country: "Włochy",
         accommodation: "Hotel",
         object: "Pampeago",
@@ -84,7 +84,7 @@ export const data = [
         transport: ["Dojazd własny", "Autokar"],
     },
     {
-        id: 12,
+        id: 7,
         country: "Włochy",
         accommodation: "Hotel",
         object: "Misurina",
@@ -98,7 +98,7 @@ export const data = [
         transport: ["Dojazd własny", "Autokar"],
     },
     {
-        id: 14,
+        id: 8,
         country: "Włochy",
         accommodation: "Hotel",
         object: "Haus an der Luck",
@@ -112,7 +112,7 @@ export const data = [
         transport: ["Dojazd własny", "Autokar"],
     },
     {
-        id: 16,
+        id: 9,
         country: "Włochy",
         accommodation: "Hotel",
         object: "Solaris",
@@ -126,7 +126,7 @@ export const data = [
         transport: ["Dojazd własny", "Autokar"],
     },
     {
-        id: 18,
+        id: 10,
         country: "Włochy",
         accommodation: "Hotel",
         object: "La Rocca Sport",
@@ -140,7 +140,7 @@ export const data = [
         transport: ["Dojazd własny", "Autokar"],
     },
     {
-        id: 20,
+        id: 11,
         country: "Włochy",
         accommodation: "Ośrodek sportowy",
         object: "Villaggio Dolomitico",
@@ -154,7 +154,7 @@ export const data = [
         transport: ["Dojazd własny", "Autokar"],
     },
     {
-        id: 22,
+        id: 12,
         country: "Francja",
         accommodation: "Apartament",
         object: "Gentianes",
@@ -168,7 +168,7 @@ export const data = [
         transport: ["Dojazd własny", "Autokar"],
     },
     {
-        id: 24,
+        id: 13,
         country: "Włochy",
         accommodation: "Hotel",
         object: "Golf",
@@ -182,7 +182,7 @@ export const data = [
         transport: ["Dojazd własny", "Autokar"],
     },
     {
-        id: 26,
+        id: 14,
         country: "Włochy",
         accommodation: "Hotel",
         object: "Cevedale",
@@ -197,7 +197,7 @@ export const data = [
     },
 
     {
-        id: 28,
+        id: 15,
         country: "Francja",
         accommodation: "Apartament",
         object: "Gentianes",
@@ -211,7 +211,7 @@ export const data = [
         transport: ["Dojazd własny", "Autokar"],
     },
     {
-        id: 30,
+        id: 16,
         country: "Włochy",
         accommodation: "Hotel",
         object: "Solaris",
@@ -226,7 +226,7 @@ export const data = [
         additionalInformation: "Termin dla grup zorganizowanych",
     },
     {
-        id: 32,
+        id: 17,
         country: "Austria",
         accommodation: "Hotel",
         object: "Margarethenbad",
@@ -240,7 +240,7 @@ export const data = [
         transport: ["Dojazd własny", "Autokar"],
     },
     {
-        id: 34,
+        id: 18,
         country: "Francja",
         accommodation: "Apartament",
         object: "Les Chalets L'Adonis",
@@ -254,7 +254,7 @@ export const data = [
         transport: ["Dojazd własny", "Autokar"],
     },
     {
-        id: 36,
+        id: 19,
         country: "Włochy",
         accommodation: "Hotel",
         object: "Angelo",
@@ -268,7 +268,7 @@ export const data = [
         transport: ["Dojazd własny", "Autokar"],
     },
     {
-        id: 38,
+        id: 20,
         country: "Francja",
         accommodation: "Apartament",
         object: "Les Chalets L'Adonis",
@@ -282,7 +282,7 @@ export const data = [
         transport: ["Dojazd własny", "Autokar"],
     },
     {
-        id: 40,
+        id: 21,
         country: "Francja",
         accommodation: "Apartament",
         object: "Front De Neige",
@@ -296,7 +296,7 @@ export const data = [
         transport: ["Dojazd własny", "Autokar"],
     },
     {
-        id: 42,
+        id: 22,
         country: "Austria",
         accommodation: "Hotel",
         object: "Margarethenbad",
@@ -310,7 +310,7 @@ export const data = [
         transport: ["Dojazd własny", "Autokar"],
     },
     {
-        id: 44,
+        id: 23,
         country: "Czechy",
         accommodation: "Hotel",
         object: "Prom",
@@ -324,7 +324,7 @@ export const data = [
         transport: ["Dojazd własny", "Autokar"],
     },
     {
-        id: 46,
+        id: 24,
         country: "Włochy",
         accommodation: "Hotel",
         object: "Cevedale",
@@ -339,7 +339,7 @@ export const data = [
     },
 
     {
-        id: 48,
+        id: 25,
         country: "Włochy",
         accommodation: "Apartament",
         object: "Top Residence",
@@ -353,7 +353,7 @@ export const data = [
         transport: ["Dojazd własny", "Autokar"],
     },
     {
-        id: 50,
+        id: 26,
         country: "Włochy",
         accommodation: "Hotel",
         object: "Misurina",
@@ -367,7 +367,7 @@ export const data = [
         transport: ["Dojazd własny", "Autokar"],
     },
     {
-        id: 52,
+        id: 27,
         country: "Włochy",
         accommodation: "Apartament",
         object: "Derby Club",
@@ -381,7 +381,7 @@ export const data = [
         transport: ["Dojazd własny"],
     },
     {
-        id: 53,
+        id: 28,
         country: "Czechy",
         accommodation: "Hotel",
         object: "Prom",
@@ -395,7 +395,7 @@ export const data = [
         transport: ["Dojazd własny", "Autokar"],
     },
     {
-        id: 54,
+        id: 29,
         country: "Czechy",
         accommodation: "Hotel",
         object: "Prom",
@@ -409,7 +409,7 @@ export const data = [
         transport: ["Dojazd własny", "Autokar"],
     },
     {
-        id: 55,
+        id: 30,
         country: "Włochy",
         accommodation: "Hotel",
         object: "Solaris",

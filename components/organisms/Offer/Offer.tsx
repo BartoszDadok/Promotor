@@ -1,4 +1,4 @@
-import React, { FormEvent, useState } from "react";
+import React, { FormEvent, useContext, useState } from "react";
 import { data } from "../../../public/assets/data";
 import { PageParagraph } from "../../atoms/PageParagraph/PageParagraph";
 import Item from "../Item/Item";
@@ -8,18 +8,11 @@ import {
     FilterWrapper,
     Filter,
     FilterH3,
-    Input,
-    Legend,
-    Label,
-    InputContainer,
-    FieldContainer,
-    FilterSidebar,
-    LabelSelect,
-    Select,
     Items,
     HeadLineH3,
-    HeadLineH4,
 } from "./Offer.styles";
+import preparedDataForState from "../../../helpers/prepareDateForState";
+
 import angelo from "../../../public/assets/hotels/angelo.jpg";
 import cevedale from "../../../public/assets/hotels/cevedale.jpg";
 import der from "../../../public/assets/hotels/der.jpg";
@@ -37,8 +30,13 @@ import prom from "../../../public/assets/hotels/prom.jpg";
 import solaris from "../../../public/assets/hotels/solaris.jpg";
 import topresidence from "../../../public/assets/hotels/topresidence.jpg";
 import villa from "../../../public/assets/hotels/villa.jpg";
-import MobileFilterPanel from "../../molecules/MobileFilterPanel/MobileFilterPanel";
-
+import FilterButton from "../../molecules/FilterButton/FilterButton";
+import FilterPanel from "../FilterPanel/FilterPanel";
+import removedDuplicatedDate from "../../../helpers/collectedDate";
+import { FilteringContext } from "../../../contexts/FilteringContext";
+import collectFilteringData from "../../../helpers/collcectFilteringData";
+import filterData from "../../../helpers/filterData";
+import { translations } from "../../../helpers/translations";
 const images = {
     angelo,
     cevedale,
@@ -61,95 +59,21 @@ const images = {
 
 const Offer = () => {
 
-    const convertedDate = data.map((item: ItemTypes) => {
-        return [[...item.date], item.startingDate];
-    });
+    const context = useContext(FilteringContext);
+    const filteringState = context.filteringState;
+    const setFilteringState = context.changeFilteringState;
 
-    const sortedDate = convertedDate.sort((a: any, b: any) => new Date(a[1]).getTime() - new Date(b[1]).getTime());
+    const collectedFilteringData = collectFilteringData(filteringState);
 
-    const swappedDate = sortedDate.map(data => {
-        if (!data[0][1]) return data[0][0];
-        return [data[0][1], data[0][0]];
-    })
-    const flattenDate = swappedDate.flat();
-
-    const removeDuplicatedDate = (arr: string[]) => {
-        let withoutDuplicates = [] as string[];
-        arr.forEach((element) => {
-            if (!withoutDuplicates.map((item: string) => item).includes(element)) {
-                withoutDuplicates.push(element);
-            }
-        });
-        return withoutDuplicates;
+    const getFilteringCategories = () => {
+        return Object.keys(collectedFilteringData);
     };
+    const filteringCategories = getFilteringCategories();
 
-    const removedDuplicatedDate = removeDuplicatedDate(flattenDate);
+    const filteredData = filterData(filteringCategories, collectedFilteringData);
 
-    const prepareDateForState = () => {
-        let object = {} as DateTypes;
+    const filteringElements = Object.values(collectedFilteringData).flat();
 
-        removedDuplicatedDate.map((item: string) => {
-            return object[item as keyof DateTypes] = false;
-        });
-        return { ...object };
-    };
-    const preparedDataForState = prepareDateForState();
-
-    const initialState = {
-        date: preparedDataForState,
-        country: {
-            "Włochy": false,
-            "Francja": false,
-            "Austria": false,
-            "Czechy": false,
-        },
-        board: {
-            "Pełne": false,
-            "Tylko śniadania": false,
-            "Bez wyżywienia": false,
-        },
-        skipass: { "Skipass": false },
-        category: {
-            "Wczasy ogólne": false,
-            "Wczasy ze szkółkami dla dzieci": false,
-            "Obozy młodzieżowe": false,
-            "Express narty": false,
-            "Ski 50+ aktywnie": false,
-        },
-        accommodation: {
-            "Hotel": false,
-            "Apartament": false,
-            "Ośrodek sportowy": false,
-        },
-        transport: {
-            "Autokar": false,
-            "Dojazd własny": false,
-        },
-    };
-
-    const translations = {
-        "italy": "Włochy",
-        "france": "Francja",
-        "austin": "Austria",
-        "czech": "Czechy",
-        "fullCatering": "Pełne",
-        "onlyBreakfast": "Tylko śniadania",
-        "withoutCatering": "Bez wyżywienia",
-        "holidays": "Wczasy ogólne",
-        "withLessonsForKids": "Wczasy ze szkółkami dla dzieci",
-        "youthCamps": "Obozy młodzieżowe",
-        "expressSki": "Express narty",
-        "ski50": "Ski 50+ aktywnie",
-        "hotel": "Hotel",
-        "apartment": "Apartament",
-        "sportCenter": "Ośrodek sportowy",
-        "skipass": "Skipass",
-        "own/bus": "Autokar",
-        "own": "Dojazd własny",
-    };
-
-
-    const [filteringState, setFilteringState] = useState<InitialStateTypes>(initialState);
 
     function handleFilteredInputs(e: FormEvent<HTMLInputElement | HTMLSelectElement>) {
         const target = e.target as HTMLInputElement;
@@ -164,7 +88,7 @@ const Offer = () => {
                 setFilteringState({ ...filteringState, date: { ...preparedDataForState } });
             }
             // @ts-ignore
-            setFilteringState({ ...filteringState,date: {...preparedDataForState, [toFilter]: !filteringState[key as keyof InitialStateTypes][toFilter as keyof InitialStateTypes], }, });
+            setFilteringState({ ...filteringState, date: { ...preparedDataForState, [toFilter]: !filteringState[key as keyof InitialStateTypes][toFilter as keyof InitialStateTypes], }, });
             return;
 
         }
@@ -178,207 +102,20 @@ const Offer = () => {
             return;
         } else {
             // @ts-ignore
-            setFilteringState({ ...filteringState, [key as keyof InitialStateTypes]: {...filteringState[key as keyof InitialStateTypes],[toFilter]: !filteringState[key as keyof InitialStateTypes][toFilter], },
-            });
+            setFilteringState({ ...filteringState, [key as keyof InitialStateTypes]: { ...filteringState[key as keyof InitialStateTypes], [toFilter]: !filteringState[key as keyof InitialStateTypes][toFilter], }, });
             return;
 
         }
     }
 
 
-    const collectFilteringData = () => {
-        let filteringData = {} as FilteringDataTypes;
-        Object.keys(filteringState).forEach((item) => {
-            Object.keys(filteringState[item as keyof InitialStateTypes]).forEach((el) => {
-                // @ts-ignore
-                if (filteringState[item][el]) {
-                    if (!filteringData[item as keyof FilteringDataTypes]) {
-                        filteringData[item as keyof FilteringDataTypes] = [el];
-                    } else {
-                        filteringData[item as keyof FilteringDataTypes] = [...filteringData[item as keyof FilteringDataTypes], el];
-                    }
-                }
-            });
-        });
-        return filteringData;
-    };
-    const collectedFilteringData = collectFilteringData();
-
-
-    const getFilteringCategories = () => {
-        return Object.keys(collectedFilteringData);
-    };
-    const filteringCategories = getFilteringCategories();
-
-    const filterData = () => {
-        const pureData = [...data];
-        return filteringCategories.reduce((acc: ItemTypes[], category: string) => {
-            const filtered = acc.filter((item: ItemTypes) => {
-                const dataToCheck = Object.values(item).flat();
-                // @ts-ignore
-                return collectedFilteringData[category].some(r => {
-                    if (r === "all") {
-                        return item;
-                    }
-                    if (dataToCheck.includes(r)) {
-                        return item;
-                    }
-                });
-            });
-            return filtered;
-        }, [...pureData]);
-    };
-
-    const filteringElements = Object.values(collectedFilteringData).flat();
-
-    const filteredData = filterData();
-
     return (
         <>
             <HeadLineH3 id="oferta">Znajdź swoje zimowe wczasy</HeadLineH3>
-            <MobileFilterPanel/>
+            <FilterButton/>
             <OfferWrapper>
-                <FilterSidebar>
-                    <HeadLineH4>Filtruj:</HeadLineH4>
-                    <FieldContainer data-name={ "date" }>
-                        <div>
-                            <LabelSelect data-name={ "date" } htmlFor="date">Wybierz termin:</LabelSelect>
-                            <Select onChange={ (e) => {
-                                handleFilteredInputs(e);
-                            } } name="date" id="date">
-                                <option value="all">Wszystkie terminy</option>
-                                { removedDuplicatedDate.map((date: any) => {
-                                    return (
-                                        <option key={ date } value={ date }>{ date }</option>
-                                    );
-                                }) }
-                            </Select>
-                        </div>
-                    </FieldContainer>
-                    <FieldContainer>
-                        <fieldset data-name={ "country" }>
-                            <Legend>Wybierz kraj:</Legend>
-                            <InputContainer>
-                                <Input onInput={ (e) => handleFilteredInputs(e) } type="checkbox" id="italy"
-                                       name="italy"/>
-                                <Label htmlFor="italy">Włochy</Label>
-                            </InputContainer>
-                            <InputContainer>
-                                <Input onInput={ (e) => handleFilteredInputs(e) } type="checkbox" id="france"
-                                       name="france"/>
-                                <Label htmlFor="france">Francja</Label>
-                            </InputContainer>
-                            <InputContainer>
-                                <Input onInput={ (e) => handleFilteredInputs(e) } type="checkbox" id="austin"
-                                       name="austin"/>
-                                <Label htmlFor="austin">Austria</Label>
-                            </InputContainer>
-                            <InputContainer>
-                                <Input onInput={ (e) => handleFilteredInputs(e) } type="checkbox" id="czech"
-                                       name="czech"/>
-                                <Label htmlFor="czech">Czechy</Label>
-                            </InputContainer>
-                        </fieldset>
-                    </FieldContainer>
-                    <FieldContainer>
-                        <fieldset data-name={ "board" }>
-                            <Legend>Wyżywienie:</Legend>
-                            <InputContainer>
-                                <Input onInput={ (e) => handleFilteredInputs(e) } type="checkbox" id="fullCatering"
-                                       name="fullCatering"/>
-                                <Label htmlFor="fullCatering">Pełne</Label>
-                            </InputContainer>
-                            <InputContainer>
-                                <Input onInput={ (e) => handleFilteredInputs(e) } type="checkbox" id="onlyBreakfast"
-                                       name="onlyBreakfast"/>
-                                <Label htmlFor="onlyBreakfast">Tylko śniadnia</Label>
-                            </InputContainer>
-                            <InputContainer>
-                                <Input onInput={ (e) => handleFilteredInputs(e) } type="checkbox" id="withoutCatering"
-                                       name="withoutCatering"/>
-                                <Label htmlFor="withoutCatering">Bez wyżywienia</Label>
-                            </InputContainer>
-                        </fieldset>
-                    </FieldContainer>
-                    <FieldContainer>
-                        <fieldset data-name={ "skipass" }>
-                            <Legend>Skipass:</Legend>
-                            <InputContainer>
-                                <Input onInput={ (e) => handleFilteredInputs(e) } type="checkbox" id="skipass"
-                                       name="skipass"/>
-                                <Label htmlFor="skipass">Skipass w cenie</Label>
-                            </InputContainer>
-                        </fieldset>
-                    </FieldContainer>
-                    <FieldContainer>
-
-                        <fieldset data-name={ "category" }>
-                            <Legend>Forma wyjazdu:</Legend>
-                            <InputContainer>
-                                <Input onInput={ (e) => handleFilteredInputs(e) } type="checkbox" id="holidays"
-                                       name="holidays"/>
-                                <Label htmlFor="holidays">Wczasy ogólne</Label>
-                            </InputContainer>
-                            <InputContainer>
-                                <Input onInput={ (e) => handleFilteredInputs(e) } type="checkbox"
-                                       id="withLessonsForKids"
-                                       name="withLessonsForKids"/>
-                                <Label htmlFor="withLessonsForKids">Wczasy ze szkółkami dla dzieci</Label>
-                            </InputContainer>
-                            <InputContainer>
-                                <Input onInput={ (e) => handleFilteredInputs(e) } type="checkbox" id="youthCamps"
-                                       name="youthCamps"/>
-                                <Label htmlFor="youthCamps">Obozy młodzieżowe</Label>
-                            </InputContainer>
-                            <InputContainer>
-                                <Input onInput={ (e) => handleFilteredInputs(e) } type="checkbox" id="expressSki"
-                                       name="expressSki"/>
-                                <Label htmlFor="expressSki">Express narty (wyjazdy weekendowe)</Label>
-                            </InputContainer>
-                            <InputContainer>
-                                <Input onInput={ (e) => handleFilteredInputs(e) } type="checkbox" id="ski50"
-                                       name="ski50"/>
-                                <Label htmlFor="ski50">Ski 50+ aktywnie</Label>
-                            </InputContainer>
-                        </fieldset>
-                    </FieldContainer>
-                    <FieldContainer>
-                        <fieldset data-name={ "accommodation" }>
-                            <Legend>Zakwaterowanie:</Legend>
-                            <InputContainer>
-                                <Input onInput={ (e) => handleFilteredInputs(e) } type="checkbox" id="hotel"
-                                       name="hotel"/>
-                                <Label htmlFor="hotel">Hotel</Label>
-                            </InputContainer>
-                            <InputContainer>
-                                <Input onInput={ (e) => handleFilteredInputs(e) } type="checkbox" id="apartment"
-                                       name="apartment"/>
-                                <Label htmlFor="apartment">Apartament</Label>
-                            </InputContainer>
-                            <InputContainer>
-                                <Input onInput={ (e) => handleFilteredInputs(e) } type="checkbox" id="sportCenter"
-                                       name="sportCenter"/>
-                                <Label htmlFor="sportCenter">Ośrodek sportowy</Label>
-                            </InputContainer>
-                        </fieldset>
-                    </FieldContainer>
-                    <FieldContainer>
-                        <fieldset data-name={ "transport" }>
-                            <Legend>Dojazd:</Legend>
-                            <InputContainer>
-                                <Input onInput={ (e) => handleFilteredInputs(e) } type="checkbox" id="own/bus"
-                                       name="own/bus"/>
-                                <Label htmlFor="own/bus">Autokar</Label>
-                            </InputContainer>
-                            <InputContainer>
-                                <Input onInput={ (e) => handleFilteredInputs(e) } type="checkbox" id="own"
-                                       name="own"/>
-                                <Label htmlFor="own">Dojazd własny</Label>
-                            </InputContainer>
-                        </fieldset>
-                    </FieldContainer>
-                </FilterSidebar>
-
+                <FilterPanel handleFilteredInputs={ handleFilteredInputs }
+                             removedDuplicatedDate={ removedDuplicatedDate }/>
                 <Items>
 
                     { filteringElements.length > 0 &&
