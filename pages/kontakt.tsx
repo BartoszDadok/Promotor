@@ -1,9 +1,6 @@
 import React from "react";
 import Navigation from "../components/organisms/Navigation/Navigation";
 import styled from "styled-components";
-import { PageParagraph } from "../components/atoms/PageParagraph/PageParagraph";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 import Footer from "../components/organisms/Footer/Footer";
 import ContactInfo from "../components/molecules/ContactInfo/ContactInfo";
 
@@ -33,6 +30,9 @@ const Title = styled.h2`
 const IframeWrapper = styled.div`
   aspect-ratio: 3/1.5;
   margin-bottom: 2em;
+  @media (max-width: 1000px) {
+    margin-bottom: 1em;
+  }
 
 `;
 const StyledLink = styled.a`

@@ -34,6 +34,9 @@ const Title = styled.h2`
 const IframeWrapper = styled.div`
   aspect-ratio: 3/1.5;
   margin-bottom: 2em;
+  @media (max-width: 1000px) {
+    margin-bottom: 1em;
+  }
 
 `;
 const StyledLink = styled.a`

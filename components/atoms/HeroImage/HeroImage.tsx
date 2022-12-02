@@ -4,10 +4,12 @@ import Image from "next/image";
 
 const HeroImage = () => {
     return (
-        <figure>
-            <Image unoptimized={true} src={ heroImgSrc } alt="Rodzina ciesząca się zimowymi wakacjami"
+        <picture>
+            <source srcSet={ heroImgSrc.src } media="(min-width: 1000px)"/>
+            <Image unoptimized={ true } src={ heroImgSrc } alt="Rodzina ciesząca się zimowymi wakacjami"
                    priority={ true }/>
-        </figure>
+
+        </picture>
     );
 };
 
