@@ -18,6 +18,7 @@ const FilterSidebar = styled.div`
   justify-content: center;
   height: fit-content;
   padding: 1em;
+  background-color: white;
   
 `;
 export const FieldContainer = styled.div`

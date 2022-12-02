@@ -15,8 +15,9 @@ const GalleryWrapper = styled.div`
 `;
 
 const Gallery = styled.div`
+  position: relative;
   width: 100%;
-  aspect-ratio: 2/1;
+  aspect-ratio: 1.5/1;
   margin: 0 auto;
   display: grid;
 
@@ -24,17 +25,23 @@ const Gallery = styled.div`
   justify-items: center;
   align-content: center;
   align-items: center;
-  grid-template-columns: 10px 1fr 10px;
+  grid-template-columns: 1fr;
   grid-template-rows: 100%;
 `;
 
-const ButtonArrow = styled.button`
-  display: block;
-  height: 100%;
+const ButtonArrow = styled.button<{ direction: string }>`
+  position: absolute;
+  z-index: 1000;
+  top: 50%;
+  ${ ({ direction }) => direction === "left" ? "left" : "right" }: 0;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
   border: none;
-  background-color: white;
-  padding: 0;
+  background-color: #0173d6;
+  padding: 4px;
   margin: 0;
 `;
 
@@ -65,8 +72,8 @@ const MobileGallery = ({ images }: { images: { url: string, title: string }[] })
     return (
         <GalleryWrapper>
             <Gallery>
-                <ButtonArrow onClick={ () => handleClickArrow("left") }>
-                    <FontAwesomeIcon width={ "25px" } color={ "#000" } icon={ faChevronLeft }/>
+                <ButtonArrow direction={ "left" } onClick={ () => handleClickArrow("left") }>
+                    <FontAwesomeIcon width={ "25px" } color={ "#fff" } icon={ faChevronLeft }/>
                 </ButtonArrow>
                 <ImageWrapper>
                     <div>
@@ -75,8 +82,8 @@ const MobileGallery = ({ images }: { images: { url: string, title: string }[] })
                                src={ images[id].url }/>
                     </div>
                 </ImageWrapper>
-                <ButtonArrow onClick={ () => handleClickArrow("right") }>
-                    <FontAwesomeIcon width={ "25px" } color={ "#000" } icon={ faChevronRight }/>
+                <ButtonArrow direction={ "right" } onClick={ () => handleClickArrow("right") }>
+                    <FontAwesomeIcon width={ "25px" } color={ "#fff" } icon={ faChevronRight }/>
                 </ButtonArrow>
             </Gallery>
         </GalleryWrapper>
