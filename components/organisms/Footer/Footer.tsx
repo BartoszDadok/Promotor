@@ -9,7 +9,7 @@ const FooterWrapper = styled.section`
   display: flex;
   justify-content: center;
   width: 100%;
-  padding: 2em 0;
+  padding: 2em 0 0 0;
   background-color: #0173d6;
 `;
 
