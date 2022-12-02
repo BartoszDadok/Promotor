@@ -16,6 +16,10 @@ const CatalogWrapper = styled.div`
   @media (max-width: 1400px) {
     width: 100%;
   }
+  @media (max-width: 1000px) {
+    width: 100%;
+    grid-template-columns: 1fr
+  }
 `;
 const CatalogContainer = styled.div`
   width: 100%;

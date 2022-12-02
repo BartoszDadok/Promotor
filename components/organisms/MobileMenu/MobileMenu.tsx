@@ -1,28 +1,39 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useRef } from "react";
 import styled from "styled-components";
 import { HamburgerContext } from "../../../contexts/HamburgerContext";
 import Link from "next/link";
 
-
-const MenuWrapper = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  flex-direction: column;
+const ModalWrapper = styled.div`
+  display: none;
+  justify-content: center;
+  align-items: center;
   width: 100%;
+  height: 100vh;
   visibility: hidden;
   pointer-events: none;
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
-
+  
   &.isActive {
     visibility: visible;
     pointer-events: all;
     opacity: 1;
-
+    display: flex;
   }
+`;
+
+const MenuWrapper = styled.nav`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+
+
+
 `;
 
 const ListItem = styled.li`
@@ -32,7 +43,10 @@ const ListItem = styled.li`
   align-items: center;
   margin: 0 0.25em;
   list-style: none;
-  height: 100%;
+`;
+
+const List = styled.ul`
+  width: 100%;
 `;
 
 
@@ -47,46 +61,67 @@ const StyledLink = styled.a`
 `;
 
 const MobileMenu = () => {
+    const nav = useRef<HTMLElement>(null);
     const context = useContext(HamburgerContext);
     const { activeMobileMenu, closeMobileMenu } = context;
 
     const closeModalMenu = () => {
         closeMobileMenu();
     };
+
+    function handleClickOutsideMenu(e: MouseEvent) {
+        if (!nav.current) return;
+        if (e.target === nav.current || nav.current.firstChild) {
+            closeMobileMenu();
+        }
+    }
+
+    useEffect(() => {
+        if (!nav.current) return;
+        if (!activeMobileMenu) return;
+        nav.current.addEventListener("click", handleClickOutsideMenu);
+        return () => removeEventListener("click", handleClickOutsideMenu);
+    }, [activeMobileMenu]);
+
     return (
-        <MenuWrapper className={ activeMobileMenu ? "isActive" : "" }>
-            <ListItem>
-                <StyledLink onClick={ closeModalMenu } href="/#oferta">OFERTA</StyledLink>
-            </ListItem>
-            <ListItem>
-                <Link passHref href="/katalog">
-                    <StyledLink onClick={ closeModalMenu } >KATALOG</StyledLink>
-                </Link>
-            </ListItem>
-            <ListItem>
-                <Link passHref href="/o-nas">
-                    <StyledLink onClick={ closeModalMenu } >O NAS</StyledLink>
-                </Link>
-            </ListItem>
-            <ListItem>
-                <Link passHref href="/blog">
-                    <StyledLink onClick={ closeModalMenu } >BLOG</StyledLink>
-                </Link>
-            </ListItem>
-            <ListItem>
-                <StyledLink onClick={ closeModalMenu }  href="/oferta-indywidualna">OFERTA INDYWIDUALNA</StyledLink>
-            </ListItem>
-            <ListItem>
-                <Link passHref href="/kontakt">
-                    <StyledLink onClick={ closeModalMenu } >KONTAKT</StyledLink>
-                </Link>
-            </ListItem>
-            <ListItem>
-                <Link passHref href="tel:+48618676623">
-                    <StyledLink onClick={ closeModalMenu } >+48 61 867 66 23</StyledLink>
-                </Link>
-            </ListItem>
-        </MenuWrapper>
+        <ModalWrapper ref={ nav } className={ activeMobileMenu ? "isActive" : "" }>
+            <MenuWrapper>
+                <List>
+                    <ListItem>
+                        <StyledLink onClick={ closeModalMenu } href="/#oferta">OFERTA</StyledLink>
+                    </ListItem>
+                    <ListItem>
+                        <Link passHref href="/katalog">
+                            <StyledLink onClick={ closeModalMenu }>KATALOG</StyledLink>
+                        </Link>
+                    </ListItem>
+                    <ListItem>
+                        <Link passHref href="/o-nas">
+                            <StyledLink onClick={ closeModalMenu }>O NAS</StyledLink>
+                        </Link>
+                    </ListItem>
+                    <ListItem>
+                        <Link passHref href="/blog">
+                            <StyledLink onClick={ closeModalMenu }>BLOG</StyledLink>
+                        </Link>
+                    </ListItem>
+                    <ListItem>
+                        <StyledLink onClick={ closeModalMenu } href="/oferta-indywidualna">OFERTA
+                            INDYWIDUALNA</StyledLink>
+                    </ListItem>
+                    <ListItem>
+                        <Link passHref href="/kontakt">
+                            <StyledLink onClick={ closeModalMenu }>KONTAKT</StyledLink>
+                        </Link>
+                    </ListItem>
+                    <ListItem>
+                        <Link passHref href="tel:+48618676623">
+                            <StyledLink onClick={ closeModalMenu }>+48 61 867 66 23</StyledLink>
+                        </Link>
+                    </ListItem>
+                </List>
+            </MenuWrapper>
+        </ModalWrapper>
     );
 };
 

@@ -108,7 +108,7 @@ const MobileGallery = ({ images }: { images: { url: string, title: string }[] })
                 <ButtonArrow direction={ "right" } onClick={ () => handleClickArrow("right") }>
                     <FontAwesomeIcon width={ "25px" } color={ "#fff" } icon={ faChevronRight }/>
                 </ButtonArrow>
-                <Counter>{ id }/{ images.length - 1 }</Counter>
+                <Counter>{ id + 1 }/{ images.length }</Counter>
             </Gallery>
         </GalleryWrapper>
     );

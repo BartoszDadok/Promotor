@@ -19,7 +19,7 @@ const FilterSidebar = styled.div`
   height: fit-content;
   padding: 1em;
   background-color: white;
-  
+
 `;
 export const FieldContainer = styled.div`
   display: flex;
@@ -131,8 +131,8 @@ const ModalFilterPanel = () => {
 
     const applyFilters = () => {
         setFilteringState(state);
-        closeFilterPanel()
-    }
+        closeFilterPanel();
+    };
 
 
     function handleFilteredInputs(e: FormEvent<HTMLInputElement | HTMLSelectElement>) {
@@ -148,7 +148,12 @@ const ModalFilterPanel = () => {
                 setState({ ...state, date: { ...preparedDataForState } });
             }
             // @ts-ignore
-            setState({ ...state, date: { ...preparedDataForState, [toFilter]: !state[key as keyof InitialStateTypes][toFilter as keyof InitialStateTypes], }, });
+            setState({ ...state,
+                date: {
+                    ...preparedDataForState,
+                    [toFilter]: !state[key as keyof InitialStateTypes][toFilter as keyof InitialStateTypes],
+                },
+            });
             return;
 
         }
@@ -162,7 +167,12 @@ const ModalFilterPanel = () => {
             return;
         } else {
             // @ts-ignore
-            setState({ ...state, [key as keyof InitialStateTypes]: { ...state[key as keyof InitialStateTypes], [toFilter]: !state[key as keyof InitialStateTypes][toFilter], }, });
+            setState({ ...state,
+                [key as keyof InitialStateTypes]: {
+                    ...state[key as keyof InitialStateTypes],
+                    [toFilter]: !state[key as keyof InitialStateTypes][toFilter],
+                },
+            });
             return;
 
         }
@@ -173,7 +183,7 @@ const ModalFilterPanel = () => {
     };
 
     return (
-        <ModalWrapper className={activeFilterPanel ? "activeFilterPanel" : ""}>
+        <ModalWrapper className={ activeFilterPanel ? "activeFilterPanel" : "" }>
             <ExitButton onClick={ handleExitButton }>
                 <FontAwesomeIcon width={ "35px" } color={ "#353535" } icon={ faCircleXmark }/>
             </ExitButton>
@@ -233,7 +243,8 @@ const ModalFilterPanel = () => {
                             <Label htmlFor="onlyBreakfast-mobile">Tylko śniadnia</Label>
                         </InputContainer>
                         <InputContainer>
-                            <Input onInput={ (e) => handleFilteredInputs(e) } type="checkbox" id="withoutCatering-mobile"
+                            <Input onInput={ (e) => handleFilteredInputs(e) } type="checkbox"
+                                   id="withoutCatering-mobile"
                                    name="withoutCatering"/>
                             <Label htmlFor="withoutCatering-mobile">Bez wyżywienia</Label>
                         </InputContainer>
@@ -316,11 +327,11 @@ const ModalFilterPanel = () => {
                         </InputContainer>
                     </fieldset>
                 </FieldContainer>
-                <Button onClick={applyFilters}>Zastosuj filtry</Button>
+                <Button onClick={ applyFilters }>Zastosuj filtry</Button>
             </FilterSidebar>
 
         </ModalWrapper>
     );
 };
 
-export default ModalFilterPanel
+export default ModalFilterPanel;

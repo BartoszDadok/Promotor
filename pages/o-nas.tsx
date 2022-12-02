@@ -19,6 +19,9 @@ const AboutUsWrapper = styled.div`
   @media (max-width: 1400px) {
     width: 100%;
   }
+  @media (max-width: 1000px) {
+    grid-template-columns: 1fr
+  }
 `;
 const Title = styled.h2`
   font-size: 2rem;
@@ -28,6 +31,7 @@ const Title = styled.h2`
 const AboutUsContainer = styled.div`
   width: 100%;
   padding: 0 2em;
+  margin-bottom: 2em;
 `;
 const AvatarsWrapper = styled.div`
   width: 100%;
@@ -58,19 +62,19 @@ const AboutUs = () => {
                     <AvatarsWrapper>
                         <div>
                             <PageParagraph textAlign={ "center" }>Piotr</PageParagraph>
-                            <Image width={ 150 } height={ 150 } src={ avatar }/>
+                            <Image alt={"avatar"} width={ 150 } height={ 150 } src={ avatar }/>
                         </div>
                         <div>
                             <PageParagraph textAlign={ "center" }>Danuta</PageParagraph>
-                            <Image width={ 150 } height={ 150 } src={ avatar }/>
+                            <Image alt={"avatar"} width={ 150 } height={ 150 } src={ avatar }/>
                         </div>
                         <div>
                             <PageParagraph textAlign={ "center" }>Eliza</PageParagraph>
-                            <Image width={ 150 } height={ 150 } src={ avatar }/>
+                            <Image alt={"avatar"} width={ 150 } height={ 150 } src={ avatar }/>
                         </div>
                         <div>
                             <PageParagraph textAlign={ "center" }>Krzysztof</PageParagraph>
-                            <Image width={ 150 } height={ 150 } src={ avatar }/>
+                            <Image alt={"avatar"} width={ 150 } height={ 150 } src={ avatar }/>
                         </div>
                     </AvatarsWrapper>
                     <Title>Gwarancja dobrych imprez</Title>

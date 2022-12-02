@@ -1,11 +1,25 @@
 import React, { useState } from "react";
-import styled from "styled-components";
 import Navigation from "../../../components/organisms/Navigation/Navigation";
 import Modal from "../../../components/organisms/Modal/Modal";
 import Footer from "../../../components/organisms/Footer/Footer";
 import ReservationForm from "../../../components/organisms/ReservationForm/ReservationForm";
 import Gallery from "../../../components/organisms/Gallery/Gallery";
 import { PageParagraph } from "../../../components/atoms/PageParagraph/PageParagraph";
+import { PageWrapper } from "../../../components/atoms/HotelWrappers/PageWrapper";
+import { ContentWrapper } from "../../../components/atoms/HotelWrappers/ContentWrapper";
+import { LeftSideWrapper } from "../../../components/atoms/HotelWrappers/LeftSideWrapper";
+import { RightSideWrapper } from "../../../components/atoms/HotelWrappers/RightSideWrapper";
+import { TitleWhite } from "../../../components/atoms/HotelTitleWhite/TitleWhite";
+import { Line } from "../../../components/atoms/HotelLine/HotelLine";
+import { DetailsWrapper } from "../../../components/atoms/HotelWrappers/DetailsWrapper";
+import { PricingWrapper } from "../../../components/atoms/HotelWrappers/PricingWrapper";
+import { ListItem } from "../../../components/atoms/HotelListItem/ListItem";
+import { List } from "../../../components/atoms/HotelList/HotelList";
+import { ListDescribe } from "../../../components/atoms/HotelList/ListDescribe";
+import { Title } from "../../../components/atoms/HotelTitle/Title";
+import { HeadlineH3 } from "../../../components/atoms/HotelHeadLineH3/HotelHeadLineH3";
+import { Link } from "../../../components/atoms/HotelLink/HotelLink";
+
 import adonis1 from "../../../public/assets/hotels/adonis/1.jpg";
 import adonis2 from "../../../public/assets/hotels/adonis/2.jpg";
 import adonis3 from "../../../public/assets/hotels/adonis/3.jpg";
@@ -50,101 +64,8 @@ import adonis41 from "../../../public/assets/hotels/adonis/41.jpg";
 import adonis42 from "../../../public/assets/hotels/adonis/42.jpg";
 import adonis43 from "../../../public/assets/hotels/adonis/43.jpg";
 import adonis44 from "../../../public/assets/hotels/adonis/44.jpg";
-
-
-const PageWrapper = styled.div`
-  width: 100%;
-`;
-
-const ContentWrapper = styled.div`
-  width: 70%;
-  margin: 0 auto;
-  grid-template-columns: 1fr 3fr;
-  display: grid;
-  grid-gap: 0 1em;
-  justify-content: center;
-  justify-items: center;
-  padding-top: 100px;
-  @media (max-width: 1550px) {
-    width: 95%;
-  }
-`;
-
-const LeftSideWrapper = styled.aside`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  background-color: #0173d6;
-  padding: 1em 1.5em;
-  border-radius: 2px;
-  height: fit-content;
-`;
-
-
-const Title = styled.h2`
-  font-size: 2rem;
-  margin: 0 0 0.3em 0;
-`;
-
-const TitleWhite = styled.h2`
-  color: white;
-  font-size: 1.8rem;
-  margin: 0 0 0.3em 0;
-  text-align: center;
-`;
-
-const HeadlineH3 = styled.h3`
-  font-size: 1.2rem;
-  margin: 0.6em 0 0.2em 0;
-  font-weight: 700;
-`;
-const DetailsWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-const List = styled.ul`
-  list-style: disc;
-  color: white;
-  padding-left: 1.3em;
-  margin-bottom: 1em;
-`;
-
-interface PropsList {
-    margin?: string;
-}
-
-const ListDescribe = styled.ul<PropsList>`
-  list-style: disc;
-  padding-left: 1.3em;
-  margin: ${ ({ margin = "0" }) => margin };
-`;
-
-const ListItem = styled.li`
-  margin: 0.3em 0;
-`;
-const Line = styled.div`
-  display: flex;
-  justify-content: center;
-  background-color: white;
-  height: 1px;
-  width: 100%;
-  margin-bottom: 1em;
-`;
-const PricingWrapper = styled.div`
-  border: 1px white solid;
-  padding: 0.3em 0.5em;
-  margin-top: 1em;
-`;
-
-const Link = styled.a`
-  color: #0173d6;
-`;
-const RightSideWrapper = styled.div`
-  display: grid;
-  width: 100%;
-  padding: 1em;
-  grid-auto-rows: min-content;
-`;
+import { TitleMobile } from "../../../components/atoms/HotelTitleMobile/TitleMobile";
+import MobileGallery from "../../../components/organisms/MobileGallery/MobileGallery";
 
 const images = [
     { url: adonis1.src, title: "Apartament l'Adonis z zewnątrz" },
@@ -204,6 +125,8 @@ const Index = () => {
             <PageWrapper>
                 <Navigation/>
                 <ContentWrapper>
+                    <TitleMobile>Apartament l&apos;Adonis **** -Trzy Doliny</TitleMobile>
+                    <MobileGallery images={ images }/>
                     <LeftSideWrapper>
                         <ReservationForm date={ date }/>
                         <TitleWhite>Szczegóły</TitleWhite>

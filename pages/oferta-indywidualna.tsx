@@ -12,14 +12,18 @@ const Contact = styled.section`
 `;
 
 const ContactWrapper = styled.div`
-  width: 80%;
-  margin: 0 auto;
   display: grid;
   grid-template-columns: 3fr 1.5fr;
   justify-content: center;
   justify-items: center;
   flex-direction: row;
-  padding-top: 100px;
+  padding: 6.25em 2em 0 2em;
+  width: 80%;
+  margin: 0 auto 2em auto;
+  @media (max-width: 1000px) {
+    width: 100%;
+    grid-template-columns: 1fr
+  }
 `;
 
 const Title = styled.h2`
@@ -153,18 +157,12 @@ const Kontakt = () => {
                             tabIndex={ 0 }
                         />
                     </IframeWrapper>
-
-
                 </Column>
-                <Column>
                     <ContactInfo/>
-                </Column>
             </ContactWrapper>
             <Footer/>
         </Contact>
-
     )
-        ;
 };
 
 export default Kontakt;

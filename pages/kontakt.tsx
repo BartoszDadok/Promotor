@@ -13,13 +13,17 @@ const Contact = styled.section`
 
 const ContactWrapper = styled.div`
   width: 80%;
-  margin: 0 auto;
+  margin: 0 auto 3em auto;
   display: grid;
   grid-template-columns: 3fr 1.5fr;
   justify-content: center;
   justify-items: center;
   flex-direction: row;
   padding-top: 100px;
+  @media (max-width: 1000px) {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
 `;
 
 const Title = styled.h2`
@@ -156,9 +160,7 @@ const Kontakt = () => {
 
 
                 </Column>
-                <Column>
-                    <ContactInfo/>
-                </Column>
+                <ContactInfo/>
             </ContactWrapper>
             <Footer/>
         </Contact>

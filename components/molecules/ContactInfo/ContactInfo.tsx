@@ -16,10 +16,13 @@ const FacebookWrapper = styled.div`
   align-items: center;
   align-content: center;
 `;
-
+const ContactWrapper = styled.div`
+  width: 100%;
+  padding: 0 2em;
+`;
 const ContactInfo = () => {
     return (
-        <div>
+        <ContactWrapper>
             <Title>Dane kontaktowe naszego biura:</Title>
             <PageParagraph fontWeight={ "700" } margin={ "0 0 0.2em 0" }>Biuro Podróży PROMOTOR Sp. z
                 o.o.</PageParagraph>
@@ -49,7 +52,7 @@ const ContactInfo = () => {
                     <PageParagraph>Facebook</PageParagraph>
                 </FacebookWrapper>
             </StyledLink>
-        </div>
+        </ContactWrapper>
     );
 };
 

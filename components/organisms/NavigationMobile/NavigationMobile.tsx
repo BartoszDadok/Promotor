@@ -1,12 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Hamburger } from "../../atoms/Hamburger/Hamburger";
 import styled from "styled-components";
-import logoSrc from "../../../public/assets/logo.svg";
-import Image from "next/image";
-import { HeadLineH1 } from "../../atoms/HeadLineH1/HeadLineH1";
 import { Logo } from "../../atoms/Logo/Logo";
 import { ListItem } from "../Navigation/Navigation.styles";
 import Link from "next/link";
+import { HamburgerContext } from "../../../contexts/HamburgerContext";
 
 const NavigationMobileWrapper = styled.nav`
   position: fixed;
@@ -29,15 +27,22 @@ const List = styled.ul`
   display: flex;
   align-items: center;
   align-content: center;
-  :first-child{
+
+  :first-child {
     margin-top: -3px;
   }
 `;
 
 
-
 const NavigationMobile = () => {
+    const context = useContext(HamburgerContext);
+    const { activeMobileMenu, closeMobileMenu } = context;
     const [isScrolled, setIsScrolled] = useState(false);
+
+    const closeModalMenu = () => {
+        if (!activeMobileMenu) return;
+        closeMobileMenu();
+    };
 
     useEffect(() => {
         const onScroll = () => {
@@ -58,7 +63,7 @@ const NavigationMobile = () => {
             <List>
                 <ListItem>
                     <Link passHref href="/">
-                        <a style={ { height: "100%" } }>
+                        <a onClick={ closeModalMenu } style={ { height: "100%" } }>
                             <Logo/>
                         </a>
                     </Link>

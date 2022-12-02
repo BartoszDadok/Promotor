@@ -1,11 +1,24 @@
 import React, { useState } from "react";
-import styled from "styled-components";
 import Navigation from "../../../components/organisms/Navigation/Navigation";
 import Modal from "../../../components/organisms/Modal/Modal";
 import Footer from "../../../components/organisms/Footer/Footer";
 import ReservationForm from "../../../components/organisms/ReservationForm/ReservationForm";
 import Gallery from "../../../components/organisms/Gallery/Gallery";
 import { PageParagraph } from "../../../components/atoms/PageParagraph/PageParagraph";
+import { PageWrapper } from "../../../components/atoms/HotelWrappers/PageWrapper";
+import { ContentWrapper } from "../../../components/atoms/HotelWrappers/ContentWrapper";
+import { LeftSideWrapper } from "../../../components/atoms/HotelWrappers/LeftSideWrapper";
+import { RightSideWrapper } from "../../../components/atoms/HotelWrappers/RightSideWrapper";
+import { TitleWhite } from "../../../components/atoms/HotelTitleWhite/TitleWhite";
+import { Line } from "../../../components/atoms/HotelLine/HotelLine";
+import { DetailsWrapper } from "../../../components/atoms/HotelWrappers/DetailsWrapper";
+import { PricingWrapper } from "../../../components/atoms/HotelWrappers/PricingWrapper";
+import { ListItem } from "../../../components/atoms/HotelListItem/ListItem";
+import { List } from "../../../components/atoms/HotelList/HotelList";
+import { ListDescribe } from "../../../components/atoms/HotelList/ListDescribe";
+import { Title } from "../../../components/atoms/HotelTitle/Title";
+import { HeadlineH3 } from "../../../components/atoms/HotelHeadLineH3/HotelHeadLineH3";
+import { Link } from "../../../components/atoms/HotelLink/HotelLink";
 
 import gent1 from "../../../public/assets/hotels/gentianes/1.jpg";
 import gent2 from "../../../public/assets/hotels/gentianes/2.jpg";
@@ -22,6 +35,8 @@ import gent12 from "../../../public/assets/hotels/gentianes/12.jpg";
 import gent13 from "../../../public/assets/hotels/gentianes/13.jpg";
 import gent14 from "../../../public/assets/hotels/gentianes/14.jpg";
 import gent15 from "../../../public/assets/hotels/gentianes/15.jpg";
+import { TitleMobile } from "../../../components/atoms/HotelTitleMobile/TitleMobile";
+import MobileGallery from "../../../components/organisms/MobileGallery/MobileGallery";
 
 
 const images = [
@@ -43,105 +58,6 @@ const images = [
 
 ];
 
-const PageWrapper = styled.div`
-  width: 100%;
-`;
-
-const ContentWrapper = styled.div`
-  width: 70%;
-  margin: 0 auto;
-  grid-template-columns: 1fr 3fr;
-  display: grid;
-  grid-gap: 0 1em;
-  justify-content: center;
-  justify-items: center;
-  padding-top: 100px;
-  @media (max-width: 1550px) {
-    width: 95%;
-  }
-`;
-
-const LeftSideWrapper = styled.aside`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  background-color: #0173d6;
-  padding: 1em 1.5em;
-  border-radius: 2px;
-  height: fit-content;
-`;
-
-
-const Title = styled.h2`
-  font-size: 2rem;
-  margin: 0 0 0.3em 0;
-`;
-
-const TitleWhite = styled.h2`
-  color: white;
-  font-size: 1.8rem;
-  margin: 0 0 0.3em 0;
-  text-align: center;
-`;
-
-const HeadlineH3 = styled.h3`
-  font-size: 1.2rem;
-  margin: 0.6em 0 0.2em 0;
-  font-weight: 700;
-`;
-
-const DetailsWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-
-const List = styled.ul`
-  list-style: disc;
-  color: white;
-  padding-left: 1.3em;
-  margin-bottom: 1em;
-`;
-
-interface PropsList {
-    margin?: string;
-}
-
-const ListDescribe = styled.ul<PropsList>`
-  list-style: disc;
-  padding-left: 1.3em;
-  margin: ${ ({ margin = "0" }) => margin };
-`;
-
-const ListItem = styled.li`
-  margin: 0.3em 0;
-`;
-
-const Line = styled.div`
-  display: flex;
-  justify-content: center;
-  background-color: white;
-  height: 1px;
-  width: 100%;
-  margin-bottom: 1em;
-`;
-
-const PricingWrapper = styled.div`
-  border: 1px white solid;
-  padding: 0.3em 0.5em;
-  margin-top: 1em;
-`;
-
-const Link = styled.a`
-  color: #0173d6;
-`;
-
-const RightSideWrapper = styled.div`
-  display: grid;
-  width: 100%;
-  padding: 1em;
-  grid-auto-rows: min-content;
-`;
-
 
 const Index = () => {
     const date = ["04.03.2023 - 11.03.2023", "03.03.2023 - 12.03.2023"];
@@ -154,6 +70,8 @@ const Index = () => {
             <PageWrapper>
                 <Navigation/>
                 <ContentWrapper>
+                    <TitleMobile>Apartament Gentianes *** - Puy St. Vincent</TitleMobile>
+                    <MobileGallery images={ images }/>
                     <LeftSideWrapper>
                         <ReservationForm date={ date }/>
                         <TitleWhite>Szczegóły</TitleWhite>
@@ -234,7 +152,7 @@ const Index = () => {
                     </LeftSideWrapper>
 
                     <RightSideWrapper>
-                        <Title>Apartament Gentianes ***  - Puy St. Vincent</Title>
+                        <Title>Apartament Gentianes *** - Puy St. Vincent</Title>
                         <Gallery images={ images } setModalData={ setModalData }/>
                         <Title>Opis</Title>
                         <HeadlineH3>STACJA NARCIARSKA PUY SAINT VINCENT</HeadlineH3>
@@ -275,32 +193,49 @@ const Index = () => {
                         <HeadlineH3> CENA PAKIETU ZAWIERA:</HeadlineH3>
                         <ListDescribe margin={ "0 0 0.6em 0" }>
                             <ListItem><PageParagraph>6 dniowy karnet narciarski</PageParagraph></ListItem>
-                            <ListItem><PageParagraph>7 noclegów w apartamentach bez wyżywienia</PageParagraph></ListItem>
-                            <ListItem><PageParagraph>dla jadących autokarem, przejazd Poznań - Puy Saint Vincent - Poznań autokarem klasy Lux (klimatyzacja, barek, TV, WC)</PageParagraph></ListItem>
+                            <ListItem><PageParagraph>7 noclegów w apartamentach bez
+                                wyżywienia</PageParagraph></ListItem>
+                            <ListItem><PageParagraph>dla jadących autokarem, przejazd Poznań - Puy Saint Vincent -
+                                Poznań autokarem klasy Lux (klimatyzacja, barek, TV, WC)</PageParagraph></ListItem>
                             <ListItem><PageParagraph>opieka pilota - rezydenta</PageParagraph></ListItem>
                             <ListItem><PageParagraph>energia elektryczna, ogrzewanie, skibox</PageParagraph></ListItem>
-                            <ListItem><PageParagraph>korzystanie z basenu w godzinach jego otwarcia</PageParagraph></ListItem>
-                            <ListItem><PageParagraph>ubezpieczenie podstawowe KL 20 000 Euro i NNW 5 000 Euro</PageParagraph></ListItem>
-                            <ListItem><PageParagraph>opłatę Gwarancyjna Funduszu Turystycznego i Pomocowego</PageParagraph></ListItem>
+                            <ListItem><PageParagraph>korzystanie z basenu w godzinach jego
+                                otwarcia</PageParagraph></ListItem>
+                            <ListItem><PageParagraph>ubezpieczenie podstawowe KL 20 000 Euro i NNW 5 000
+                                Euro</PageParagraph></ListItem>
+                            <ListItem><PageParagraph>opłatę Gwarancyjna Funduszu Turystycznego i
+                                Pomocowego</PageParagraph></ListItem>
                         </ListDescribe>
 
                         <HeadlineH3>CENA NIE ZAWIERA:</HeadlineH3>
 
                         <ListDescribe margin={ "0 0 1em 0" }>
-                            <ListItem><PageParagraph>końcowego sprzątania 60/70 Euro/apartament lub sprzątanie we własnym zakresie (bez opłat)</PageParagraph></ListItem>
+                            <ListItem><PageParagraph>końcowego sprzątania 60/70 Euro/apartament lub sprzątanie we
+                                własnym zakresie (bez opłat)</PageParagraph></ListItem>
                             <ListItem><PageParagraph>kaucji zwrotnej - 300 Euro/apartament</PageParagraph></ListItem>
-                            <ListItem><PageParagraph>taksy klimatycznej - 1,10 Euro/os za dzień (płatne na miejscu)</PageParagraph></ListItem>
-                            <ListItem><PageParagraph>wypożyczenia pościeli - 8 Euro lub można zabrać własną</PageParagraph></ListItem>
-                            <ListItem><PageParagraph>wypożyczenia ręczników - 8 Euro lub można zabrać własne</PageParagraph></ListItem>
-                            <ListItem><PageParagraph>dopłaty za niewykorzystane miejsce w apartamencie – 475 zł/miejsce</PageParagraph></ListItem>
-                            <ListItem><PageParagraph>dodatkowego ubezpieczenia ryzyka amatorskiego uprawiania narciarstwa lub snowboardu </PageParagraph></ListItem>
-                            <ListItem><PageParagraph>ubezpieczenia ryzyka rezygnacji z imprezy - 3% łącznej ceny; możliwość zawarcia tego ubezpieczenia tylko w chwili podpisywania umowy</PageParagraph></ListItem>
-                            <ListItem><PageParagraph>dodatkowego ubezpieczenia ryzyka chorób przewlekłych i nowotworowych ani innych ubezpieczeń</PageParagraph></ListItem>
+                            <ListItem><PageParagraph>taksy klimatycznej - 1,10 Euro/os za dzień (płatne na
+                                miejscu)</PageParagraph></ListItem>
+                            <ListItem><PageParagraph>wypożyczenia pościeli - 8 Euro lub można zabrać
+                                własną</PageParagraph></ListItem>
+                            <ListItem><PageParagraph>wypożyczenia ręczników - 8 Euro lub można zabrać
+                                własne</PageParagraph></ListItem>
+                            <ListItem><PageParagraph>dopłaty za niewykorzystane miejsce w apartamencie – 475
+                                zł/miejsce</PageParagraph></ListItem>
+                            <ListItem><PageParagraph>dodatkowego ubezpieczenia ryzyka amatorskiego uprawiania
+                                narciarstwa lub snowboardu </PageParagraph></ListItem>
+                            <ListItem><PageParagraph>ubezpieczenia ryzyka rezygnacji z imprezy - 3% łącznej ceny;
+                                możliwość zawarcia tego ubezpieczenia tylko w chwili podpisywania umowy</PageParagraph></ListItem>
+                            <ListItem><PageParagraph>dodatkowego ubezpieczenia ryzyka chorób przewlekłych i
+                                nowotworowych ani innych ubezpieczeń</PageParagraph></ListItem>
                         </ListDescribe>
                         <HeadlineH3>WAŻNE INFORMACJE</HeadlineH3>
                         <ListDescribe margin={ "0 0 2em 0" }>
-                            <ListItem><PageParagraph>dla jadących autokarem, zbiórka w dniu wyjazdu o godz. 17.45, na parkingu przy starym ZOO ul.Zwierzyniecka; wyjazd godz. 18.00; powrót w to samo miejsce ok. godz 8.00 w dniu przyjazdu (miejsce zbiórki może ulec zmianie)</PageParagraph></ListItem>
-                            <ListItem><PageParagraph>wymagany jest dowód osobisty lub paszport</PageParagraph></ListItem>
+                            <ListItem><PageParagraph>dla jadących autokarem, zbiórka w dniu wyjazdu o godz. 17.45, na
+                                parkingu przy starym ZOO ul.Zwierzyniecka; wyjazd godz. 18.00; powrót w to samo miejsce
+                                ok. godz 8.00 w dniu przyjazdu (miejsce zbiórki może ulec
+                                zmianie)</PageParagraph></ListItem>
+                            <ListItem><PageParagraph>wymagany jest dowód osobisty lub
+                                paszport</PageParagraph></ListItem>
                             <ListItem>
                                 <PageParagraph>
                                     wymagana jest karta EKUZ (Europejska Karta Ubezpieczenia Zdrowotnego; informacje

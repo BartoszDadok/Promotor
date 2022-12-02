@@ -27,7 +27,6 @@ const MainTemplate = (props: Props) => {
                 <ModalFilterPanel/>
                 <MobileMenu/>
             </div>
-
         </>
     );
 };
