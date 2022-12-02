@@ -5,7 +5,7 @@ import styled from "styled-components";
 
 const HeaderContainer = styled.header`
   position: relative;
-  @media (max-width: 49em) {
+  @media (max-width: 60em) {
     display: none;
   }
 `;

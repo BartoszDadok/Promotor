@@ -9,7 +9,6 @@ import {
 } from "../../organisms/Navigation/Navigation.styles";
 import Link from "next/link";
 import { Logo } from "../../atoms/Logo/Logo";
-import { HeadLineH1 } from "../../atoms/HeadLineH1/HeadLineH1";
 
 interface Props {
     isScrolled: boolean;
@@ -21,7 +20,7 @@ const MenuDesktop = ({ isScrolled }: Props) => {
             <LeftSide>
                 <ListItem>
                     <Link passHref href="/">
-                        <a style={{height: "100%"}}>
+                        <a style={ { height: "100%" } }>
                             <Logo/>
                         </a>
                     </Link>
@@ -30,7 +29,7 @@ const MenuDesktop = ({ isScrolled }: Props) => {
             </LeftSide>
             <RightSide>
                 <ListItem>
-                        <StyledLink href="/#oferta">OFERTA</StyledLink>
+                    <StyledLink href="/#oferta">OFERTA</StyledLink>
                 </ListItem>
                 <ListItem>
                     <Link passHref href="/katalog">
@@ -55,7 +54,7 @@ const MenuDesktop = ({ isScrolled }: Props) => {
                         <StyledLink>KONTAKT</StyledLink>
                     </Link>
                 </ListItem>
-                <ListItem arrowSrc={ arrowSrc.src }  className={ isScrolled ? "isScrolled" : "" }>
+                <ListItem arrowSrc={ arrowSrc.src } className={ isScrolled ? "isScrolled" : "" }>
                     <Link passHref href="tel:+48618676623">
                         <StyledLink>+48 61 867 66 23</StyledLink>
                     </Link>

@@ -8,7 +8,7 @@ import Footer from "../components/organisms/Footer/Footer";
 const Home: NextPage = () => {
     return (
         <div>
-            <Navigation homePage={ "homePage" }/>
+
             <Header/>
             <News/>
             <Offer/>

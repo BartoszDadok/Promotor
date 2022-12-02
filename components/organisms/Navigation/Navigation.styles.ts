@@ -2,6 +2,7 @@ import styled, { keyframes } from "styled-components";
 
 export const NavigationDesktop = styled.nav<{ stripeSrc?: string }>`
   display: flex;
+  background-color: transparent;
   justify-content: space-between;
   position: fixed;
   z-index: 1000;
@@ -63,7 +64,7 @@ export const ListItem = styled.li<{ arrowSrc?: string }>`
   align-items: center;
   margin: 0 0.25em;
   list-style: none;
-  color: white;
+  text-shadow: none;
   height: 100%;
   
 
@@ -87,12 +88,57 @@ export const ListItem = styled.li<{ arrowSrc?: string }>`
 
 export const StyledLink = styled.a`
   background-color: transparent;
-  border: none;
   padding: 0.5em;
   font-size: 1rem;
   font-weight: 300;
   cursor: pointer;
   letter-spacing: 1px;
+  color: white;
+
+
+  @media (max-width: 1300px) {
+    font-size: 1rem;
+  }
+  @media (max-width: 1200px) {
+    font-size: 1rem;
+    padding: 0.2em;
+  }
+  
+  @media (max-width: 1100px) {
+    font-size: 0.8rem;
+    padding: 0.2em;
+  }
+
+  :after {
+    content: "";
+    width: 0;
+    height: 2px;
+    position: absolute;
+    top: 80%;
+    left: 0;
+    background-color: #fff;
+    transition: width 0.5s;
+  }
+
+  :hover {
+    transition: all 0.5s;
+  }
+
+  :hover:after {
+    width: 100%;
+  }
+`;
+
+export const StyledButton = styled.button`
+  border: none;
+  background-color: transparent;
+  padding: 0.5em;
+  font-size: 1rem;
+  font-weight: 300;
+  cursor: pointer;
+  letter-spacing: 1px;
+  color: white;
+
 
   @media (max-width: 1300px) {
     font-size: 1rem;

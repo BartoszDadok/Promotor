@@ -27,6 +27,7 @@ const Container = styled.div`
 const FontWrapper = styled.div`
   margin: 3px 5px 0 0;
 `;
+
 const FilterButton = () => {
     const context = useContext(MobileFilterPanelContext);
 

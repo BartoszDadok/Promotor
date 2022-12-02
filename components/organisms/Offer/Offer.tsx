@@ -1,8 +1,7 @@
-import React, { FormEvent, useContext, useState } from "react";
-import { data } from "../../../public/assets/data";
+import React, { FormEvent, useContext } from "react";
 import { PageParagraph } from "../../atoms/PageParagraph/PageParagraph";
 import Item from "../Item/Item";
-import { InitialStateTypes, DateTypes, Translations, FilteringDataTypes, ItemTypes } from "./OfferTypes";
+import { InitialStateTypes, Translations, ItemTypes } from "./OfferTypes";
 import {
     OfferWrapper,
     FilterWrapper,
@@ -37,6 +36,7 @@ import { FilteringContext } from "../../../contexts/FilteringContext";
 import collectFilteringData from "../../../helpers/collcectFilteringData";
 import filterData from "../../../helpers/filterData";
 import { translations } from "../../../helpers/translations";
+
 const images = {
     angelo,
     cevedale,
@@ -58,7 +58,6 @@ const images = {
 };
 
 const Offer = () => {
-
     const context = useContext(FilteringContext);
     const filteringState = context.filteringState;
     const setFilteringState = context.changeFilteringState;
@@ -72,37 +71,53 @@ const Offer = () => {
 
     const filteredData = filterData(filteringCategories, collectedFilteringData);
 
-    const filteringElements = Object.values(collectedFilteringData).flat();
-
+    const filteringElements = Object.values(collectedFilteringData).flat(); //any tu jest
 
     function handleFilteredInputs(e: FormEvent<HTMLInputElement | HTMLSelectElement>) {
         const target = e.target as HTMLInputElement;
         const key = target?.parentElement?.parentElement?.dataset.name;
 
-        // @ts-ignore
+
         const toFilter = translations[target.name as keyof Translations] ? translations[target.name as keyof Translations] : target.name;
+
+
         if (target.tagName === "SELECT") {
             // @ts-ignore
             const toFilter = translations[target.value as keyof Translations] ? translations[target.value as keyof Translations] : target.value;
             if (target.value === "all") {
                 setFilteringState({ ...filteringState, date: { ...preparedDataForState } });
             }
-            // @ts-ignore
-            setFilteringState({ ...filteringState, date: { ...preparedDataForState, [toFilter]: !filteringState[key as keyof InitialStateTypes][toFilter as keyof InitialStateTypes], }, });
+
+            setFilteringState({
+                ...filteringState,
+                date: {
+                    ...preparedDataForState,
+                    [toFilter]: !filteringState[key as keyof InitialStateTypes][toFilter as keyof InitialStateTypes[keyof InitialStateTypes]],
+                },
+            });
             return;
 
         }
+
         const objectIsNested = Object.keys(filteringState[key as keyof InitialStateTypes]).length;
 
+
         if (!objectIsNested) {
-            setFilteringState({
+            let newState = {
                 ...filteringState,
                 [key as keyof InitialStateTypes]: !filteringState[key as keyof InitialStateTypes],
-            });
+            };
+            setFilteringState(newState);
             return;
         } else {
-            // @ts-ignore
-            setFilteringState({ ...filteringState, [key as keyof InitialStateTypes]: { ...filteringState[key as keyof InitialStateTypes], [toFilter]: !filteringState[key as keyof InitialStateTypes][toFilter], }, });
+            const newState = {
+                ...filteringState,
+                [key as keyof InitialStateTypes]: {
+                    ...filteringState[key as keyof InitialStateTypes],
+                    [toFilter]: !filteringState[key as keyof InitialStateTypes][toFilter as keyof InitialStateTypes[keyof InitialStateTypes]],
+                },
+            };
+            setFilteringState(newState);
             return;
 
         }

@@ -10,6 +10,7 @@ export const HeadLineH3 = styled.h3`
   @media (max-width: 60em) {
     margin: 1.5em auto 0.5em auto;
   }
+  padding-top: 100px;
 `;
 
 export const OfferWrapper = styled.section`

@@ -23,6 +23,7 @@ import angelo13 from "../../../public/assets/hotels/angelo/13.jpg";
 import angelo14 from "../../../public/assets/hotels/angelo/14.jpg";
 import angelo15 from "../../../public/assets/hotels/angelo/15.jpg";
 import angelo16 from "../../../public/assets/hotels/angelo/16.jpg";
+import MobileGallery from "../../../components/organisms/MobileGallery/MobileGallery";
 
 const images = [
     { url: angelo1.src, title: "Hotel Angelo z zewnątrz" },
@@ -59,6 +60,9 @@ const ContentWrapper = styled.div`
   @media (max-width: 1550px) {
     width: 95%;
   }
+  @media (max-width: 1000px) {
+    grid-template-columns: 1fr
+  }
 `;
 
 const LeftSideWrapper = styled.aside`
@@ -75,7 +79,23 @@ const LeftSideWrapper = styled.aside`
 const Title = styled.h2`
   font-size: 2rem;
   margin: 0 0 0.3em 0;
+  @media (max-width: 60em) {
+    display: none;
+
+  }
 `;
+
+const TitleMobile = styled.h2`
+  display: none;
+  font-size: 2rem;
+  margin: 0 0 0.3em 0;
+  @media (max-width: 1000px) {
+    font-size: 1.6rem;
+    display: block;
+  }
+
+`;
+
 
 const TitleWhite = styled.h2`
   color: white;
@@ -154,6 +174,8 @@ const Index = () => {
             <PageWrapper>
                 <Navigation/>
                 <ContentWrapper>
+                    <TitleMobile>Hotel Angelo - Val di Sole - Passo del Tonale </TitleMobile>
+                    <MobileGallery images={images}/>
                     <LeftSideWrapper>
                         <ReservationForm date={ date }/>
                         <TitleWhite>Szczegóły</TitleWhite>
@@ -169,7 +191,8 @@ const Index = () => {
                             <PageParagraph margin={ "0 0 0.6em 0" }
                                            color={ "white" }><b>Kraj: </b>Włochy
                             </PageParagraph>
-                            <PageParagraph margin={ "0 0 0.6em 0" } color={ "white" }><b>Miejscowość: </b>Passo del Tonale
+                            <PageParagraph margin={ "0 0 0.6em 0" } color={ "white" }><b>Miejscowość: </b>Passo del
+                                Tonale
                             </PageParagraph>
                             <PageParagraph margin={ "0 0 0.6em 0" } color={ "white" }><b>Rodzaj
                                 zakwaterowania: </b>Hotel
@@ -279,7 +302,7 @@ const Index = () => {
                     </LeftSideWrapper>
 
                     <RightSideWrapper>
-                        <Title>Hotel Angelo - Val di Sole - Passo del Tonale </Title>
+                        <Title>Hotel Angelo - Val di Sole - Passo del Tonale</Title>
                         <Gallery images={ images } setModalData={ setModalData }/>
                         <Title>Opis</Title>
                         <HeadlineH3>REGION NARCIARSKI VAL DI SOLE –

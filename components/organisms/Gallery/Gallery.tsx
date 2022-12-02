@@ -2,6 +2,13 @@ import React from "react";
 import Image from "next/image";
 import styled from "styled-components";
 
+const GalleryWrapper = styled.div`
+  display: block;
+  @media (max-width: 1000px) {
+    display: none;
+
+  }
+`;
 const Title = styled.h2`
   font-size: 2rem;
   margin: 0 0 0.3em 0;
@@ -17,6 +24,9 @@ const FirstRow = styled.div`
   grid-template-areas: 
   "smallImage bigImage"
   "smallImage2 bigImage";
+
+
+
 `;
 
 const SecondRow = styled.div`
@@ -116,7 +126,7 @@ const Gallery = ({
     };
 
     return (
-        <div>
+        <GalleryWrapper>
             <FirstRow>
                 <SingleImage1>
                     <Button data-id="1" onClick={ (e) => handleModal(e) }>
@@ -158,7 +168,7 @@ const Gallery = ({
                                         <Image style={ { filter: "brightness(35%)" } } alt={ image.title }
                                                src={ image.url } layout={ "fill" }
                                                objectFit={ "cover" }/>
-                                        <p>+ {images.length - 8} zdjęć</p>
+                                        <p>+ { images.length - 8 } zdjęć</p>
                                     </Button>
                                 </SingleImage>
                             );
@@ -166,7 +176,7 @@ const Gallery = ({
                     })
                 }
             </SecondRow>
-        </div>
+        </GalleryWrapper>
 
 
     );

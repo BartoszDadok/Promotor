@@ -28,7 +28,28 @@ export interface InitialStateTypes {
         "Autokar": boolean,
         "Dojazd własny": boolean,
     },
-};
+}
+
+export interface Keys {
+    "Włochy": boolean,
+    "Francja": boolean,
+    "Austria": boolean,
+    "Czechy": boolean,
+    "Pełne": boolean,
+    "Tylko śniadania": boolean,
+    "Bez wyżywienia": boolean,
+    "Skipass": boolean,
+    "Wczasy ogólne": boolean,
+    "Wczasy ze szkółkami dla dzieci": boolean,
+    "Obozy młodzieżowe": boolean,
+    "Express narty": boolean,
+    "Ski 50+ aktywnie": boolean,
+    "Hotel": boolean,
+    "Apartament": boolean,
+    "Ośrodek sportowy": boolean,
+    "Autokar": boolean,
+    "Dojazd własny": boolean,
+}
 
 export interface Translations {
     "italy": string,
@@ -49,7 +70,7 @@ export interface Translations {
     "skipass": string,
     "own/bus": string,
     "own": string,
-};
+}
 
 export interface DateTypes {
     "03.03.2023 - 12.03.2023": boolean;
@@ -78,6 +99,7 @@ export interface FilteringDataTypes {
     accomodation: string[],
     tranposrt: string[],
 }
+
 export interface ItemTypes {
     id: number,
     country: string,

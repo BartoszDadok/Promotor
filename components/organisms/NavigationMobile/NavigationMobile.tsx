@@ -11,24 +11,19 @@ import Link from "next/link";
 const NavigationMobileWrapper = styled.nav`
   position: fixed;
   width: 100%;
-  height: 70px;
+  height: 4.3em;
   display: flex;
   padding: 0.3em;
   justify-content: space-between;
   z-index: 1000;
-  @media (min-width: 60em) {
+  @media (min-width: 1000px) {
     display: none;
 
   }
   @media (max-width: 60em) {
-    background-color: transparent;
-  }
-  &.isScrolled {
     background-color: #0173d6;
   }
-  @media (max-width: 49em) {
-    background-color: #0173d6;
-  }
+
 `;
 const List = styled.ul`
   display: flex;

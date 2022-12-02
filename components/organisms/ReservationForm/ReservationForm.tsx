@@ -29,6 +29,7 @@ const InputForm = styled.input`
   margin-bottom: 0.6em;
 `;
 const SelectForm = styled.select`
+  width: 100%;
   border: none;
   padding: 0.4em;
   margin-bottom: 0.6em;

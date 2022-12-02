@@ -18,6 +18,7 @@ const FilterSidebar = styled.div`
   justify-content: center;
   height: fit-content;
   padding: 1em;
+  
 `;
 export const FieldContainer = styled.div`
   display: flex;
@@ -108,6 +109,7 @@ const ExitButton = styled.button`
   margin: 0;
 `;
 export const Button = styled.button`
+  cursor: pointer;
   background-color: #0173d6;
   padding: 1em;
   color: white;
@@ -118,14 +120,12 @@ export const Button = styled.button`
 
 const ModalFilterPanel = () => {
     const [state, setState] = useState<InitialStateTypes>(initialState);
-    console.log(state);
 
     const context = useContext(MobileFilterPanelContext);
     const activeFilterPanel = context.activeFilterPanel;
     const closeFilterPanel = context.closeFilterPanel;
 
     const filteringContext = useContext(FilteringContext);
-    const filteringState = filteringContext.filteringState;
     const setFilteringState = filteringContext.changeFilteringState;
 
     const applyFilters = () => {
@@ -322,4 +322,4 @@ const ModalFilterPanel = () => {
     );
 };
 
-export default ModalFilterPanel;
+export default ModalFilterPanel

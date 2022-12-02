@@ -36,7 +36,7 @@ export const HamburgerInner = styled.span`
   left: 0;
   top: 50%;
   transform: translateY(-50%);
-  transition: background-color .1s .2s ease-in-out;
+  transition: background-color .1s .1s ease-in-out;
 
   &.active {
     background-color: transparent;
@@ -58,7 +58,7 @@ export const HamburgerInner = styled.span`
     content: '';
     top: -10px;
     left: 0;
-    transition: transform .2s .2s ease-in-out;
+    transition: transform .1s .1s ease-in-out;
   }
 
   ::after {
@@ -69,6 +69,6 @@ export const HamburgerInner = styled.span`
     content: '';
     top: 10px;
     left: 0;
-    transition: transform .2s .2s ease-in-out;
+    transition: transform .1s .1s ease-in-out;
   }
 `;

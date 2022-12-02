@@ -4,7 +4,7 @@ import { PageParagraph } from "../../atoms/PageParagraph/PageParagraph";
 
 const NewsContainer = styled.div`
   width: 60%;
-  margin: 0 auto 1em auto;
+  margin: 0 auto -100px auto;
   padding-top: 2em;
 
   ol {
@@ -16,7 +16,7 @@ const NewsContainer = styled.div`
   @media (max-width: 1400px) {
     width: 80%;
   }
-  @media (max-width: 49em) {
+  @media (max-width: 60em) {
     padding-top: 5.5em;
   }
 `;
