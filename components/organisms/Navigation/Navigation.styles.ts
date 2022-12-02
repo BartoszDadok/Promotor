@@ -10,7 +10,7 @@ export const NavigationDesktop = styled.nav<{ stripeSrc?: string }>`
   width: 100%;
   padding: 0 1em;
 
-  @media (max-width: 60em) {
+  @media (max-width: 1000px) {
     display: none;
   }
 

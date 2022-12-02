@@ -16,7 +16,7 @@ const NewsContainer = styled.div`
   @media (max-width: 1400px) {
     width: 80%;
   }
-  @media (max-width: 60em) {
+  @media (max-width: 1000px) {
     padding-top: 5.5em;
   }
 `;

@@ -18,7 +18,7 @@ const NavigationMobileWrapper = styled.nav`
     display: none;
 
   }
-  @media (max-width: 60em) {
+  @media (max-width: 1000px) {
     background-color: #0173d6;
   }
 

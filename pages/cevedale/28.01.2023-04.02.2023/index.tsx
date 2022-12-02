@@ -19,39 +19,10 @@ import { List } from "../../../components/atoms/HotelList/HotelList";
 import { ListDescribe } from "../../../components/atoms/HotelList/ListDescribe";
 import { Title } from "../../../components/atoms/HotelTitle/Title";
 import { HeadlineH3 } from "../../../components/atoms/HotelHeadLineH3/HotelHeadLineH3";
-import {Link} from "../../../components/atoms/HotelLink/HotelLink"
-
-import cevedele1 from "../../../public/assets/hotels/cevedele/1.jpg";
-import cevedele2 from "../../../public/assets/hotels/cevedele/2.jpg";
-import cevedele3 from "../../../public/assets/hotels/cevedele/3.jpg";
-import cevedele4 from "../../../public/assets/hotels/cevedele/4.jpg";
-import cevedele5 from "../../../public/assets/hotels/cevedele/5.jpg";
-import cevedele6 from "../../../public/assets/hotels/cevedele/6.jpg";
-import cevedele7 from "../../../public/assets/hotels/cevedele/7.jpg";
-import cevedele8 from "../../../public/assets/hotels/cevedele/8.jpg";
-import cevedele9 from "../../../public/assets/hotels/cevedele/9.jpg";
-import cevedele10 from "../../../public/assets/hotels/cevedele/10.jpg";
-import cevedele11 from "../../../public/assets/hotels/cevedele/11.jpg";
-import cevedele12 from "../../../public/assets/hotels/cevedele/12.jpg";
-import cevedele13 from "../../../public/assets/hotels/cevedele/13.jpg";
+import { Link } from "../../../components/atoms/HotelLink/HotelLink";
 import MobileGallery from "../../../components/organisms/MobileGallery/MobileGallery";
+import { images } from "../../../utils/cevedaleImages";
 
-const images = [
-    { url: cevedele1.src, title: "Hotel Cevedele z zewnątrz" },
-    { url: cevedele2.src, title: "Hotel Cevedele wewnątrz" },
-    { url: cevedele3.src, title: "Hotel Cevedele wewnątrz" },
-    { url: cevedele4.src, title: "Hotel Cevedele wewnątrz" },
-    { url: cevedele5.src, title: "Hotel Cevedele z zewnątrz" },
-    { url: cevedele6.src, title: "Hotel Cevedele wewnątrz" },
-    { url: cevedele7.src, title: "Hotel Cevedele wewnątrz" },
-    { url: cevedele8.src, title: "Hotel Cevedele wewnątrz" },
-    { url: cevedele9.src, title: "Hotel Cevedele z zewnątrz" },
-    { url: cevedele10.src, title: "Hotel Cevedele wewnątrz" },
-    { url: cevedele11.src, title: "Hotel Cevedele wewnątrz" },
-    { url: cevedele12.src, title: "Hotel Cevedele wewnątrz" },
-    { url: cevedele13.src, title: "Hotel Cevedele wewnątrz" },
-
-];
 
 const Index = () => {
     const date = ["28.01.2023 - 04.02.2023", "27.01.2023 - 05.02.2023"];
@@ -356,7 +327,8 @@ const Index = () => {
                                 płatne)</PageParagraph></ListItem>
                             <ListItem><PageParagraph>przejazd autokarem klasy Lux na trasie
                                 Poznań-Pejo-Poznań</PageParagraph></ListItem>
-                            <ListItem><PageParagraph>dla jadących autokarem transfery z hotelu do stacji narciarskich (autokar lub
+                            <ListItem><PageParagraph>dla jadących autokarem transfery z hotelu do stacji narciarskich
+                                (autokar lub
                                 skibus)</PageParagraph></ListItem>
                             <ListItem><PageParagraph>korzystanie z wellness, fitness, basenu w hotelu w godzinach ich
                                 otwarcia</PageParagraph></ListItem>
@@ -380,7 +352,8 @@ const Index = () => {
 
                         <HeadlineH3>CENA NIE ZAWIERA:</HeadlineH3>
                         <ListDescribe margin={ "0 0 0.6em 0" }>
-                            <ListItem><PageParagraph fontWeight={ "700" }>opłaty na 6-dniowy skipass Combi 3+3</PageParagraph></ListItem>
+                            <ListItem><PageParagraph fontWeight={ "700" }>opłaty na 6-dniowy skipass Combi
+                                3+3</PageParagraph></ListItem>
                             <ListDescribe>
                                 <ListItem>
                                     <PageParagraph fontWeight={ "700" }>
@@ -424,8 +397,10 @@ const Index = () => {
                                 </ListItem>
                             </ListDescribe>
                         </ListDescribe>
-                        <PageParagraph margin={ "0 0 0.5em 0" }>Junior ur. po 30.04.2014, dzieci ur. po 30.04.2006 skipass gratis (1:1).</PageParagraph>
-                        <PageParagraph margin={ "0 0 0.5em 0" }>Ubezpieczenie karnetu narciarskiego 2,50 Euro/dzień; 15 Euro/6 dni.</PageParagraph>
+                        <PageParagraph margin={ "0 0 0.5em 0" }>Junior ur. po 30.04.2014, dzieci ur. po 30.04.2006
+                            skipass gratis (1:1).</PageParagraph>
+                        <PageParagraph margin={ "0 0 0.5em 0" }>Ubezpieczenie karnetu narciarskiego 2,50 Euro/dzień; 15
+                            Euro/6 dni.</PageParagraph>
 
 
                         <ListDescribe margin={ "0 0 1em 0" }>
@@ -436,7 +411,10 @@ const Index = () => {
                             <ListItem><PageParagraph>opłaty za fakultatywne przedszkole narciarskie BABY SKI (dzieci 4-7
                                 lat) - opieka instruktora, nauka jazdy na nartach, 6 dni ok. 10.00-15.30 - 1100
                                 zł/dziecko/tydzień</PageParagraph></ListItem>
-                            <ListItem><PageParagraph>opłaty za fakultatywne szkolenie narciarskie osób dorosłych w grupie - 600 zł/os. (6 dni x 2 godziny dziennie); należy zgłosić przy podpisywaniu umowy, szkolenie uruchamiamy przy zgłoszeniu min. 5 os. w tej samej grupie</PageParagraph></ListItem>
+                            <ListItem><PageParagraph>opłaty za fakultatywne szkolenie narciarskie osób dorosłych w
+                                grupie - 600 zł/os. (6 dni x 2 godziny dziennie); należy zgłosić przy podpisywaniu
+                                umowy, szkolenie uruchamiamy przy zgłoszeniu min. 5 os. w tej samej
+                                grupie</PageParagraph></ListItem>
                             <ListItem><PageParagraph>dodatkowego ubezpieczenia ryzyka amatorskiego uprawiania
                                 narciarstwa
                                 lub snowboardu - ZALECAMY !!!</PageParagraph></ListItem>
@@ -445,12 +423,17 @@ const Index = () => {
                                 zawarcia tego ubezpieczenia tylko w chwili podpisywania umowy</PageParagraph></ListItem>
                             <ListItem><PageParagraph>ubezpieczenia ryzyka chorób przewlekłych i nowotworowych ani innych
                                 ubezpieczeń</PageParagraph></ListItem>
-                            <ListItem><PageParagraph>taksy klimatycznej – 2 Euro/os/dzień od 14 roku życia, płatna w hotelu w recepcji</PageParagraph></ListItem>
+                            <ListItem><PageParagraph>taksy klimatycznej – 2 Euro/os/dzień od 14 roku życia, płatna w
+                                hotelu w recepcji</PageParagraph></ListItem>
                             <ListItem><PageParagraph>opłat za napoje do obiadokolacji</PageParagraph></ListItem>
-                            <ListItem><PageParagraph>dopłaty do pokoju 1os – 450 zł/pokój/tydzień</PageParagraph></ListItem>
-                            <ListItem><PageParagraph>dopłaty do pokoju Family Junior Suite (2+2) - 950 zł/pokój/tydzień</PageParagraph></ListItem>
-                            <ListItem><PageParagraph>dopłata do pokoju Junior Suite - 650 zł/pokój/tydzień</PageParagraph></ListItem>
-                            <ListItem><PageParagraph>dojazdu do/z Pejo ani transferów na stok. Istnieje możliwość dokupienia transferów do stacji narciarskich – 140 zł/osoba</PageParagraph></ListItem>
+                            <ListItem><PageParagraph>dopłaty do pokoju 1os – 450
+                                zł/pokój/tydzień</PageParagraph></ListItem>
+                            <ListItem><PageParagraph>dopłaty do pokoju Family Junior Suite (2+2) - 950
+                                zł/pokój/tydzień</PageParagraph></ListItem>
+                            <ListItem><PageParagraph>dopłata do pokoju Junior Suite - 650
+                                zł/pokój/tydzień</PageParagraph></ListItem>
+                            <ListItem><PageParagraph>dojazdu do/z Pejo ani transferów na stok. Istnieje możliwość
+                                dokupienia transferów do stacji narciarskich – 140 zł/osoba</PageParagraph></ListItem>
                         </ListDescribe>
                         <HeadlineH3>WAŻNE INFORMACJE</HeadlineH3>
                         <ListDescribe margin={ "0 0 2em 0" }>

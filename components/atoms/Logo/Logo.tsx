@@ -47,7 +47,7 @@ export const Logo = () => {
         <LogoWrapper>
             <ImageWrapper>
                 <Image alt={ "Logo biura podróży Promotor" } src={ logoSrc } objectFit={ "contain" }
-                       layout={ "fill" }/>
+                       layout={ "fill" } priority={true}/>
             </ImageWrapper>
             <H1Headline>Biuro podróży z zimowymi wakacjami</H1Headline>
         </LogoWrapper>

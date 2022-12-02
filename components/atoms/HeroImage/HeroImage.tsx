@@ -4,19 +4,19 @@ import Image from "next/image";
 import styled from "styled-components";
 
 const Picture = styled.picture`
-  display: block;
+  display: flex;
   width: 100%;
   height: 100%;
+  justify-content: center;
 `;
 const HeroImage = () => {
     return (
         <Picture>
-            <source srcSet={ heroImgSrc.src } media="(min-width: 1000px)"/>
-            <Image unoptimized={ true } src={ heroImgSrc } alt="Rodzina ciesząca się zimowymi wakacjami"
+            <Image src={ heroImgSrc } alt="Rodzina ciesząca się zimowymi wakacjami"
                    priority={ true }/>
 
         </Picture>
     );
 };
 
-export default HeroImage;
+export default HeroImage
