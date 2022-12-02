@@ -61,6 +61,10 @@ const InputsWrapper = styled.div`
   width: 100%;
   display: flex;
   flex-direction: row;
+  @media (max-width: 1000px) {
+    flex-direction: column;
+  }
+  
 `;
 
 const InputWrapper = styled.div`
