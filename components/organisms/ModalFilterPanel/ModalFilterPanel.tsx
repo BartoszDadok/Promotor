@@ -139,19 +139,16 @@ const ModalFilterPanel = () => {
         const target = e.target as HTMLInputElement;
         const key = target?.parentElement?.parentElement?.dataset.name;
 
-        // @ts-ignore
         const toFilter = translations[target.name as keyof Translations] ? translations[target.name as keyof Translations] : target.name;
         if (target.tagName === "SELECT") {
-            // @ts-ignore
             const toFilter = translations[target.value as keyof Translations] ? translations[target.value as keyof Translations] : target.value;
             if (target.value === "all") {
                 setState({ ...state, date: { ...preparedDataForState } });
             }
-            // @ts-ignore
             setState({ ...state,
                 date: {
                     ...preparedDataForState,
-                    [toFilter]: !state[key as keyof InitialStateTypes][toFilter as keyof InitialStateTypes],
+                    [toFilter]: !state[key as keyof InitialStateTypes][toFilter as keyof InitialStateTypes[keyof InitialStateTypes]],
                 },
             });
             return;
@@ -166,11 +163,10 @@ const ModalFilterPanel = () => {
             });
             return;
         } else {
-            // @ts-ignore
             setState({ ...state,
                 [key as keyof InitialStateTypes]: {
                     ...state[key as keyof InitialStateTypes],
-                    [toFilter]: !state[key as keyof InitialStateTypes][toFilter],
+                    [toFilter]: !state[key as keyof InitialStateTypes][toFilter as keyof InitialStateTypes[keyof InitialStateTypes]],
                 },
             });
             return;

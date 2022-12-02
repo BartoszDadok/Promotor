@@ -13,7 +13,7 @@ const ModalWrapper = styled.div`
   pointer-events: none;
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
-  
+
   &.isActive {
     visibility: visible;
     pointer-events: all;
@@ -61,7 +61,7 @@ const StyledLink = styled.a`
 `;
 
 const MobileMenu = () => {
-    const nav = useRef<HTMLElement>(null);
+    const nav = useRef<HTMLDivElement>(null);
     const context = useContext(HamburgerContext);
     const { activeMobileMenu, closeMobileMenu } = context;
 
@@ -79,8 +79,12 @@ const MobileMenu = () => {
     useEffect(() => {
         if (!nav.current) return;
         if (!activeMobileMenu) return;
-        nav.current.addEventListener("click", handleClickOutsideMenu);
-        return () => removeEventListener("click", handleClickOutsideMenu);
+        const navRef = nav.current;
+        navRef.addEventListener("click", (e) => handleClickOutsideMenu(e));
+        return () => {
+            if (!navRef) return;
+            navRef.removeEventListener("click", (e) => handleClickOutsideMenu(e));
+        };
     }, [activeMobileMenu]);
 
     return (
