@@ -1,4 +1,4 @@
-import React, { FormEvent, useContext } from "react";
+import React, { FormEvent, useContext} from "react";
 import { PageParagraph } from "../../atoms/PageParagraph/PageParagraph";
 import Item from "../Item/Item";
 import { InitialStateTypes, Translations, ItemTypes } from "./OfferTypes";
@@ -36,6 +36,7 @@ import { FilteringContext } from "../../../contexts/FilteringContext";
 import collectFilteringData from "../../../helpers/collcectFilteringData";
 import filterData from "../../../helpers/filterData";
 import { translations } from "../../../helpers/translations";
+
 
 const images = {
     angelo,
@@ -76,10 +77,7 @@ const Offer = () => {
     function handleFilteredInputs(e: FormEvent<HTMLInputElement | HTMLSelectElement>) {
         const target = e.target as HTMLInputElement;
         const key = target?.parentElement?.parentElement?.dataset.name;
-
-
         const toFilter = translations[target.name as keyof Translations] ? translations[target.name as keyof Translations] : target.name;
-
 
         if (target.tagName === "SELECT") {
             // @ts-ignore

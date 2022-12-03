@@ -17,6 +17,7 @@ export const NavigationDesktop = styled.nav<{ stripeSrc?: string }>`
   
   &.isScrolled {
     background-image: url(${ ({ stripeSrc }) => stripeSrc });
+    background-size: cover;
   }
 `;
 
