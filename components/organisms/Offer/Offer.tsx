@@ -123,7 +123,6 @@ const Offer = () => {
         }
     }
 
-
     return (
         <>
             <HeadLineH3 id="oferta">Znajdź swoje zimowe wczasy</HeadLineH3>

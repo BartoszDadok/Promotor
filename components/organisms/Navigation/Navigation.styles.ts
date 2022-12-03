@@ -114,7 +114,7 @@ export const StyledLink = styled.a`
     width: 0;
     height: 2px;
     position: absolute;
-    top: 80%;
+    top: 95%;
     left: 0;
     background-color: #fff;
     transition: width 0.5s;
@@ -158,7 +158,7 @@ export const StyledButton = styled.button`
     width: 0;
     height: 2px;
     position: absolute;
-    top: 80%;
+    top: 95%;
     left: 0;
     background-color: #fff;
     transition: width 0.5s;

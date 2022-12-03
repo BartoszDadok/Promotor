@@ -6,6 +6,10 @@ export default class MyDocument extends Document {
         return (
             <Html lang="en">
                 <Head>
+                    {/*To preload heroImage photo only on desktops*/}
+                    <link rel="preload" href="/_next/static/media/promotor-family-image.3c1a7147.jpg" as="image"
+                          media="(min-width: 1000px)"/>
+
                     <link rel="preload" href="/fonts/subset-Lato-BoldItalic.woff2" as="font" type="font/woff2"
                           crossOrigin=""/>
                     <link rel="preload" href="/fonts/subset-Lato-Regular.woff2" as="font" type="font/woff2"
@@ -14,7 +18,6 @@ export default class MyDocument extends Document {
                           crossOrigin=""/>
                     <link rel="preload" href="/fonts/subset-Lato-Bold.woff2" as="font" type="font/woff2"
                           crossOrigin=""/>
-
                 </Head>
                 <body>
                 <Main/>

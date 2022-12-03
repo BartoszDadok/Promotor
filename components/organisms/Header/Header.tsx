@@ -8,6 +8,7 @@ const HeaderContainer = styled.header`
   @media (max-width: 1000px) {
     display: none;
   }
+  aspect-ratio: 3.7/1;
 `;
 
 const HeadLineContainer = styled.div`
