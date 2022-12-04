@@ -58,6 +58,8 @@ const images = {
     derbyclub: der,
 };
 
+
+
 const Offer = () => {
     const context = useContext(FilteringContext);
     const filteringState = context.filteringState;

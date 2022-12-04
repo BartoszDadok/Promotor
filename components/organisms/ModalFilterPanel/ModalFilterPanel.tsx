@@ -209,8 +209,8 @@ const ModalFilterPanel = () => {
                             <Label htmlFor="italy-mobile">Włochy</Label>
                         </InputContainer>
                         <InputContainer>
-                            <Input onInput={ (e) => handleFilteredInputs(e) } type="checkbox" id="france-mobile"
-                                   name="franceM"/>
+                            <Input onInput={ (e) => handleFilteredInputs(e) } type="checkbox" id="franceM-mobile"
+                                   name="france"/>
                             <Label htmlFor="franceM-mobile">Francja</Label>
                         </InputContainer>
                         <InputContainer>
@@ -314,7 +314,7 @@ const ModalFilterPanel = () => {
                         <InputContainer>
                             <Input onInput={ (e) => handleFilteredInputs(e) } type="checkbox" id="own/bus-mobile"
                                    name="own/bus"/>
-                            <Label htmlFor="own-mobile/bus">Autokar</Label>
+                            <Label htmlFor="own/bus-mobile">Autokar</Label>
                         </InputContainer>
                         <InputContainer>
                             <Input onInput={ (e) => handleFilteredInputs(e) } type="checkbox" id="own-mobile"

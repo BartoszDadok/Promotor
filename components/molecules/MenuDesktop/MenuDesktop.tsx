@@ -19,7 +19,7 @@ const MenuDesktop = ({ isScrolled }: Props) => {
         <MenuContainer>
             <LeftSide>
                 <ListItem>
-                    <Link passHref href="/">
+                    <Link as="blog.html" passHref href="/">
                         <a style={ { height: "100%" } }>
                             <Logo/>
                         </a>

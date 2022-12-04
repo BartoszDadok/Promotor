@@ -1,6 +1,7 @@
 import React from "react";
 import heroImgSrc from "../../../public/assets/promotor-family-image.jpg";
 import styled from "styled-components";
+import Image from "next/image";
 
 const Picture = styled.picture`
   display: flex;
@@ -25,7 +26,6 @@ const HeroImage = () => {
             <source media="(min-width: 1000px)"
                     srcSet={ heroImgSrc.src }/>
             <Img src={ heroImgSrc.src } alt="Rodzina ciesząca się zimowymi wakacjami"/>
-
         </Picture>
 
     );

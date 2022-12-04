@@ -12,7 +12,7 @@ const NavigationMobileWrapper = styled.nav`
   height: 4.3em;
   display: flex;
   padding: 0.3em;
-  justify-content: space-between;
+
   z-index: 1000;
   @media (min-width: 1000px) {
     display: none;
@@ -24,12 +24,13 @@ const NavigationMobileWrapper = styled.nav`
 
 `;
 const List = styled.ul`
+  width: 100%;
   display: flex;
   align-items: center;
   align-content: center;
-
+  justify-content: space-between;
   :first-child {
-    margin-top: -3px;
+    margin-top: -6px;
   }
 `;
 
@@ -68,11 +69,10 @@ const NavigationMobile = () => {
                         </a>
                     </Link>
                 </ListItem>
+                <ListItem>
+                    <Hamburger/>
+                </ListItem>
             </List>
-            <List>
-                <Hamburger/>
-            </List>
-
         </NavigationMobileWrapper>
     );
 };
