@@ -78,7 +78,7 @@ const Offer = () => {
                     ...filteringState,
                     [key]: {
                         ...filteringState[key],
-                        [toFilter]: !filteringState["country"][toFilter],
+                        [toFilter]: !filteringState[key][toFilter],
                     },
                 };
                 setFilteringState(newState);
