@@ -2,9 +2,9 @@ import { DateTypes } from "../components/organisms/Offer/OfferTypes";
 import removedDuplicatedDate from "./collectedDate";
 
 const prepareDateForState = () => {
-    let object = {} as DateTypes;
+    let object = <DateTypes>{};
 
-    removedDuplicatedDate.map((item: string) => {
+    removedDuplicatedDate.forEach((item: string) => {
         return object[item as keyof DateTypes] = false;
     });
     return { ...object };

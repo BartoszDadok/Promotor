@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Template } from "./MainTemplate.style";
 import { MobileFilterPanelContext } from "../../../contexts/MobileFilterPanel";
 import ModalFilterPanel from "../../organisms/ModalFilterPanel/ModalFilterPanel";
-import MobileMenu from "../../organisms/MobileMenu/MobileMenu";
+import MobileMenu from "../../molecules/MobileMenu/MobileMenu";
 import { HamburgerContext } from "../../../contexts/HamburgerContext";
 import Navigation from "../../organisms/Navigation/Navigation";
 

@@ -24,17 +24,15 @@ const Navigation = ({ homePage }: { homePage?: string }) => {
     return (
         homePage ?
             <>
-            <NavigationDesktop stripeSrc={ stripeSrc.src } className={ isScrolled ? "isScrolled" : "" }>
-                <MenuDesktop isScrolled={ isScrolled }/>
-            </NavigationDesktop>
-            <NavigationMobile/>
+                <NavigationDesktop stripeSrc={ stripeSrc.src } className={ isScrolled ? "isScrolled" : "" }>
+                    <MenuDesktop isScrolled={ isScrolled }/>
+                </NavigationDesktop>
+                <NavigationMobile/>
             </>
             :
             <NavigationDesktop stripeSrc={ stripeSrc.src } className={ "visible isScrolled" }>
                 <MenuDesktop isScrolled={ isScrolled }/>
             </NavigationDesktop>
-
-
     );
 };
 

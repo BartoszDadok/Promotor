@@ -35,14 +35,11 @@ const GridWrapper = styled.div`
 
 const Informations = styled.div`
   margin-bottom: 1.5em;
-
   @media (max-width: 60em) {
     p {
       text-align: center;
     }
-
   ;
-
 `;
 
 const StyledLink = styled.a`

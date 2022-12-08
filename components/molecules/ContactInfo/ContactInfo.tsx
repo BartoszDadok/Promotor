@@ -1,4 +1,3 @@
-import React from "react";
 import { PageParagraph } from "../../atoms/PageParagraph/PageParagraph";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook } from "@fortawesome/free-brands-svg-icons";
@@ -8,18 +7,22 @@ const Title = styled.h2`
   font-size: 2rem;
   margin: 0.6em 0;
 `;
+
 const StyledLink = styled.a`
   color: #0173d6;
 `;
+
 const FacebookWrapper = styled.div`
   display: flex;
   align-items: center;
   align-content: center;
 `;
+
 const ContactWrapper = styled.div`
   width: 100%;
   padding: 0 2em;
 `;
+
 const ContactInfo = () => {
     return (
         <ContactWrapper>

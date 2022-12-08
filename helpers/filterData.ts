@@ -1,17 +1,17 @@
 import { data } from "../public/assets/data";
-import { ItemTypes } from "../components/organisms/Offer/OfferTypes";
+import { FilteringDataTypes, ItemTypes } from "../components/organisms/Offer/OfferTypes";
 
-const filterData = (filteringCategories: string[], collectedFilteringData: any) => {
+const filterData = (filteringCategories: string[], collectedFilteringData: FilteringDataTypes) => {
     const pureData = [...data];
+
     return filteringCategories.reduce((acc: ItemTypes[], category: string) => {
         return acc.filter((item: ItemTypes) => {
             const dataToCheck = Object.values(item).flat();
-            // @ts-ignore
-            return collectedFilteringData[category].some(r => {
-                if (r === "all") {
+            return (collectedFilteringData[category as keyof FilteringDataTypes]).some((value: string) => {
+                if (value === "all") {
                     return item;
                 }
-                if (dataToCheck.includes(r)) {
+                if (dataToCheck.includes(value)) {
                     return item;
                 }
             });

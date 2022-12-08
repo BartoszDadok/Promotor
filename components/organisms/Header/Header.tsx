@@ -36,9 +36,8 @@ const HeadLineH2 = styled.h2`
   @media (max-width: 1100px) {
     font-size: 1.2rem;
   }
-
-
 `;
+
 const Header = () => {
     return (
         <HeaderContainer>

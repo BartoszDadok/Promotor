@@ -1,118 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import styled from "styled-components";
-
-const GalleryWrapper = styled.div`
-  display: block;
-  @media (max-width: 1000px) {
-    display: none;
-
-  }
-`;
-const Title = styled.h2`
-  font-size: 2rem;
-  margin: 0 0 0.3em 0;
-`;
-
-const FirstRow = styled.div`
-  width: 100%;
-  display: grid;
-  height: 400px;
-  grid-gap: 0.5em;
-  grid-template-columns: 1fr 2fr;
-  grid-template-rows: auto;
-  grid-template-areas: 
-  "smallImage bigImage"
-  "smallImage2 bigImage";
-
-
-
-`;
-
-const SecondRow = styled.div`
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-auto-flow: row;
-  grid-gap: 0 0.5em;
-  margin-top: 0.5em;
-  margin-bottom: 1.5em;
-`;
-const SingleImage1 = styled.div`
-  grid-area: smallImage;
-  width: 100%;
-  display: block;
-  position: relative;
-
-  :hover {
-    filter: brightness(85%);
-  }
-`;
-
-const SingleImage2 = styled.div`
-  grid-area: smallImage2;
-  width: 100%;
-  display: block;
-  position: relative;
-
-  :hover {
-    filter: brightness(85%);
-  }
-`;
-
-const SingleImage = styled.div`
-  width: 100%;
-  display: block;
-  height: 130px;
-  position: relative;
-  @media (max-width: 1400px) {
-    height: 110px;
-  }
-  @media (max-width: 1300px) {
-    height: 100px;
-  }
-  @media (max-width: 1100px) {
-    height: 90px;
-  }
-
-  :hover {
-    filter: brightness(85%);
-  }
-
-  p {
-    width: 100%;
-    text-align: center;
-    font-weight: 700;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    font-size: 1.5rem;
-  }
-`;
-
-const BigImage = styled.div`
-  display: grid;
-  position: relative;
-  grid-area: bigImage;
-  width: 100%;
-
-  :hover {
-    filter: brightness(85%);
-  }
-`;
-
-const Button = styled.button`
-  cursor: pointer;
-  display: block;
-  border: none;
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-`;
-
+import { GalleryWrapper, Button, BigImage, SingleImage, SingleImage1, SingleImage2, FirstRow, SecondRow } from "./Gallery.styles";
 
 const Gallery = ({
                      setModalData,
@@ -177,8 +65,6 @@ const Gallery = ({
                 }
             </SecondRow>
         </GalleryWrapper>
-
-
     );
 };
 

@@ -1,11 +1,15 @@
 import { data } from "../public/assets/data";
 import { ItemTypes } from "../components/organisms/Offer/OfferTypes";
 
-const convertedDate = data.map((item: ItemTypes) => {
+const convertedDate: ([string[], string])[] = data.map((item: ItemTypes) => {
     return [[...item.date], item.startingDate];
 });
 
-const sortedDate = convertedDate.sort((a: any, b: any) => new Date(a[1]).getTime() - new Date(b[1]).getTime());
+const sortedDate = convertedDate.sort((a, b) => {
+        return new Date(a[1]).getTime() - new Date(b[1]).getTime();
+    },
+);
+
 
 const swappedDate = sortedDate.map(data => {
     if (!data[0][1]) return data[0][0];

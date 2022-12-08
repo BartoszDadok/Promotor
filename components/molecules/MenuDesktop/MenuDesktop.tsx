@@ -1,14 +1,8 @@
 import React from "react";
 import arrowSrc from "../../../public/assets/arrow.svg";
-import {
-    LeftSide,
-    ListItem,
-    MenuContainer,
-    RightSide,
-    StyledLink,
-} from "../../organisms/Navigation/Navigation.styles";
 import Link from "next/link";
 import { Logo } from "../../atoms/Logo/Logo";
+import { MenuContainer, RightSide, StyledLink, LeftSide, ListItem } from "./MenuDesktop.style";
 
 interface Props {
     isScrolled: boolean;
@@ -19,7 +13,7 @@ const MenuDesktop = ({ isScrolled }: Props) => {
         <MenuContainer>
             <LeftSide>
                 <ListItem>
-                    <Link as="blog.html" passHref href="/">
+                    <Link passHref href="/">
                         <a style={ { height: "100%" } }>
                             <Logo/>
                         </a>

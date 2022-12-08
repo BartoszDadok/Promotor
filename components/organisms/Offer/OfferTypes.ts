@@ -30,46 +30,30 @@ export interface InitialStateTypes {
     },
 }
 
-export interface Keys {
-    "Włochy": boolean,
-    "Francja": boolean,
-    "Austria": boolean,
-    "Czechy": boolean,
-    "Pełne": boolean,
-    "Tylko śniadania": boolean,
-    "Bez wyżywienia": boolean,
-    "Skipass": boolean,
-    "Wczasy ogólne": boolean,
-    "Wczasy ze szkółkami dla dzieci": boolean,
-    "Obozy młodzieżowe": boolean,
-    "Express narty": boolean,
-    "Ski 50+ aktywnie": boolean,
-    "Hotel": boolean,
-    "Apartament": boolean,
-    "Ośrodek sportowy": boolean,
-    "Autokar": boolean,
-    "Dojazd własny": boolean,
-}
+export type InitialStateKeysWithoutDate = keyof Omit<InitialStateTypes, "date">;
+export type TranslationKeys = keyof Translations;
+export type NestedKeys = keyof InitialStateTypes[InitialStateKeysWithoutDate]
+
 
 export interface Translations {
-    "italy": string,
-    "france": string,
-    "austin": string,
-    "czech": string,
-    "fullCatering": string,
-    "onlyBreakfast": string,
-    "withoutCatering": string,
-    "holidays": string,
-    "withLessonsForKids": string,
-    "youthCamps": string,
-    "expressSki": string,
-    "ski50": string,
-    "hotel": string,
-    "apartment": string,
-    "sportCenter": string,
-    "skipass": string,
-    "own/bus": string,
-    "own": string,
+    "italy": "Włochy",
+    "france": "Francja",
+    "austin": "Austria",
+    "czech": "Czechy",
+    "fullCatering": "Pełne",
+    "onlyBreakfast": "Tylko śniadania",
+    "withoutCatering": "Bez wyżywienia",
+    "holidays": "Wczasy ogólne",
+    "withLessonsForKids": "Wczasy ze szkółkami dla dzieci",
+    "youthCamps": "Obozy młodzieżowe",
+    "expressSki": "Express narty",
+    "ski50": "Ski 50+ aktywnie",
+    "hotel": "Hotel",
+    "apartment": "Apartament",
+    "sportCenter": "Ośrodek sportowy",
+    "skipass": "Skipass",
+    "own/bus": "Autokar",
+    "own": "Dojazd własny",
 }
 
 export interface DateTypes {
@@ -88,6 +72,7 @@ export interface DateTypes {
     "27.01.2023 - 05.02.2023": boolean;
     "28.01.2023 - 04.02.2023": boolean;
     "29.01.2023 - 03.02.2023": boolean;
+    "all"?: boolean;
 }
 
 export interface FilteringDataTypes {
@@ -96,8 +81,8 @@ export interface FilteringDataTypes {
     country: string[],
     date: string[],
     category: string[],
-    accomodation: string[],
-    tranposrt: string[],
+    accommodation: string[],
+    transport: string[],
 }
 
 export interface ItemTypes {

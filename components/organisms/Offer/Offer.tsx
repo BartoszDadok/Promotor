@@ -1,7 +1,10 @@
-import React, { FormEvent, useContext} from "react";
+import React, { FormEvent, useContext } from "react";
 import { PageParagraph } from "../../atoms/PageParagraph/PageParagraph";
 import Item from "../Item/Item";
-import { InitialStateTypes, Translations, ItemTypes } from "./OfferTypes";
+import {
+    ItemTypes,
+    DateTypes, TranslationKeys, InitialStateKeysWithoutDate, NestedKeys,
+} from "./OfferTypes";
 import {
     OfferWrapper,
     FilterWrapper,
@@ -11,24 +14,6 @@ import {
     HeadLineH3,
 } from "./Offer.styles";
 import preparedDataForState from "../../../helpers/prepareDateForState";
-
-import angelo from "../../../public/assets/hotels/angelo.jpg";
-import cevedale from "../../../public/assets/hotels/cevedale.jpg";
-import der from "../../../public/assets/hotels/der.jpg";
-import front from "../../../public/assets/hotels/front.jpg";
-import golf from "../../../public/assets/hotels/golf.jpg";
-import gentianes from "../../../public/assets/hotels/gentianes.jpg";
-import haus from "../../../public/assets/hotels/haus.jpg";
-import lagra from "../../../public/assets/hotels/lagra.jpg";
-import laroccasport from "../../../public/assets/hotels/laroccasport.jpg";
-import leschaletsladonis from "../../../public/assets/hotels/leschaletsladonis.jpg";
-import margarethenbad from "../../../public/assets/hotels/margarethenbad.jpg";
-import misurina from "../../../public/assets/hotels/misurina.jpg";
-import pampeago from "../../../public/assets/hotels/pampeago.jpg";
-import prom from "../../../public/assets/hotels/prom.jpg";
-import solaris from "../../../public/assets/hotels/solaris.jpg";
-import topresidence from "../../../public/assets/hotels/topresidence.jpg";
-import villa from "../../../public/assets/hotels/villa.jpg";
 import FilterButton from "../../molecules/FilterButton/FilterButton";
 import FilterPanel from "../FilterPanel/FilterPanel";
 import removedDuplicatedDate from "../../../helpers/collectedDate";
@@ -36,28 +21,7 @@ import { FilteringContext } from "../../../contexts/FilteringContext";
 import collectFilteringData from "../../../helpers/collcectFilteringData";
 import filterData from "../../../helpers/filterData";
 import { translations } from "../../../helpers/translations";
-
-
-const images = {
-    angelo,
-    cevedale,
-    golf,
-    gentianes,
-    leschaletsladonis,
-    margarethenbad,
-    misurina,
-    pampeago,
-    prom,
-    solaris,
-    topresidence,
-    laroccasport,
-    hausanderluck: haus,
-    lagranbecca: lagra,
-    frontdeneige: front,
-    villaggiodolomitico: villa,
-    derbyclub: der,
-};
-
+import { images } from "../../../utils/mainImages";
 
 
 const Offer = () => {
@@ -74,16 +38,15 @@ const Offer = () => {
 
     const filteredData = filterData(filteringCategories, collectedFilteringData);
 
-    const filteringElements = Object.values(collectedFilteringData).flat(); //any tu jest
+    const filteringElements: string[] = Object.values(collectedFilteringData).flat(); //any tu jest
 
     function handleFilteredInputs(e: FormEvent<HTMLInputElement | HTMLSelectElement>) {
         const target = e.target as HTMLInputElement;
-        const key = target?.parentElement?.parentElement?.dataset.name;
-        const toFilter = translations[target.name as keyof Translations] ? translations[target.name as keyof Translations] : target.name;
 
         if (target.tagName === "SELECT") {
-            // @ts-ignore
-            const toFilter = translations[target.value as keyof Translations] ? translations[target.value as keyof Translations] : target.value;
+            const key = target?.parentElement?.parentElement?.dataset.name as "date";
+            const toFilter = target.value as keyof DateTypes;
+
             if (target.value === "all") {
                 setFilteringState({ ...filteringState, date: { ...preparedDataForState } });
             }
@@ -92,33 +55,35 @@ const Offer = () => {
                 ...filteringState,
                 date: {
                     ...preparedDataForState,
-                    [toFilter]: !filteringState[key as keyof InitialStateTypes][toFilter as keyof InitialStateTypes[keyof InitialStateTypes]],
+                    [toFilter]: !filteringState[key][toFilter],
                 },
             });
             return;
 
-        }
-
-        const objectIsNested = Object.keys(filteringState[key as keyof InitialStateTypes]).length;
-
-
-        if (!objectIsNested) {
-            let newState = {
-                ...filteringState,
-                [key as keyof InitialStateTypes]: !filteringState[key as keyof InitialStateTypes],
-            };
-            setFilteringState(newState);
-            return;
         } else {
-            const newState = {
-                ...filteringState,
-                [key as keyof InitialStateTypes]: {
-                    ...filteringState[key as keyof InitialStateTypes],
-                    [toFilter]: !filteringState[key as keyof InitialStateTypes][toFilter as keyof InitialStateTypes[keyof InitialStateTypes]],
-                },
-            };
-            setFilteringState(newState);
-            return;
+            const key = target?.parentElement?.parentElement?.dataset.name as InitialStateKeysWithoutDate;
+            const targetName = target.name as TranslationKeys;
+            const toFilter = translations[targetName] as NestedKeys;
+
+            const objectIsNested = Object.keys(filteringState[key]).length;
+            if (!objectIsNested) {
+                let newState = {
+                    ...filteringState,
+                    [key]: !filteringState[key],
+                };
+                setFilteringState(newState);
+                return;
+            } else {
+                const newState = {
+                    ...filteringState,
+                    [key]: {
+                        ...filteringState[key],
+                        [toFilter]: !filteringState["country"][toFilter],
+                    },
+                };
+                setFilteringState(newState);
+                return;
+            }
 
         }
     }
@@ -141,9 +106,9 @@ const Offer = () => {
                     </FilterWrapper>
                     }
 
-                    { filteredData.length > 0 ? filteredData.map((itemData: ItemTypes) => {
+                    { filteredData.length > 0
+                        ? filteredData.map((itemData: ItemTypes) => {
                             const objectPhoto = itemData.object.replace(/ /g, "").toLowerCase().replace("'", "");
-                            // @ts-ignore
                             const src = images[objectPhoto];
                             return (<Item key={ itemData.id } itemData={ itemData } src={ src }/>);
                         })

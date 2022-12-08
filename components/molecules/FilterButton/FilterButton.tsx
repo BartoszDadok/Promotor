@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext} from "react";
 import styled from "styled-components";
 import filterIcon from "../../../public/assets/filterIcon.svg";
 import Image from "next/image";
@@ -30,10 +30,8 @@ const FontWrapper = styled.div`
 
 const FilterButton = () => {
     const context = useContext(MobileFilterPanelContext);
-
-    const activeFilterPanel = context.activeFilterPanel;
     const openFilterPanel = context.openFilterPanel
-    const closeFilterPanel = context.closeFilterPanel;
+
 
     const handleFilterPanel = () => {
         window.scrollTo(0, 0);
