@@ -11,7 +11,7 @@ body.galleryIsActive{
 }
 
 html {
-    font-family: Arial;
+    font-family: Lato, Arial, serif;
     font-size: 16px;
     line-height: 1.65;
     letter-spacing: -0.15px;
@@ -20,44 +20,44 @@ html {
     color: black;
 }
 
-html.fonts-loaded {
-    font-family: Lato;
-    font-size: 16px;
-    line-height: 1.6;
-    visibility: visible;
-}
+/*html.fonts-loaded {*/
+/*    font-family: Lato;*/
+/*    font-size: 16px;*/
+/*    line-height: 1.6;*/
+/*    visibility: visible;*/
+/*}*/
 
-html .h2 {
-    font-size: 2rem;
-}
-html.fonts-loaded .h2 {
-    font-size: 2.2rem;
-}
+/*html .h2 {*/
+/*    font-size: 2rem;*/
+/*}*/
+/*html.fonts-loaded .h2 {*/
+/*    font-size: 2.2rem;*/
+/*}*/
 
-@media (max-width: 1550px) {
-    html .h2 {
-        font-size: 1.5rem;
-    }
-    html.fonts-loaded .h2 {
-        font-size: 1.8rem;
-    }
-}
-@media (max-width: 1200px) {
-    html .h2 {
-        font-size: 1.2rem;
-    }
-    html.fonts-loaded .h2 {
-        font-size: 1.5rem;
-    }
-}
-@media (max-width: 1000px) {
-    html .h2 {
-        font-size: 1.2rem;
-    }
-    html.fonts-loaded .h2 {
-        font-size: 1.2rem;
-    }
-}
+/*@media (max-width: 1550px) {*/
+/*    html .h2 {*/
+/*        font-size: 1.5rem;*/
+/*    }*/
+/*    html.fonts-loaded .h2 {*/
+/*        font-size: 1.8rem;*/
+/*    }*/
+/*}*/
+/*@media (max-width: 1200px) {*/
+/*    html .h2 {*/
+/*        font-size: 1.2rem;*/
+/*    }*/
+/*    html.fonts-loaded .h2 {*/
+/*        font-size: 1.5rem;*/
+/*    }*/
+/*}*/
+/*@media (max-width: 1000px) {*/
+/*    html .h2 {*/
+/*        font-size: 1.2rem;*/
+/*    }*/
+/*    html.fonts-loaded .h2 {*/
+/*        font-size: 1.2rem;*/
+/*    }*/
+/*}*/
 
 a {
     color: inherit;
@@ -82,7 +82,7 @@ button {
     url('/fonts/subset-Lato-Italic.ttf') format('truetype');
     font-weight: normal;
     font-style: italic;
-    font-display: swap;
+    font-display: optional;
 }
 
 @font-face {
@@ -94,7 +94,7 @@ button {
     url('/fonts/subset-Lato-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
-    font-display: swap;
+    font-display: optional;
 }
 
 @font-face {
@@ -106,7 +106,7 @@ button {
     url('/fonts/subset-Lato-Hairline.ttf') format('truetype');
     font-weight: 300;
     font-style: normal;
-    font-display: swap;
+    font-display: optional;
 }
 
 @font-face {
@@ -118,7 +118,7 @@ button {
     url('/fonts/subset-Lato-LightItalic.ttf') format('truetype');
     font-weight: 300;
     font-style: italic;
-    font-display: swap;
+    font-display: optional;
 }
 
 @font-face {
@@ -130,7 +130,7 @@ button {
     url('/fonts/subset-Lato-HairlineItalic.ttf') format('truetype');
     font-weight: 300;
     font-style: italic;
-    font-display: swap;
+    font-display: optional;
 }
 
 @font-face {
@@ -142,7 +142,7 @@ button {
     url('/fonts/subset-Lato-BlackItalic.ttf') format('truetype');
     font-weight: 900;
     font-style: italic;
-    font-display: swap;
+    font-display: optional;
 }
 
 @font-face {
@@ -154,7 +154,7 @@ button {
     url('/fonts/subset-Lato-BoldItalic.ttf') format('truetype');
     font-weight: bold;
     font-style: italic;
-    font-display: swap;
+    font-display: optional;
 }
 
 @font-face {
@@ -166,7 +166,7 @@ button {
     url('/fonts/subset-Lato-Light.ttf') format('truetype');
     font-weight: 300;
     font-style: normal;
-    font-display: swap;
+    font-display: optional;
 }
 
 @font-face {
@@ -178,7 +178,7 @@ button {
     url('/fonts/subset-Lato-Bold.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
-    font-display: swap;
+    font-display: optional;
 }
 
 @font-face {
@@ -190,5 +190,5 @@ button {
     url('/fonts/subset-Lato-Black.ttf') format('truetype');
     font-weight: 900;
     font-style: normal;
-    font-display: swap;
+    font-display: optional;
 }

@@ -9,8 +9,7 @@ export default class MyDocument extends Document {
                     {/*To preload heroImage photo only on desktops*/}
                     <link rel="preload" href="/_next/static/media/promotor-family-image.3c1a7147.jpg" as="image"
                           media="(min-width: 1000px)"/>
-
-                    <link rel="preload" href="/fonts/subset-Lato-BoldItalic.woff2" as="font" type="font/woff2"
+                    <link rel="preload" href="/fonts/subset-Lato-BlackItalic.woff2" as="font" type="font/woff2"
                           crossOrigin=""/>
                     <link rel="preload" href="/fonts/subset-Lato-Regular.woff2" as="font" type="font/woff2"
                           crossOrigin=""/>

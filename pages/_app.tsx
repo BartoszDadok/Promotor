@@ -20,15 +20,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                             <meta name="description"
                                   content="Biuro podróży Promotor - specjalista od zimowych wakacji"/>
                             <link rel="shortcut icon" href={ favicon.src }/>
-                            <script
-                                dangerouslySetInnerHTML={ {
-                                    __html: `
-                    document.fonts.ready.then(function(){
-                    document.getElementsByTagName("html")[0].classList.add("fonts-loaded")
-                })
-                  `,
-                                } }
-                            ></script>
+           
                         </Head>
                         <MainTemplate>
                             <Component { ...pageProps } />

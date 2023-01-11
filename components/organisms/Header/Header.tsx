@@ -17,7 +17,7 @@ const HeadLineContainer = styled.div`
   background-color: #c40002;
   opacity: 85%;
   padding: 1em;
-  width: 40%;
+  width: 35%;
 `;
 
 const HeadLineH2 = styled.h2`
@@ -26,7 +26,7 @@ const HeadLineH2 = styled.h2`
   padding-left: 0.4em;
   font-weight: 900;
   color: #fff;
-  font-size: 2.5rem;
+  font-size: 2.3rem;
   @media (max-width: 1550px) {
     font-size: 1.8rem;
   }
@@ -43,8 +43,8 @@ const Header = () => {
         <HeaderContainer>
             <HeroImage/>
             <HeadLineContainer id="headlines">
-                <HeadLineH2 className={ "h2" }> Pojedź z nami raz</HeadLineH2>
-                <HeadLineH2 className={ "h2" }>- będziesz z nami jeździł zawsze!</HeadLineH2>
+                <HeadLineH2>Pojedź z nami raz</HeadLineH2>
+                <HeadLineH2>- będziesz z nami jeździł zawsze!</HeadLineH2>
             </HeadLineContainer>
         </HeaderContainer>
     );
